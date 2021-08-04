@@ -1,1 +1,54 @@
-<p>cart works!</p>
+<div class="wrap cf">
+  <div class="heading cf">
+    <h1>My Cart</h1>
+  </div>
+  <div class="cart">
+    <!--    <ul class="tableHead">
+          <li class="prodHeader">Product</li>
+          <li>Quantity</li>
+          <li>Total</li>
+           <li>Remove</li>
+        </ul>-->
+    <ul class="cartWrap">
+
+      <li *ngFor="let product of products ; index as i" [ngClass]="i%2!=0?'items even':'items odd'">
+
+        <div class="infoWrap">
+          <div class="cartSection">
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-gold-select-201810?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1603332211000" alt="image" class="itemImg" />
+            <p class="itemNumber">{{product.productId}}</p>
+            <h3>{{product.name}}</h3>
+
+            <p> <input type="text"  class="qty" placeholder="{{product.quantity}}"/> x ${{product.price}}</p>
+
+<!--            <p class="stockStatus"> In Stock</p>-->
+          </div>
+
+
+          <div class="prodTotal cartSection">
+            <p>{{product.subTotal}}</p>
+          </div>
+          <div class="cartSection removeWrap">
+            <a href="#" class="remove">x</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+<!--  <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />-->
+<!--    <a href="#" class="btn"></a></div>-->
+
+  <div class="subtotal cf">
+    <ul>
+<!--      <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>-->
+
+<!--      <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>-->
+
+<!--      <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>-->
+      <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+      <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+    </ul>
+  </div>
+</div>
