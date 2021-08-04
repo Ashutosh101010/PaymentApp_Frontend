@@ -20,8 +20,8 @@ export class CartComponent implements OnInit {
       this.products=[];
     }
   }
-total=0;
- products:Product[];
+  total=0;
+  products:Product[];
 
   ngOnInit(): void {
     if(this.products.length<=0)

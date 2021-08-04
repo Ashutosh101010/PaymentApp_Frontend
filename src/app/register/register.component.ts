@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NetworkService} from "../network.service";
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private networkService:NetworkService) { }
 
   ngOnInit(): void {
   }
-
+  verifyToken() {
+    console.log("register")
+  }
 }
