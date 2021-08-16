@@ -1,0 +1,126 @@
+
+<div style="" class="sidebar-container">
+  <div style="margin-left: 87px;margin-top: 34px;" class="sidebar-logo">
+    <img src="/assets/gieo.jpg" alt="">
+  </div>
+  <div style="margin-left: 30px;height: 150px;">
+    <ul class="sidebar-navigation">
+
+
+      <li style="margin-top: 180px;">
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> Transictions
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-cog" aria-hidden="true"></i> History
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!--main-content-->
+
+<div style="background:linear-gradient(180deg, rgba(253, 240, 240, 0.86) 0%, rgba(246, 244, 243, 0.85) 22.71%, rgba(232, 253, 249, 0.96) 100%);
+;height: 100%;font-family:Calibri">
+  <div  class="content-container">
+
+    <div  class="container-fluid">
+      <div style="margin-left: 158px;"><h2 style="    margin-left: 14px;
+    margin-top: 41px;
+">Your Profile</h2></div>
+      <div style="margin-left: 125px;
+    margin-top: 32px;">
+        <img style="margin-top: 30px; margin-left: 50px;height: 110px;width: 110px; border-radius: 50%;" src="/assets/images/6.jpg" alt="">
+        <p style="margin-left: 91px; color: #6b1b98;margin-top: 7px;">edit</p>
+        <div style="margin-left: 200px; margin-top: -150px;">
+
+          <!--        <div class="col-sm-4">-->
+          <!--          <div class="checkbox switcher">-->
+          <!--            <label>Invoice Number *-->
+          <!--              <input type="checkbox" name="autoGenerate" [(ngModel)]="invoice.autoGenerate">-->
+          <!--              <span><small></small></span>-->
+          <!--              <small *ngIf="invoice.autoGenerate">Auto Generate</small>-->
+          <!--              <small *ngIf="!invoice.autoGenerate">Enter Manually</small>-->
+          <!--            </label>-->
+          <!--          </div>-->
+          <!--          <ng-container *ngIf="!invoice.autoGenerate">-->
+          <!--            <input type="text" name="invoicenumber" placeholder="eg. G-INV001" class="form-control" [(ngModel)]="invoice.invoiceNumber">-->
+          <!--          </ng-container>-->
+          <!--          -->
+          <!--        </div>-->
+          <div style="margin-left: -186px;">
+            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
+              <h4 style="margin-left: -530px;">Name</h4>
+
+              <!--        <input type="checkbox" name="enableTxtBox" [(ngModel)]="enableTxtBox">-->
+              <!--        Edit  {{enableTxtBox}}-->
+              <!--    <button  (click)="toggle()"> Edit {{enableTxtBox}}</button>-->
+              <button class="btn" style="height: 29px;
+    width: 114px;
+    border-radius: 6px;
+    border: 0;"
+                      (click)="tog()"
+                      [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
+                <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+                <i class="fa fa-edit">Edit</i></button>
+            </div>
+            <br />
+            <div>
+              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;margin-top: -24px;" type="text" name="Name" [disabled]="!enableTxtBox"
+                     placeholder="Name" class="form-control">
+            </div>
+          </div>
+          <div style="margin-left: -182px;">
+            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
+              <h5 style="margin-left: -530px;">E-mail</h5>
+
+            </div>
+            <br />
+            <div>
+              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="Email" name="name" [disabled]="!enableTxtBox"
+                     placeholder="Email" class="form-control" >
+            </div>
+          </div>
+          <div style="margin-left: -186px;">
+            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
+              <h5 style="margin-left: -530px;">Phone</h5>
+
+            </div>
+            <br />
+            <div>
+              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="search" name="Phone" [disabled]="!enableTxtBox"
+                     placeholder="Phone" class="form-control" >
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</div>

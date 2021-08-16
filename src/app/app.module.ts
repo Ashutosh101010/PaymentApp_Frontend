@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingComponent } from './landing/landing.component';
 import { TransictionComponent } from './transiction/transiction.component';
+import {FormsModule} from "@angular/forms";
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { TransictionComponent } from './transiction/transiction.component';
     LoginComponent,
     RegisterComponent,
     LandingComponent,
-    TransictionComponent
+    TransictionComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
 
   ],
   providers: [],

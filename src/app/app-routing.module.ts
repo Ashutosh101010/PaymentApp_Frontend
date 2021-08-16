@@ -12,7 +12,8 @@ const routes: Routes = [{path:'cart',component:CartComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'transition',component:TransictionComponent},
-  {path:'landing',component:LandingComponent}];
+  {path:'landing',component:LandingComponent},
+  {path:'**',redirectTo:'/login',pathMatch:'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

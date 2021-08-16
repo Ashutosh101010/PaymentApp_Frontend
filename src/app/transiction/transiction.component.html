@@ -10,54 +10,21 @@
             <thead class="thead-light">
             <tr>
 
-              <th scope="col">Activity</th>
+              <th scope="col">Order Number</th>
               <th scope="col">Date</th>
-              <th scope="col">Platform(s)</th>
+              <th scope="col">Type</th>
               <th scope="col">Amount</th>
             </tr>
             </thead>
             <tbody class="customtable">
-            <tr>
+            <tr *ngFor="let transaction of transactions; index as i">
 
-              <td>India</td>
-              <td>Chrome OS</td>
-              <td>MAC OS</td>
-              <td>76</td>
-            </tr>
-            <tr>
+              <td>{{transaction.orderNumber}}</td>
+              <td>{{transaction.date  | date:'dd/MM/yyyy'}}</td>
 
-              <td>USA</td>
-              <td>Internet Explorer</td>
-              <td>Win 2010</td>
-              <td>10</td>
-            </tr>
-            <tr>
+              <td>{{transaction.type}}</td>
+              <td>{{transaction.amount}}</td>
 
-              <td>UK</td>
-              <td>Safari</td>
-              <td>Mac OS</td>
-              <td>16</td>
-            </tr>
-            <tr>
-
-              <td>UAE</td>
-              <td>Google Chrome</td>
-              <td>Win 2013</td>
-              <td>76.12</td>
-            </tr>
-            <tr>
-
-              <td>Canada</td>
-              <td>Internet Explorer</td>
-              <td>Win 2010</td>
-              <td>10</td>
-            </tr>
-            <tr>
-
-              <td>Turkey</td>
-              <td>Internet Explorer 8</td>
-              <td>Win 2010</td>
-              <td>8</td>
             </tr>
             </tbody>
           </table>
