@@ -1,3 +1,5 @@
+import {Product} from "./Product";
+
 export class Transaction{
   private _amount:number=0;
   private _orderNumber:string | undefined;
@@ -5,7 +7,16 @@ export class Transaction{
   private _statusCode:number=-1;
   private _date: number|undefined;
   private _type:string | undefined;
+  private _cart:Product[]=[];
 
+
+  get cart(): Product[] {
+    return this._cart;
+  }
+
+  set cart(value: Product[]) {
+    this._cart = value;
+  }
 
   get type(): string | undefined {
     return this._type;

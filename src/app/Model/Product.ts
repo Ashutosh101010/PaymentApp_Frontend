@@ -9,7 +9,16 @@ export class Product{
   private _price: number | undefined;
   private _subTotal: number | undefined;
   private _name: number | undefined;
+  private _images: String[]=[];
 
+
+  get images(): String[] {
+    return this._images;
+  }
+
+  set images(value: String[]) {
+    this._images = value;
+  }
 
   get name(): number | undefined {
     return this._name;

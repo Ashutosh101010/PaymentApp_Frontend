@@ -8,6 +8,24 @@ export class User{
   private _userId:string | undefined;
   private _token:string | undefined;
   private _operatorId : string | undefined;
+  private _email:string | undefined;
+  private _mobileNumber:string | undefined;
+
+
+  get email(): string | undefined {
+    return this._email;
+  }
+
+  set email(value: string | undefined) {
+    this._email = value;
+  }
+  get mobileNumber(): string | undefined {
+    return this._mobileNumber;
+  }
+
+  set mobileNumber(value: string | undefined) {
+    this._mobileNumber = value;
+  }
 
 
   get operatorId(): string | undefined {

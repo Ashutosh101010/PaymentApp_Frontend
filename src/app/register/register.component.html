@@ -1,64 +1,94 @@
-<div class="limiter">
-  <div class="container-login100">
-    <div class="wrap-login100">
-      <div class="login100-pic js-tilt" data-tilt>
-        <img src="../../assets/img-01.png" alt="IMG">
-      </div>
+<div style="background-color:#d7d4e3; height: 150%;">
+  <div style="margin-left: 50px;"><img src="/assets/gieo.jpg" alt=""></div>
+  <div style="margin-left: 610px;"><img src="/assets/svmny.jpg" alt=""></div>
+  <div style="margin-top: 100px;margin-left: 521px;" class="wrapper fadeInDown">
+    <div style="margin-top: -60px;background-color: #f6f6f6; height: 445px;width: 497px;border-radius: 40px;" id="formContent">
 
 
-      <span class="login100-form-title">
-        Member Register
-      </span>
+     <div style="margin-top:10px;height: 700px;background-color:#f6f6f6;border-radius: 40px;">
+       <select style="background-color:#fff;height: 34.09px; margin-bottom: 60px; width: 303px;margin-left: 100px;margin-top: 20px;" class="dropdown-select" [(ngModel)]=operator>
+         <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
+         <option value="location-1" *ngFor="let operator of operators ; index as i" [ngValue]=operator >&nbsp; &nbsp; &nbsp; &nbsp;  {{operator.name}}</option>
+         <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
+         <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
+       </select>
+      <br>
+      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">
+      <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your name" [(ngModel)]="Name">
+       <br>
+      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px;margin-left: 100px;" type="password"  class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]="password">
+      <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your Number" [(ngModel)]="number">
+       <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" placeholder="Enter Your DOB" matInput [matDatepicker]="picker" [(ngModel)]="birthdate">
+       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+       <mat-datepicker #picker></mat-datepicker>
+       <br>
 
-      <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-        <input class="input100" type="text" name="email" placeholder="Email">
-        <span class="focus-input100"></span>
-        <span class="symbol-input100">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-        </span>
-      </div>
-
-      <div class="wrap-input100 validate-input">
-        <input class="input100" type="text" name="phone" placeholder="phone">
-        <span class="focus-input100"></span>
-        <span class="symbol-input100">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-        </span>
-      </div>
-
-      <div class="wrap-input100 validate-input" data-validate="Password is required">
-        <input class="input100" type="password" name="pass" placeholder="Password">
-        <span class="focus-input100"></span>
-        <span class="symbol-input100">
-          <i class="fa fa-lock" aria-hidden="true"></i>
-        </span>
-      </div>
-
-
-      <select class="dropdown-select">
-        <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Select Location</option>
-        <option value="location-1">Location 1</option>
-        <option value="location-2">Location 2</option>
-        <option value="location-3">Location 3</option>
-      </select>
+       <button style="height: 40px;width: 150px;margin-left: 150px;background-color: #6B1B98;border-radius: 20px;" (click)="register()">Create Account</button>
+     </div>
+       <!--
+<input style="margin-top: 70px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">-->
+<!--      &lt;!&ndash; Icon &ndash;&gt;-->
+<!--      <div style="margin-top: 60px;" class="fadeIn first">-->
+<!--        <img style="width: 10%;" src="/assets/figma1.jpg" id="icon" alt="User Icon" />-->
+<!--      </div>-->
 
 
+<!--      <span class="login100-form-title">-->
+<!--        Member Register-->
+<!--      </span>-->
 
-      <div style="margin-top: 2px;" class="container-login100-form-btn">
-        <button class="login100-form-btn">
-          Create Account
-        </button>
-      </div>
+<!--      <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">-->
+<!--        <input class="input100" type="text" name="email" placeholder="Email">-->
+<!--        <span class="focus-input100"></span>-->
+<!--        <span class="symbol-input100">-->
+<!--          <i class="fa fa-envelope" aria-hidden="true"></i>-->
+<!--        </span>-->
+<!--      </div>-->
+
+<!--      <div class="wrap-input100 validate-input">-->
+<!--        <input class="input100" type="text" name="phone" placeholder="phone">-->
+<!--        <span class="focus-input100"></span>-->
+<!--        <span class="symbol-input100">-->
+<!--          <i class="fa fa-envelope" aria-hidden="true"></i>-->
+<!--        </span>-->
+<!--      </div>-->
+
+<!--      <div class="wrap-input100 validate-input" data-validate="Password is required">-->
+<!--        <input class="input100" type="password" name="pass" placeholder="Password">-->
+<!--        <span class="focus-input100"></span>-->
+<!--        <span class="symbol-input100">-->
+<!--          <i class="fa fa-lock" aria-hidden="true"></i>-->
+<!--        </span>-->
+<!--      </div>-->
+
+
+<!--      <select class="dropdown-select">-->
+<!--        <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Select Location</option>-->
+<!--        <option value="location-1">Location 1</option>-->
+<!--        <option value="location-2">Location 2</option>-->
+<!--        <option value="location-3">Location 3</option>-->
+<!--      </select>-->
+
+
+
+<!--      <div style="margin-top: 2px;" class="container-login100-form-btn">-->
+<!--        <button class="login100-form-btn">-->
+<!--          Create Account-->
+<!--        </button>-->
+<!--      </div>-->
 
 
 
 
-      <div class="text-center p-t-136">
-        <a class="txt2" href="#">
-          Create your Account
-          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-        </a>
-      </div>
+<!--      <div class="text-center p-t-136">-->
+<!--        <a class="txt2" href="#">-->
+<!--          Create your Account-->
+<!--          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>-->
+<!--        </a>-->
+<!--      </div>-->
       <!--      </form>-->
     </div>
   </div>

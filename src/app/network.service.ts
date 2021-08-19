@@ -8,8 +8,16 @@ import {Operator} from "./Model/Operator";
 import {LoginResponse} from "./Model/LoginResponse";
 import {Transaction} from "./Model/Transaction";
 import {TransactionResponse} from "./Model/TransactionResponse";
+import {RegisterComponent} from "./register/register.component";
+import {EmailValidator} from "@angular/forms";
+import {UserResponse} from "./Model/UserResponse";
 
 
+class ProfileResponse {
+}
+
+class RegisterResponse {
+}
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +25,14 @@ import {TransactionResponse} from "./Model/TransactionResponse";
 export class NetworkService {
 
   baseUrl: string ="http://192.168.1.7:4040/api/operator";
+  baseUrlUser: string ="http://192.168.1.7:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
   transactionUrl: string =this.baseUrl+"/getTransaction";
+  registerUrl: string =this.baseUrlUser+"/create";
+  profileUrl: string =this.baseUrlUser+"/getUserInfo";
+
 
 
   constructor(private http:HttpClient,private  router: Router) {
@@ -64,6 +76,36 @@ export class NetworkService {
     return response;
   }
 
+  register(email: string,password: string, dob:string, operatorId: string, phoneNumber: string,Name:string):Observable<RegisterResponse>{
+    let response=this.http.post<RegisterResponse>(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        return EMPTY;
+      }
+
+      return caught;
+
+    }));
+
+    return response;
+  }
+  profile(Name:string,email: string, phoneNumber: string):Observable<ProfileResponse>{
+    let response=this.http.post<RegisterResponse>(this.profileUrl,{"name":Name,"email":email,"mobileNumber":phoneNumber}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        return EMPTY;
+      }
+
+      return caught;
+
+    }));
+
+    return response;
+  }
+
+
+
+
 
   getOperators():Observable<Operator[]>
   {
@@ -92,4 +134,24 @@ export class NetworkService {
 
     return response;
   }
+
+
+  getUsers(userId:string,token:string,operatorId:string):Observable<UserResponse>
+{
+    let response=this.http.post<UserResponse>(this.profileUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+
+        return EMPTY;
+
+      }
+
+      return caught;
+    }));
+
+    console.log(response);
+    return response;
+  }
+
+
 }

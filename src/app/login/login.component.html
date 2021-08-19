@@ -81,14 +81,14 @@
 
       <!-- Login Form -->
 
-        <select style="background-color:#fff;height: 34.09px; margin-bottom: 60px;" class="dropdown-select" [(ngModel)]=operator>
-<!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
-          <option value="location-1" *ngFor="let operator of operators ; index as i" [ngValue]=operator >&nbsp; &nbsp; &nbsp; &nbsp;  {{operator.name}}</option>
-<!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
-<!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
-        </select>
+      <select style="background-color:#fff;height: 34.09px; margin-bottom: 60px;" class="dropdown-select" [(ngModel)]=operator>
+        <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
+        <option value="location-1" *ngFor="let operator of operators ; index as i" [ngValue]=operator >&nbsp; &nbsp; &nbsp; &nbsp;  {{operator.name}}</option>
+        <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
+        <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
+      </select>
         <input style="background-color: #fff;height: 34.09px; border-radius: 5px; margin-bottom: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>
-        <input style="background-color: #fff;height: 34.09px; border-radius: 5px;" type="password"  class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>
+        <input style="background-color: #fff;height: 34.09px; border-radius: 5px;"   class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>
         <input style="margin-top: 70px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
 
 

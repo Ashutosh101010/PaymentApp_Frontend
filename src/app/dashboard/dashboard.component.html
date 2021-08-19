@@ -5,8 +5,8 @@
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 
 <div style="" class="sidebar-container">
-  <div style="margin-left: 87px;margin-top: 34px;" class="sidebar-logo">
-    <img src="/assets/gieo.jpg" alt="">
+  <div class="sidebar-logo" style="margin-left: 87px;">
+    <img style="height: 74px;width: 126px;" src="/assets/gieo.jpg" alt="">
   </div>
   <div style="margin-left: 30px;height: 150px;">
     <ul class="sidebar-navigation">
@@ -31,172 +31,273 @@
   </div>
 </div>
 
-<div class="content-container">
+<div>
 
-  <div class="container-fluid">
+  <div >
 
     <!-- main-content -->
-    <div  style="margin-left: 140px;"><h3>Transactions</h3>
-      <div style="display: flex; background-color: rgba(111, 108, 153, 0.5);border-radius: 25px;height: 42px; margin-left: 10px;font-size: large;align-items: center;margin-top: 40px;  " class="upper-box">
-        <p> &nbsp; &nbsp; Order no.</p> &nbsp; <p>Category Purchase</p> <p style="margin-left: 700px;">Date</p>
-      </div>
-      <div style="background-color: #fff; display: flex;margin-top: -10px;">
-        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">
-        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>
+    <div style="margin-left: 360px;border-radius: 30px;"><h3>Transactions</h3>
+      <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px" >
+        <div style="display: flex; justify-content: center" >
+        <p style="margin-top: 11px;">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;">Category Purchase{{transaction.type}}</p>
 
-        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>
-        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-        </svg></div>
-        <div style="margin-left: -971px" class="col-lg-2">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div style="height: 1px;" class="input-group">
-        <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >
-              <span class="glyphicon glyphicon-minus"></span>
-            </button>
-        </span>
-            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number" min="1" max="100">
-            <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-        </span>
+        <p style="margin-left: 450px;margin-top: 11px;">Date{{transaction.date}}</p>
+          &nbsp;&nbsp;
+        <p style="margin-top: 11px;">Amount{{transaction.amount}}</p>
+        </div>
+        <div  style="background-color: white;
 
+    margin-top: 3px;" *ngFor="let product of transaction.cart; index as j">
+          <ul class="list-group list-group-flush">
+        <div style="display: flex ; max-height: 120px;">
 
-          </div>
+            <img src="{{product.images[0]}}">
 
+            <div>
+          <h5 style="margin-top: 25px;"><td >{{product.name}}</td> </h5>
+              <h6 style="margin-top: -7px;" ><td>{{product.brand}}</td></h6>
+
+              <div class="center" style="display: flex;margin-top: -1px;height: 28px;">
+                <div style="border: 1px solid;display: flex;border-radius: 5px;">
+          <span class="input-group-btn">
+              <button style="height: 26px;padding: 0px;border-color: transparent" type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                <span class="glyphicon glyphicon-minus">	<mat-icon class="material-icons color_white">remove</mat-icon></span>
+              </button>
+          </span>
+                <input style="width: 40px; height: 26px;border-color: transparent" type="text" name="quant[2]" class="form-control input-number" value="{{product.quantity}}" min="1" max="100">
+                <span class="input-group-btn">
+              <button  style="height: 26px;padding: 0px;border-color: transparent" type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                  <span class="glyphicon glyphicon-plus"><mat-icon class="material-icons color_white" >add</mat-icon></span>
+              </button>
+          </span>
+                </div>
+
+                <div ><svg style="height: 30px;width: 15px;margin-left: 700px;"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></div>
+              </div>
+            </div>
         </div>
 
-      </div>
+          </ul>
+
+        </div>
+        <div style="background-color: white">
+        <br>
+
+        <button style="border-radius: 10px;margin-left: 920px;width: 99px; font-weight: 400;border: 1px solid;border-color: #000000;height: 38px;">Checkout</button>
+        <br>
+        <br>
+        </div>
+       </div>
+
+
+
+        <br>
       <br>
-      <div style="background-color: #fff; display: flex;margin-top: -10px;">
-        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">
-        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>
-
-        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>
-        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-        </svg></div>
-        <div style="margin-left: -971px" class="col-lg-2">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div class="input-group">
-        <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-              <span class="glyphicon glyphicon-minus"></span>
-            </button>
-        </span>
-            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number"  min="1" max="100">
-            <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-        </span>
-
-
-          </div>
-
-        </div>
-
-      </div>
       <br>
-      <div style="background-color: #fff; display: flex;margin-top: -10px;">
-        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">
-        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>
-
-        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>
-        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-        </svg></div>
-        <div style="margin-left: -971px" class="col-lg-2">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div class="input-group">
-        <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >
-              <span class="glyphicon glyphicon-minus"></span>
-            </button>
-        </span>
-            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number" min="1" max="100">
-            <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-        </span>
-
-
-          </div>
-
-        </div>
-
-      </div>
-      <button style="margin-left: 1050px" type="button" class="btn btn-primary">PayBill</button>
       <br>
-      <div style="display: flex; background-color: rgba(111, 108, 153, 0.5);border-radius: 25px;height: 42px; margin-left: 10px;font-size: large;align-items: center;margin-top: 40px;  " class="upper-box">
-        <p> &nbsp; &nbsp; Order no.</p> &nbsp; <p>Category Purchase</p> <p style="margin-left: 700px;">Date</p>
-      </div>
-      <div style="background-color: #fff; display: flex;margin-top: -10px;">
-        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">
-        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>
-
-        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>
-        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-        </svg></div>
-        <div style="margin-left: -971px" class="col-lg-2">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div class="input-group">
-        <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >
-              <span class="glyphicon glyphicon-minus"></span>
-            </button>
-        </span>
-            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number"  min="1" max="100">
-            <span class="input-group-btn">
-            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-        </span>
+      <br>
+      <br><br>
+      <br>
+      <br>
+      <br>
 
 
-          </div>
 
-        </div>
+<!--      <div style="background: rgb(250, 250, 250);" class="table-responsive">-->
+<!--        <table class="table">-->
+<!--          <thead class="thead-light">-->
+<!--          <tr>-->
 
-      </div>
-      <button style="margin-left: 1050px" type="button" class="btn btn-primary">PayBill</button>
-    </div>
+<!--            <th scope="col">Order Number</th>-->
+<!--            <th scope="col">Date</th>-->
+<!--            <th scope="col">Type</th>-->
+<!--            <th scope="col">Amount</th>-->
+<!--          </tr>-->
+<!--          </thead>-->
 
-  </div>
-</div>
+
+
+
+
+<!--          <tbody class="customtable">-->
+<!--          <tr *ngFor="let transaction of transactions; index as i">-->
+
+<!--            <td>{{transaction.orderNumber}}</td>-->
+<!--            <td>{{transaction.date  | date:'dd/MM/yyyy'}}</td>-->
+<!--            <td>{{transaction.type}}</td>-->
+<!--            <td>{{transaction.status}}</td>-->
+<!--            <td>{{transaction.statusCode}}</td>-->
+<!--            <td>{{transaction.amount}}</td>-->
+
+<!--          <div *ngFor="let product of transaction.cart; index as j">-->
+<!--            <td>{{product.quantity}}</td>-->
+<!--            <td>{{product.productId}}</td>-->
+<!--            <td>{{product.color}}</td>-->
+<!--            <td>{{product.description}}</td>-->
+<!--            <td>{{product.brand}}</td>-->
+<!--            <td>{{product.timestamp}}</td>-->
+<!--            <td>{{product.price}}</td>-->
+<!--            <td>{{product.subTotal}}</td>-->
+<!--            <td>{{product.name}}</td>-->
+<!--            <td>{{product.images}}</td>-->
+
+<!--          </div>-->
+<!--          </tr>-->
+
+<!--&lt;!&ndash;          </tbody>&ndash;&gt;-->
+<!--        </table>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;      <div style="background-color: #fff; display: flex;margin-top: -10px;">&ndash;&gt;-->
+<!--        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">-->
+<!--        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>-->
+
+<!--        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>-->
+
+<!--        <div style="margin-left: -971px" class="col-lg-2">-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <div style="height: 1px;" class="input-group">-->
+<!--        <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >-->
+<!--              <span class="glyphicon glyphicon-minus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+<!--            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number" min="1" max="100">-->
+<!--            <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >-->
+<!--                <span class="glyphicon glyphicon-plus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+
+
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <br>-->
+
+<!--    <tr *ngFor="let transaction of transactions; index as i">-->
+<!--      <div *ngFor="let product of transaction.cart; index as j" style="background-color: #fff; display: flex;margin-top: -10px;margin-left: 350px;">-->
+<!--        <tbody>-->
+<!--        <img src="{{product.images}}}">-->
+<!--        <h5 style="margin-top: 50px; margin-left: 10px"><td>{{product.name}}</td> </h5>-->
+
+<!--        <h6 style="margin-left: -112px;margin-top: 70px;"><br><td>{{product.brand}}</td></h6>-->
+
+<!--        </tbody>-->
+
+<!--        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">-->
+<!--          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
+<!--          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>-->
+<!--        </svg></div>-->
+<!--        <div style="margin-left: -971px" class="col-lg-2">-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <div class="input-group">-->
+<!--        <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">-->
+<!--              <span class="glyphicon glyphicon-minus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+<!--            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number"  min="1" max="100">-->
+<!--            <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >-->
+<!--                <span class="glyphicon glyphicon-plus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+
+
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <br>-->
+<!--      <div style="background-color: #fff; display: flex;margin-top: -10px;">-->
+<!--        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">-->
+<!--        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>-->
+
+<!--        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>-->
+<!--        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">-->
+<!--          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
+<!--          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>-->
+<!--        </svg></div>-->
+<!--        <div style="margin-left: -971px" class="col-lg-2">-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <div class="input-group">-->
+<!--        <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >-->
+<!--              <span class="glyphicon glyphicon-minus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+<!--            <input style="height: 30px" type="text" id="quantity" name="quantity" class="form-control input-number" min="1" max="100">-->
+<!--            <span class="input-group-btn">-->
+<!--            <button style="height: 30px" type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >-->
+<!--                <span class="glyphicon glyphicon-plus"></span>-->
+<!--            </button>-->
+<!--        </span>-->
+
+
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <button style="margin-left: 1050px" type="button" class="btn btn-primary">PayBill</button>-->
+<!--      <br>-->
+<!--      <div style="display: flex; background-color: rgba(111, 108, 153, 0.5);border-radius: 25px;height: 42px; margin-left: 10px;font-size: large;align-items: center;margin-top: 40px;  " class="upper-box">-->
+<!--        <p> &nbsp; &nbsp; Order no.</p> &nbsp; <p>Category Purchase</p> <p style="margin-left: 700px;">Date</p>-->
+<!--      </div>-->
+<!--      <div style="background-color: #fff; display: flex;margin-top: -10px;">-->
+<!--        <img src="/assets/images/o1.jpg" alt="" style="height: 174px;">-->
+<!--        <h5 style="margin-top: 50px; margin-left: 10px">200ml Hairloss oil </h5>-->
+
+<!--        <h6 style="margin-left: -112px;margin-top: 70px;"><br>AMAZON</h6>-->
+<!--        <div><svg style="margin-left: 850px;margin-top: 57px;height: 20px;width: 52px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">-->
+<!--          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
+<!--          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>-->
+<!--        </svg></div>-->
+<!--        <div style="margin-left: -971px" class="col-lg-2">-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <br>-->
+
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <button style="margin-left: 1050px" type="button" class="btn btn-primary">PayBill</button>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+

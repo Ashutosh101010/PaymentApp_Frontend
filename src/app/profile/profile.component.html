@@ -69,15 +69,15 @@
     width: 114px;
     border-radius: 6px;
     border: 0;"
-                      (click)="tog()"
+                      (click)="profile()"
                       [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
                 <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-                <i class="fa fa-edit">Edit</i></button>
+                <i class="fa fa-edit" >{{status}}</i></button>
             </div>
             <br />
             <div>
               <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;margin-top: -24px;" type="text" name="Name" [disabled]="!enableTxtBox"
-                     placeholder="Name" class="form-control">
+                     value="{{user.name}}" class="form-control" [(ngModel)]="Name">
             </div>
           </div>
           <div style="margin-left: -182px;">
@@ -88,7 +88,7 @@
             <br />
             <div>
               <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="Email" name="name" [disabled]="!enableTxtBox"
-                     placeholder="Email" class="form-control" >
+                     value="{{user.email}}" class="form-control" [(ngModel)]="Email" >
             </div>
           </div>
           <div style="margin-left: -186px;">
@@ -98,8 +98,8 @@
             </div>
             <br />
             <div>
-              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="search" name="Phone" [disabled]="!enableTxtBox"
-                     placeholder="Phone" class="form-control" >
+              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="search" name="Phone"  [disabled]="!enableTxtBox"
+                     value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >
             </div>
           </div>
         </div>

@@ -13,6 +13,11 @@ import { LandingComponent } from './landing/landing.component';
 import { TransictionComponent } from './transiction/transiction.component';
 import {FormsModule} from "@angular/forms";
 import { ProfileComponent } from './profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatIconModule} from "@angular/material/icon";
+
 
 
 @NgModule({
@@ -26,13 +31,17 @@ import { ProfileComponent } from './profile/profile.component';
     TransictionComponent,
     ProfileComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,7 @@
   overflow-y: auto;
   background: #d7d4e3;
   color: #fff;
+
 }
 
 .content-container {
@@ -105,4 +106,36 @@
 .col-lg-2 {
   width: 12.666667%;
   height: 10px;
+}
+.mat-body, .mat-body-1, .mat-typography {
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+}
+img, svg {
+  vertical-align: middle;
+  height: 120px;
+  width: 120px;
+}
+.center{
+  width: 150px;
+  margin: 40px auto;
+
+}
+.material-icons.color_green { color: #050505; }
+.material-icons.color_white { color: #000000; }
+.btn-danger {
+  color: #fff;
+  background-color: #ffffff;
+
+
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #ffffff;
+
+}
+.mat-icon {
+  font-size: 8px;
+  position: sticky;
 }
