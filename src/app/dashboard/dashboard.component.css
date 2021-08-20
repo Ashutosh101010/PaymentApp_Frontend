@@ -139,3 +139,11 @@ img, svg {
   font-size: 8px;
   position: sticky;
 }
+.bord{
+  border-radius: 30px;
+}
+.panel {
+  float: bottom ;
+
+  border-radius: 37px;
+}
