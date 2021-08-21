@@ -143,7 +143,10 @@ img, svg {
   border-radius: 30px;
 }
 .panel {
-  float: bottom ;
+  float: right;
+  width: 1670px;
+  height: auto;
+  background: #afafaf;
+  border-radius: 39px;
 
-  border-radius: 37px;
 }

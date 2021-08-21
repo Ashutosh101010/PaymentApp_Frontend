@@ -101,11 +101,14 @@
 
 
 <!--        *ngIf="transaction.type=='Product'"-->
-        <div style="border-radius: 30px;"><h3 style="background: white" >Transactions</h3>
+        <div style="border-radius: 30px;margin-top: -40px;"><h3 style="background: white" >Transactions</h3>
 
           <div  *ngFor="let transaction of transactions; index as i" >
             <div  *ngIf="transaction.type=='Subscription'">
-              <div class="panel"  style="display: flex; justify-content: center;border-radius: 30px;" >
+              <div class="panel"  style="    display: flex;
+    justify-content: center;
+    margin-left: -23px;
+    margin-top: -42px;" >
                 <p style="margin-top: 11px; ">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;">Category Purchase{{transaction.type}}</p>
 
                 <p style="margin-top: 11px;">Date{{transaction.date}}</p>

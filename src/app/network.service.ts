@@ -24,8 +24,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="http://192.168.1.6:4040/api/operator";
-  baseUrlUser: string ="http://192.168.1.6:4040/api/users";
+  baseUrl: string ="http://192.168.43.249:4040/api/operator";
+  baseUrlUser: string ="http://192.168.43.249:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
