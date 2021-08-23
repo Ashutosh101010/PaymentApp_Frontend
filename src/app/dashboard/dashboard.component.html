@@ -101,14 +101,16 @@
 
 
 <!--        *ngIf="transaction.type=='Product'"-->
-        <div style="border-radius: 30px;margin-top: -40px;"><h3 style="background: white" >Transactions</h3>
+        <div style="background: white"><h3>Transictions</h3></div>
 
-          <div  *ngFor="let transaction of transactions; index as i" >
+        <div ><h3 style="background: white" >&nbsp;</h3>
+        </div>
+          <div   *ngFor="let transaction of transactions; index as i" >
             <div  *ngIf="transaction.type=='Subscription'">
               <div class="panel"  style="    display: flex;
     justify-content: center;
     margin-left: -23px;
-    margin-top: -42px;" >
+    margin-top: -52px;" >
                 <p style="margin-top: 11px; ">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;">Category Purchase{{transaction.type}}</p>
 
                 <p style="margin-top: 11px;">Date{{transaction.date}}</p>
@@ -126,7 +128,7 @@
 
               <div>
                 <h5 style="margin-top: 25px;margin-left: 20px; font-size: 15px;"><td >449  rechard unlimited <br> calls/messages 3gb data/day</td> </h5>
-                <div style="margin-top: -30px;"><span style="margin-left: 800px;"><button style="background: rgba(251, 232, 233, 0.31);border: 1px solid #000000;box-sizing: border-box;border-radius: 10px;">Pay now</button></span></div>
+                <div style="margin-top: -30px;justify-content: space-between"><span style="margin-left: 800px;"><button style="background: rgba(251, 232, 233, 0.31);border: 1px solid #000000;box-sizing: border-box;border-radius: 10px;">Pay now</button></span></div>
 
 
 
@@ -136,6 +138,9 @@
           </ul>
 
         </div>
+              <br>
+              <br>
+              <br>
 
 
       </div>
