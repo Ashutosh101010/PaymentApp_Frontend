@@ -7,7 +7,7 @@ import {LandingComponent} from "./landing/landing.component";
 import {RegisterComponent} from "./register/register.component";
 import {TransictionComponent} from "./transiction/transiction.component";
 import {ProfileComponent} from "./profile/profile.component";
-
+import {HistoryComponent} from "./history/history.component";
 
 
 const routes: Routes = [{path:'cart',component:CartComponent},
@@ -17,6 +17,7 @@ const routes: Routes = [{path:'cart',component:CartComponent},
   {path:'transition',component:TransictionComponent},
   {path:'landing',component:LandingComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'history',component:HistoryComponent},
   {path:'**',redirectTo:'/login',pathMatch:'full'}];
 
 @NgModule({

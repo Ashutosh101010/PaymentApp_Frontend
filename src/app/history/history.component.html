@@ -1,0 +1,95 @@
+
+<div style="height: 100%;color: #050505" class="wrapper rounded">
+  <nav style="background: white" class="navbar navbar-expand-lg navbar-dark dark d-lg-flex align-items-lg-start"> <a style="color: #050505;background: white" class="navbar-brand" href="#">Transactions <p style="color: #050505;background: white" class="text-muted pl-1">Welcome to your transactions</p> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-lg-auto">
+        <li class="nav-item"> <a class="nav-link" href="#"> <span class="notify">Notifications</span> </a> </li>
+        <li  class="nav-item "> <a  href="#"><span  class="fa fa-search"></span></a> <input type="search" class="dark" placeholder="Search" style="color: #050505;background: #d5d5d5;border-radius: 30px;"> </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row mt-2 pt-2">
+    <div class="col-md-6" id="income">
+      <div class="d-flex justify-content-start align-items-center">
+
+        <p style="color: black" class="text mx-3">Income</p>
+        <p style="color: black"  >$9,758.23</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex justify-content-md-end align-items-center">
+
+        <div style="color: black">Expense</div>
+        &nbsp; &nbsp; &nbsp;
+        <div style="color: black">$961.23</div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <ul class="nav nav-tabs w-75">
+      <li  class="nav-item"> <a style="background-color: #e8e8e8;color: black " class="nav-link active" href="#history">History</a> </li>
+      <li class="nav-item"> <a style="color: black">Reports</a> </li>
+    </ul> <button style="background-color: #e8e8e8;color: black; width: 150px;border-radius: 30px; " class="btn btn-primary">New Transaction</button>
+  </div>
+  <div style="background-color: white" class="table-responsive mt-3">
+    <table  class="table table-dark table-borderless">
+      <thead >
+      <tr>
+
+        <th style="color: black;background-color: #e8e8e8;width: 30px;" >Activity</th>
+        <th style="color: black;background-color: #e8e8e8;" >Mode</th>
+        <th style="color: black;background-color: #e8e8e8;" >Date</th>
+        <th style="color: black;background-color: #e8e8e8;">Amount</th>
+      </tr>
+      </thead>
+
+        <div style="background-color:#e8e8e8;" CLASS="mt-1" *ngFor="let TransactionHistory of Transactionhistorys; index as i">
+      <tbody>
+      <tr>
+        <td  style="color: black;background-color: #e8e8e8" scope="row">   {{TransactionHistory.orderNumber}} </td>
+        &nbsp;
+        <td style="background-color: #e8e8e8"><span style="color: black" class="fa fa-cc-mastercard">{{TransactionHistory.type}}</span></td>
+        &nbsp;
+        <td style="background-color: #e8e8e8" class="text-muted">{{TransactionHistory.date}}</td>
+        &nbsp;
+        <td style="background-color: #e8e8e8;color: black" >{{TransactionHistory.amount}}</td>
+      </tr>
+<!--      <tr>-->
+<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
+<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
+<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
+<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
+<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
+<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
+<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
+<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
+<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
+<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
+<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
+<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
+<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
+<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
+<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
+<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
+<!--      </tr>-->
+
+      </tbody>
+        </div>
+    </table>
+  </div>
+  <div class="d-flex justify-content-between align-items-center results"> <span class="pl-md-3">Showing<b class="text-white"> 1-7 0f 200 </b> trasactions</span>
+
+  </div>
+</div>

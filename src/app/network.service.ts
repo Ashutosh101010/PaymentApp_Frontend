@@ -11,7 +11,7 @@ import {TransactionResponse} from "./Model/TransactionResponse";
 import {RegisterComponent} from "./register/register.component";
 import {EmailValidator} from "@angular/forms";
 import {UserResponse} from "./Model/UserResponse";
-
+import {TransactionHistoryResponse} from "./Model/TransactionHistoryResponse";
 
 class ProfileResponse {
 }
@@ -19,19 +19,23 @@ class ProfileResponse {
 class RegisterResponse {
 }
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class NetworkService {
 
-  baseUrl: string ="https://rotten-fireant-96.loca.lt/api/operator";
-  baseUrlUser: string ="https://rotten-fireant-96.loca.lt/api/users";
+  baseUrl: string ="\n" + "http://192.168.1.6:4040/api/operator";
+  baseUrlUser: string ="\n" + "http://192.168.1.6:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
   transactionUrl: string =this.baseUrl+"/getTransaction";
   registerUrl: string =this.baseUrlUser+"/create";
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
+  historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
+
 
 
 
@@ -150,6 +154,19 @@ export class NetworkService {
     }));
 
     console.log(response);
+    return response;
+  }
+  getTransactionHistory(userId:string,token:string,operatorId:string):Observable<TransactionHistoryResponse>
+
+  {
+    let response=this.http.post<TransactionHistoryResponse>(this.transactionUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        return EMPTY;
+      }
+      return caught;
+    }));
+
     return response;
   }
 

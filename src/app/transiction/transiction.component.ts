@@ -4,6 +4,7 @@ import {DataService} from "../data.service";
 import {User} from "../Model/User";
 import {Transaction} from "../Model/Transaction";
 import {Router} from "@angular/router";
+import {TransactionHIstory} from "../Model/TransactionHistory";
 
 @Component({
   selector: 'app-transiction',

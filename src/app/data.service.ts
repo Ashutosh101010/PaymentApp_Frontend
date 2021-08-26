@@ -6,6 +6,7 @@ import {User} from "./Model/User";
   providedIn: 'root'
 })
 export class DataService {
+  history: string|undefined;
 
   constructor() { }
 

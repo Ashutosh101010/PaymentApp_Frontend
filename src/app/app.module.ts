@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
+import { HistoryComponent } from './history/history.component';
 
 
 
@@ -29,7 +30,8 @@ import {MatIconModule} from "@angular/material/icon";
     RegisterComponent,
     LandingComponent,
     TransictionComponent,
-    ProfileComponent
+    ProfileComponent,
+    HistoryComponent
   ],
     imports: [
         BrowserModule,
