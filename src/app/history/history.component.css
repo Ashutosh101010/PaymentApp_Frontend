@@ -2,7 +2,7 @@
 
 * {
   padding: 1px;
-  margin: 0;
+  margin: 2px;
   box-sizing: border-box
 }
 
@@ -16,7 +16,7 @@ body {
   min-height: 100%;
   max-width: 100%;
   margin: 10px auto;
-  padding: 10px 30px
+  padding: 20px 6px
 }
 
 .dark,
@@ -25,7 +25,7 @@ body {
 }
 
 .navbar {
-  padding: 0.5rem 0rem
+  padding: -1.5rem 0.5rem
 }
 
 .navbar .navbar-brand {
@@ -294,7 +294,17 @@ tbody tr td .fa-long-arrow-down {
   }
 
   .nav.nav-tabs .nav-link {
-    padding: 10px
+    padding: 0.5rem!important;
+    margin-top: -1.5rem!important;
   }
-
+  .mat-body, .mat-body-1, .mat-typography {
+    font: 53 15px/30px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+  }
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+  }
 }

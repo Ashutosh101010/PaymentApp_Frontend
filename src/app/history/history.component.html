@@ -1,83 +1,113 @@
 
-<div style="height: 100%;color: #050505" class="wrapper rounded">
-  <nav style="background: white" class="navbar navbar-expand-lg navbar-dark dark d-lg-flex align-items-lg-start"> <a style="color: #050505;background: white" class="navbar-brand" href="#">Transactions <p style="color: #050505;background: white" class="text-muted pl-1">Welcome to your transactions</p> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+
+<div style="display: flex;height: 100% ;background-color:#d7d4e3 ">
+<div style="background-color:#d7d4e3;width: 21%;height: 100% " class="sidebar-container">
+  <div style="margin-left: 30px;background-color: #d7d4e3;" class="sidebar-logo">
+    <img src="/assets/gieo.jpg" alt="">
+  </div>
+  <div style="height: 100%;background-color: #d7d4e3" class="sidebar-container">
+    <ul style="margin-left: 60px;font-size: x-large" class="sidebar-navigation">
+
+
+      <li style="margin-top: 180px;">
+        <a style="color: white" href="/dashboard">
+          <i class="fa fa-users" aria-hidden="true"></i> Transactions
+        </a>
+      </li>
+      <br>
+      <li>
+        <a style="color: white" href="/history">
+          <i class="fa fa-cog" aria-hidden="true"></i> History
+        </a>
+      </li>
+      <br>
+      <li>
+        <a style="color: white" href="/profile">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div style="color: #050505;background-color: #d7d4e3;width: 79% ;height: 100%;margin-top: 50px;" >
+  <nav style="background: white;background-color: #d7d4e3;justify-content: center" class="navbar navbar-expand-lg navbar-dark dark d-lg-flex "> <a style="color: #050505;background-color: #d7d4e3" class="navbar-brand" href="#">Transactions <p style="color: #050505;background-color: #d7d4e3" class="text-muted pl-1">Welcome to your transactions</p> </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-lg-auto">
-        <li class="nav-item"> <a class="nav-link" href="#"> <span class="notify">Notifications</span> </a> </li>
-        <li  class="nav-item "> <a  href="#"><span  class="fa fa-search"></span></a> <input type="search" class="dark" placeholder="Search" style="color: #050505;background: #d5d5d5;border-radius: 30px;"> </li>
+
+
       </ul>
     </div>
   </nav>
-  <div class="row mt-2 pt-2">
-    <div class="col-md-6" id="income">
-      <div class="d-flex justify-content-start align-items-center">
+  <div style="margin-top: -1.5rem!important; padding-top: 0.5rem!important;" class="row mt-2 pt-2 mat-body mat-body-1 mat-typography">
 
-        <p style="color: black" class="text mx-3">Income</p>
-        <p style="color: black"  >$9,758.23</p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="d-flex justify-content-md-end align-items-center">
 
-        <div style="color: black">Expense</div>
-        &nbsp; &nbsp; &nbsp;
-        <div style="color: black">$961.23</div>
-      </div>
-    </div>
-  </div>
   <div class="d-flex justify-content-between align-items-center mt-3">
-    <ul class="nav nav-tabs w-75">
-      <li  class="nav-item"> <a style="background-color: #e8e8e8;color: black " class="nav-link active" href="#history">History</a> </li>
-      <li class="nav-item"> <a style="color: black">Reports</a> </li>
-    </ul> <button style="background-color: #e8e8e8;color: black; width: 150px;border-radius: 30px; " class="btn btn-primary">New Transaction</button>
+
   </div>
-  <div style="background-color: #CDCDCD;margin-top: 20px;font-family: auto">
-    <div  >
+  <div  style="background-color: #d7d4e3 ">
+    <div style="font-family: Roboto">
       <table class="table">
         <thead>
-        <tr  >
-          <th style="color: black;width: 27%;" scope="col">Activity</th>
-          <th style="color: black;width: 26%;" scope="col">Mode</th>
-          <th style="color: black;width: 26%;" scope="col">Date</th>
+        <tr style="background-color: rgba(98,98,98,0.4)" >
+          <th style="color: black;width: 31%;" scope="col">Order No.</th>
+          <th style="color: black;width: 28%;" scope="col">Type</th>
+          <th style="color: black;width: 17%;" scope="col">Date</th>
           <th style="color: black;text-align: -webkit-center" scope="col">Amount</th>
         </tr>
         </thead>
       </table>
     </div>
-    <div *ngFor="let TransactionHistory of Transactionhistorys; index as i">
-      <div >
+    <div  *ngFor="let TransactionHistory of Transactionhistorys; index as i">
+      <div>
         <table class="table">
-          <tr>
-            <th style="border: 3px solid" scope="row">{{TransactionHistory.id}}</th>
-            <td style="border: 3px solid">{{TransactionHistory.type}}</td>
-            <td style="border: 3px solid">{{TransactionHistory.date}}</td>
-            <td style="border: 3px solid">{{TransactionHistory.amount}}</td>
+          <tr style="font-family: Roboto;" >
+
+            <th style="font: icon">{{TransactionHistory.id}}</th>
+
+            <br>
+
+            <br>
+
+            <td>{{TransactionHistory.type}}</td>
+
+
+            <br>
+            <br>
+
+            <td>{{TransactionHistory.date| date: 'dd/MM/yyyy'}}</td>
+            <br>
+            <br>
+
+            <td >{{TransactionHistory.amount}}$</td>
+
+
+
           </tr>
 
 
+
+
         </table>
-      </div>
+      <hr></div>
     </div>
   </div>
-  <div class="d-flex justify-content-between align-items-center results"> <span class="pl-md-3">Showing<b class="text-white"> 1-7 0f 200 </b> trasactions</span>
+  <div class="d-flex justify-content-between align-items-center results"> <span style="color: black" class="pl-md-3">Showing trasactions</span>
 
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
+</div>
 
 
 
-  <br>
-  <br>
 
-  <br>
-  <br>
-  <br>
-  <br>
+
 <!--  <table mat-table [dataSource]="Transactionhistorys" class="mat-elevation-z8">-->
 
 <!--    &lt;!&ndash;- Note that these columns can be defined in any order.-->

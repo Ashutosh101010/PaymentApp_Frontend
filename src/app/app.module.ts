@@ -19,6 +19,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
 import { HistoryComponent } from './history/history.component';
 import {MatTableModule} from "@angular/material/table";
+import {CdkTableModule} from "@angular/cdk/table";
 
 
 
@@ -34,18 +35,19 @@ import {MatTableModule} from "@angular/material/table";
     ProfileComponent,
     HistoryComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatTableModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatTableModule,
+        CdkTableModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
