@@ -31,65 +31,88 @@
       <li class="nav-item"> <a style="color: black">Reports</a> </li>
     </ul> <button style="background-color: #e8e8e8;color: black; width: 150px;border-radius: 30px; " class="btn btn-primary">New Transaction</button>
   </div>
-  <div style="background-color: white" class="table-responsive mt-3">
-    <table  class="table table-dark table-borderless">
-      <thead >
-      <tr>
+  <div style="background-color: #CDCDCD;margin-top: 20px;font-family: auto">
+    <div  >
+      <table class="table">
+        <thead>
+        <tr  >
+          <th style="color: black;width: 27%;" scope="col">Activity</th>
+          <th style="color: black;width: 26%;" scope="col">Mode</th>
+          <th style="color: black;width: 26%;" scope="col">Date</th>
+          <th style="color: black;text-align: -webkit-center" scope="col">Amount</th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div *ngFor="let TransactionHistory of Transactionhistorys; index as i">
+      <div >
+        <table class="table">
+          <tr>
+            <th style="border: 3px solid" scope="row">{{TransactionHistory.id}}</th>
+            <td style="border: 3px solid">{{TransactionHistory.type}}</td>
+            <td style="border: 3px solid">{{TransactionHistory.date}}</td>
+            <td style="border: 3px solid">{{TransactionHistory.amount}}</td>
+          </tr>
 
-        <th style="color: black;background-color: #e8e8e8;width: 30px;" >Activity</th>
-        <th style="color: black;background-color: #e8e8e8;" >Mode</th>
-        <th style="color: black;background-color: #e8e8e8;" >Date</th>
-        <th style="color: black;background-color: #e8e8e8;">Amount</th>
-      </tr>
-      </thead>
 
-        <div style="background-color:#e8e8e8;" CLASS="mt-1" *ngFor="let TransactionHistory of Transactionhistorys; index as i">
-      <tbody>
-      <tr>
-        <td  style="color: black;background-color: #e8e8e8" scope="row">   {{TransactionHistory.orderNumber}} </td>
-        &nbsp;
-        <td style="background-color: #e8e8e8"><span style="color: black" class="fa fa-cc-mastercard">{{TransactionHistory.type}}</span></td>
-        &nbsp;
-        <td style="background-color: #e8e8e8" class="text-muted">{{TransactionHistory.date}}</td>
-        &nbsp;
-        <td style="background-color: #e8e8e8;color: black" >{{TransactionHistory.amount}}</td>
-      </tr>
-<!--      <tr>-->
-<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
-<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
-<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
-<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
-<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
-<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
-<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
-<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
-<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
-<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
-<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
-<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
-<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td style="color: black;background-color: #e8e8e8" scope="row">   Coorg Trip </td>-->
-<!--        <td style="background-color: #e8e8e8">   <span style="color: black" class="fa fa-cc-mastercard">Amazon</span></td>-->
-<!--        <td style="background-color: #e8e8e8" class="text-muted">12 Jul 2020, 12:30 PM</td>-->
-<!--        <td style="background-color: #e8e8e8;color: black" class="d-flex justify-content-end align-items-center">     $52.9 </td>-->
-<!--      </tr>-->
-
-      </tbody>
-        </div>
-    </table>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="d-flex justify-content-between align-items-center results"> <span class="pl-md-3">Showing<b class="text-white"> 1-7 0f 200 </b> trasactions</span>
 
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+<!--  <table mat-table [dataSource]="Transactionhistorys" class="mat-elevation-z8">-->
+
+<!--    &lt;!&ndash;- Note that these columns can be defined in any order.-->
+<!--          The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Position Column &ndash;&gt;-->
+<!--    <ng-container matColumnDef="position">-->
+<!--      <th mat-header-cell *matHeaderCellDef> No. </th>-->
+<!--      <td mat-cell *matCellDef="let transaction">amount</td>-->
+<!--    </ng-container>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Name Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <ng-container matColumnDef="name">&ndash;&gt;-->
+<!--&lt;!&ndash;      <th mat-header-cell *matHeaderCellDef> Name </th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td mat-cell *matCellDef="let element"> {{element.name}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ng-container>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Weight Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <ng-container matColumnDef="weight">&ndash;&gt;-->
+<!--&lt;!&ndash;      <th mat-header-cell *matHeaderCellDef> Weight </th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ng-container>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Symbol Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <ng-container matColumnDef="symbol">&ndash;&gt;-->
+<!--&lt;!&ndash;      <th mat-header-cell *matHeaderCellDef> Symbol </th>&ndash;&gt;-->
+<!--&lt;!&ndash;      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ng-container>&ndash;&gt;-->
+
+<!--    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--    <tr mat-row *matRowDef="let row; columns: displayedColumns;">{{row.amount}}</tr>-->
+<!--  </table>-->
+
+
+
+
+
+

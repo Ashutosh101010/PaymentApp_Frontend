@@ -18,6 +18,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
 import { HistoryComponent } from './history/history.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 
@@ -33,17 +34,18 @@ import { HistoryComponent } from './history/history.component';
     ProfileComponent,
     HistoryComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatIconModule
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatTableModule
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
