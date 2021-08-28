@@ -6,6 +6,7 @@ import {LoginResponse} from "../Model/LoginResponse";
 import {Router} from "@angular/router";
 import {DataService} from "../data.service";
 import {User} from "../Model/User";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-login',

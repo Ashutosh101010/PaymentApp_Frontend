@@ -3769,6 +3769,13 @@ input[type=text]:placeholder {
   border-radius: 5px;
   height: 56px;
   background-color: #f6f6f6;
+.mat-form-field-infix {
+  display: contents;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 180px;
+}
 }
 
 

@@ -5,15 +5,17 @@
     <div style="margin-top: -60px;background-color: #f6f6f6; height: 445px;width: 497px;border-radius: 40px;" id="formContent">
 
 
-     <div style="margin-top:10px;height: 700px;background-color:#f6f6f6;border-radius: 40px;">
-       <select style="background-color:#fff;height: 34.09px; margin-bottom: 60px; width: 303px;margin-left: 100px;margin-top: 20px;" class="dropdown-select" [(ngModel)]=operator>
+     <div style="height: 700px;background-color:#f6f6f6;border-radius: 40px;">
+       <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 25px; width: 305px;margin-left: 100px;margin-top: 25px;border-radius: 30px;"  [(ngModel)]=operator>
          <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
-         <option value="location-1" *ngFor="let operator of operators ; index as i" [ngValue]=operator >&nbsp; &nbsp; &nbsp; &nbsp;  {{operator.name}}</option>
+         <!--        <option value="" disabled selected >Select Operator</option>-->
+
+         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
          <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
          <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
-       </select>
+       </mat-select>
       <br>
-      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">
+      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 30px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">
       <br>
        <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your name" [(ngModel)]="Name">
        <br>
