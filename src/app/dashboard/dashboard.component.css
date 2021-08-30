@@ -108,7 +108,7 @@
   height: 10px;
 }
 .mat-body, .mat-body-1, .mat-typography {
-  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  font: 400 14px/15px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
 }
 img, svg {
@@ -144,7 +144,7 @@ img, svg {
 }
 .panel {
   float: right;
-  width: 1316px;
+  width: 1116px;
   height: auto;
   background: #afafaf;
   border-radius: 39px
