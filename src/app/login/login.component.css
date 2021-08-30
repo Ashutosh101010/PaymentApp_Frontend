@@ -3642,7 +3642,7 @@ input[type=text]:focus {
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text]::placeholder {
   color: #cccccc;
 }
 
@@ -3769,6 +3769,7 @@ input[type=text]:placeholder {
   border-radius: 5px;
   height: 56px;
   background-color: #f6f6f6;
+}
 .mat-form-field-infix {
   display: contents;
   position: relative;
@@ -3776,7 +3777,7 @@ input[type=text]:placeholder {
   min-width: 0;
   width: 180px;
 }
-}
+
 
 
 

@@ -40,27 +40,28 @@
 
       <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px">
         <div *ngIf="transaction.type=='Subscription'">
-        <div style="display: flex; justify-content: center" >
-        <p style="margin-top: 11px;">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;">Category Purchase{{transaction.type}}</p>
+        <div style="display: flex; justify-content: center;margin-left: 30px;" >
+        <p style="margin-top: 11px;width: 25%;">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;width: 25%;">Category Purchase{{transaction.type}}</p>
 
-        <p style="margin-left: 450px;margin-top: 11px;">Date{{transaction.date}}</p>
+        <p style="margin-top: 11px;width: 25%;">Date{{transaction.date}}</p>
           &nbsp;&nbsp;
-        <p style="margin-top: 11px;">Amount{{transaction.amount}}</p>
+        <p style="margin-top: 11px;width: 25%;">Amount{{transaction.amount}}</p>
         </div>
         <div  style="background-color: white;
 
     margin-top: 3px;" *ngFor="let product of transaction.cart; index as j">
           <ul class="list-group list-group-flush">
-        <div style="display: flex ; max-height: 120px;">
+        <div style="display: flex ; max-height: 120px;width: 70%">
 
-            <img src="{{product.images[0]}}">
+        <div style="width: 10%">    <img src="{{product.images[0]}}"> </div>
 
-            <div>
+
+              <div style="margin-left: 50px">
           <h5 style="margin-top: 25px;"><td >{{product.name}}</td> </h5>
               <h6 style="margin-top: -7px;" ><td>{{product.brand}}</td></h6>
 
               <div class="center" style="display: flex;margin-top: -1px;height: 28px;">
-                <div style="border: 1px solid;display: flex;border-radius: 5px;">
+                <div style="border: 1px solid;display: flex;border-radius: 5px;margin-left: -30px;">
           <span class="input-group-btn">
               <button style="height: 26px;padding: 0px;border-color: transparent" type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
                 <span class="glyphicon glyphicon-minus">	<mat-icon class="material-icons color_white">remove</mat-icon></span>
@@ -72,13 +73,15 @@
                   <span class="glyphicon glyphicon-plus"><mat-icon class="material-icons color_white" >add</mat-icon></span>
               </button>
           </span>
-                  <br>
                 </div>
 
-                <div ><svg style="height: 30px;width: 15px;margin-left: 700px;"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+
+                  <div style="width: 20%; margin-left: 100px">
+                <div style="margin-left: 500px;"  ><svg style="height: 30px;width: 15px;"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                   <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                 </svg></div>
+                  </div>`
               </div>
             </div>
         </div>
@@ -87,76 +90,56 @@
 
         </div>
 
-        <div style="background-color: white">
+        <div style="background-color: white;width: 100%">
         <br>
           <br>
           <br>
-        <button style="border-radius: 10px;margin-left: 920px;width: 90px; font-weight: 400;border: 1px solid;border-color: #000000;height: 25px;background: rgba(251, 232, 233, 0.31);">Checkout</button>
+        <button style="border-radius: 10px;margin-left: 800px;width: 90px; font-weight: 400;border: 1px solid;border-color: #000000;height: 25px;background: rgba(251, 232, 233, 0.31);">Checkout</button>
         <br>
         <br>
           <br>
           <br>
         </div>
+      </div>
       </div>
 
 
 <!--        *ngIf="transaction.type=='Product'"-->
-        <div style="background: white;height: 30px;margin-top: 2px;"><h3>Transactions</h3></div>
+        <div style="background: white;height: 30px;margin-top: 2px;"><h3>Transactions</h3> </div>
 
-        <div ><h3 style="background: white;max-height: 250px;" >&nbsp;</h3>
-        </div>
-          <div   *ngFor="let transaction of transactions; index as i" >
-            <div  style="background-color: white" *ngIf="transaction.type=='Subscription'">
-              <div  class="panel"  style="    display: flex;
-    justify-content: center;
-    margin-left: -23px;
-    margin-top: -40px;" >
-                <p style="margin-top: 11px; ">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p style="margin-top: 11px;">Category Purchase{{transaction.type}}</p>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <p style="margin-top: 11px;">Date{{transaction.date}}</p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <p style="margin-top: 11px;">Amount{{transaction.amount}}</p>
-              </div>
-        <div  style="background-color: white;
+        <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px">
 
-    margin-top: 3px;" *ngFor="let product of transaction.cart; index as k">
-          <ul class="list-group list-group-flush">
+          <div *ngIf="transaction.type=='Subscription'">
+            <div style="display: flex; justify-content: center;margin-left: 30px;" >
+              <p style="margin-top: 11px;width: 25%;">  Order no.{{transaction.orderNumber}}</p> &nbsp;&nbsp; <p style="margin-top: 11px;width: 25%;">Category Purchase{{transaction.type}}</p>
 
-            <div style="display: flex ; max-height: 120px;margin-top: 30px">
-
-              <img style="height: 80px;width: 80px;" src="https://seeklogo.com/images/J/jio-logo-7720D2E7BA-seeklogo.com.png">
-              <br>
-              <div>
-                <div style="justify-content: space-between"><span style="margin-left: 800px;"><button style="background: rgba(251, 232, 233, 0.31);border: 1px solid #000000;box-sizing: border-box;border-radius: 10px;">Pay now</button></span></div>
-                <h5 style="margin-left: 20px; font-size: 15px;"><td >449  rechard unlimited <br> calls/messages 3gb data/day</td> </h5>
-            <br>
-
-
-
-
-
-              </div>
+              <p style="margin-top: 11px;width: 25%;">Date{{transaction.date}}</p>
+              &nbsp;&nbsp;
+              <p style="margin-top: 11px;width: 25%;">Amount{{transaction.amount}}</p>
             </div>
 
+
+        <div  style="background-color: white;margin-top: 3px;" *ngFor="let product of transaction.cart; index as k">
+          <ul class="list-group list-group-flush">
+<div style="display: flex">
+            <div style="display: flex ; height: 110px;margin-top: 9px;width: 70%;margin-left: 30px;">
+
+              <img style="height: 80px;width: 80px;margin-top: 10px;" src="https://seeklogo.com/images/J/jio-logo-7720D2E7BA-seeklogo.com.png">
+              <br>
+              <div style="display: flex;margin-top: 10px;">
+
+                <h5 style="margin-left: 20px; font-size: 15px;"><td >449  recharge unlimited <br> calls/messages 3gb data/day</td> </h5>
+              </div>
+              </div>
+                <div style="justify-content: space-between;margin-top: -10px;width: 20%"><span ><button style="background: rgba(251, 232, 233, 0.31);border: 1px solid #000000;box-sizing: border-box;border-radius: 10px;margin-top: 40px;">Pay now</button></span></div>
+
+
+</div>
+
+
+
+
           </ul>
-
-        </div>
-              <br>
-              <br>
-              <br>
-
-
-      </div>
-
-    </div>
-
-      </div>
-      <br>
-      <br>
-      <br>
-  </div>
-
-
 
 
 
