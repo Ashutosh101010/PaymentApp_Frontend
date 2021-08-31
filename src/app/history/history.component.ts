@@ -32,6 +32,19 @@ export class HistoryComponent implements OnInit {
     }
 
 
+  w3_open() {
 
+    document.getElementById("mySidebar")!.style.display = "block";
+    document.getElementById("mySidebar")!.style.width = "200px";
+    document.getElementById("main")!.style.marginLeft = "200px";
+    document.getElementById("second")!.style.marginLeft = "200px";
+  }
+
+  w3_close() {
+    document.getElementById("mySidebar")!.style.display = "none";
+    document.getElementById("mySidebar")!.style.width = "0px";
+    document.getElementById("main")!.style.marginLeft = "0px";
+    document.getElementById("second")!.style.marginLeft = "0px";
+  }
 
 }

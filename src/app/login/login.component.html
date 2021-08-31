@@ -1,106 +1,75 @@
-<!--<div class="limiter">-->
-<!--  <div class="container-login100">-->
-<!--    <div class="wrap-login100">-->
-<!--      <div class="login100-pic js-tilt" data-tilt>-->
-<!--        <img src="../../assets/img-01.png" alt="IMG">-->
+<!--<div style="background-color:#d7d4e3;height: 100%">-->
+
+<!--<div >-->
+  <!--  <div style="margin-left: 50px;"><img src="/assets/gieo.jpg" alt=""></div>-->
+<!--  <div style="margin-left: 40%;"><img src="/assets/svmny.jpg" alt=""></div>-->
+<!--  <div style="width: 100%" class="wrapper fadeInDown">-->
+<!--    <div style="background-color: #f6f6f6; height: 445px;width: 100%;" id="formContent">-->
+<!--      &lt;!&ndash; Tabs Titles &ndash;&gt;-->
+
+<!--      &lt;!&ndash; Icon &ndash;&gt;-->
+
+<!--      <div style="margin-top: 20px;"  class="fadeIn first">-->
+<!--        <img style="width: 10%;" src="/assets/figma1.jpg" id="icon" alt="User Icon" />-->
 <!--      </div>-->
 
-<!--      &lt;!&ndash;      <form (submit)="verifyToken()">&ndash;&gt;-->
-<!--      <span class="login100-form-title">-->
-<!--						Member Login-->
-<!--					</span>-->
+<!--      &lt;!&ndash; Login Form &ndash;&gt;-->
 
-<!--      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">-->
-<!--        <input class="input100" type="text" name="email" placeholder="Email" [(ngModel)]=username>-->
-<!--        <span class="focus-input100"></span>-->
-<!--        <span class="symbol-input100">-->
-<!--							<i class="fa fa-envelope" aria-hidden="true"></i>-->
-<!--						</span>-->
-<!--      </div>-->
+<!--      <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 30px; width: 400px;margin-left: 30px;margin-top: 20px;"  [(ngModel)]=operator>-->
+<!--    -->
+<!--      </mat-select>-->
 
-<!--      <div class="wrap-input100 validate-input" data-validate = "Password is required">-->
-<!--        <input class="input100" type="password" name="pass" placeholder="Password"  [(ngModel)]=password>-->
-<!--        <span class="focus-input100"></span>-->
-<!--        <span class="symbol-input100">-->
-<!--							<i class="fa fa-lock" aria-hidden="true"></i>-->
-<!--						</span>-->
-<!--      </div>-->
+<!--        <input style="background-color: #fff;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-top: 40px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>-->
+<!--        <input type="password" style="background-color: #fff;height: 34.09px; border-radius: 5px;width: 380px;text-align: center"   class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>-->
+<!--      <br>-->
+<!--      <input style="margin-top: 30px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">-->
+<!--     <br>-->
+<!--      <a style="font-weight: 600;margin-top: -10px ;font-family: Roboto" href="/register">Create Account</a>-->
+
+<!--      &lt;!&ndash; Remind Passowrd &ndash;&gt;-->
 
 
-
-
-
-<!--      <select class="dropdown-select" [(ngModel)]=operator>-->
-<!--        <option value="location-1" *ngFor="let operator of operators ; index as i" [ngValue]=operator>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {{operator.name}}</option>-->
-<!--      </select>-->
-
-
-
-
-<!--      <div class="container-login100-form-btn">-->
-<!--        <button class="login100-form-btn" (click)="login()">-->
-<!--          Login-->
-<!--        </button>-->
-<!--      </div>-->
-
-<!--      <div class="text-center p-t-12">-->
-<!--						<span class="txt1">-->
-<!--							Forgot-->
-<!--						</span>-->
-<!--        <a class="txt2" href="#">-->
-<!--          Username / Password?-->
-<!--        </a>-->
-<!--      </div>-->
-
-
-
-<!--      <div class="text-center p-t-136">-->
-<!--        <a class="txt2" href="#">-->
-<!--          Create your Account-->
-<!--          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>-->
-<!--        </a>-->
-<!--      </div>-->
-<!--      &lt;!&ndash;      </form>&ndash;&gt;-->
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-<div style="background-color:#d7d4e3;height: 100%">
+<!--</div>-->
 
-<div >
-  <div style="margin-left: 50px;"><img src="/assets/gieo.jpg" alt=""></div>
-  <div style="margin-left: 40%;"><img src="/assets/svmny.jpg" alt=""></div>
-  <div style="width: 100%" class="wrapper fadeInDown">
-    <div style="background-color: #f6f6f6; height: 445px;width: 100%;" id="formContent">
-      <!-- Tabs Titles -->
 
-      <!-- Icon -->
 
-      <div style="margin-top: 20px;"  class="fadeIn first">
-        <img style="width: 10%;" src="/assets/figma1.jpg" id="icon" alt="User Icon" />
-      </div>
+<!--<&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
 
-      <!-- Login Form -->
-
-      <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 30px; width: 400px;margin-left: 30px;margin-top: 20px;"  [(ngModel)]=operator>
-        <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
-<!--        <option value="" disabled selected >Select Operator</option>-->
-
-        <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
-        <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
-        <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
-      </mat-select>
-
-        <input style="background-color: #fff;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-top: 40px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>
-        <input type="password" style="background-color: #fff;height: 34.09px; border-radius: 5px;width: 380px;text-align: center"   class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>
+<div style="background-color:#d7d4e3;height: 100% ">
+  <div>
+    <div style="width: 100%;text-align: center"><img src="/assets/gieo.jpg" alt="">
       <br>
-      <input style="margin-top: 30px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
-     <br>
-      <a style="font-weight: 600;margin-top: -10px ;font-family: Roboto" href="/register">Create Account</a>
+      <img style="margin-top: 20px;" src="/assets/svmny.jpg" alt="">
+      <br>
+        <div style="width: 100%" class="wrapper fadeInDown">
+          <div style="background-color: #f6f6f6; height: 445px;width: 100%;" id="formContent">
+            <!-- Tabs Titles -->
 
-      <!-- Remind Passowrd -->
+            <!-- Icon -->
 
+            <div style="margin-top: 20px;"  class="fadeIn first">
+              <img style="width: 10%;" src="/assets/figma1.jpg" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+
+            <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 30px; width: 60%;margin-top: 20px;"  [(ngModel)]=operator>
+              <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
+            </mat-select>
+              <br>
+              <input style="background-color: #fff;height: 34.09px; width: 60%; border-radius: 5px; margin-bottom: 60px;margin-top: 40px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>
+            <br>
+            <input type="password" style="background-color: #fff;height: 34.09px; border-radius: 5px;width: 60%;text-align: center"   class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>
+            <br>
+            <input style="margin-top: 30px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+           <br>
+            <a style="font-weight: 600;margin-top: -10px ;font-family: Roboto" href="/register">Create Account</a>
 
     </div>
   </div>
 </div>
+  </div>
 </div>
