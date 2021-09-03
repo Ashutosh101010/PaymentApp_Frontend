@@ -316,9 +316,9 @@
 
 <div style="background-color: #a9a1c0;" >
 <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 80%" id="mySidebar">
-            <button class="w3-bar-item w3-button w3-xxlarge" style=" margin-top: 30px;margin-left: 79%;" (click)="w3_close()">
-              <mat-icon style="background-color: white">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-        <ul style="font-size: small;background-color: #a9a1c0;width: 79%;margin-left: 20px;" class="sidebar-navigation">
+            <button class="w3-bar-item w3-button w3-xxlarge" style=" height: 100px;align-items: end" (click)="w3_close()">
+              <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
+        <ul style="font-size: large;background-color: #a9a1c0;margin-left: 5px;" class="sidebar-navigation">
 
 
           <hr>
@@ -381,21 +381,12 @@
                      </div>
                     </div>
                         <div style="display:flex;">
-                       <div style="border: 1px solid;display: flex;border-radius: 5px;width: 25%;height: 10%;margin-left: 45%;">
-                      <span class="input-group-btn">
-                          <button style="height: 26px;padding: 0px;border-color: transparent;margin-left: 1%" type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
-                            <span class="glyphicon glyphicon-minus">	<mat-icon class="material-icons color_white">remove</mat-icon></span>
-                          </button>
-                      </span>
-                        <input style="width: 40px; height: 26px;border-color: transparent;margin-left: 10%;" type="text" name="quant[2]" class="form-control input-number" value="{{product.quantity}}" min="1" max="100">
-                        <span class="input-group-btn">
-                          <button  style="height: 26px;padding: 0px;margin-left: -75%;border-color: transparent" type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
-                              <span class="glyphicon glyphicon-plus"><mat-icon class="material-icons color_white" >add</mat-icon></span>
-                          </button>
-                      </span>
 
-                      </div>
-
+                          <div style="margin-left: 50%;display: flex;max-width: 120px;" class="def-number-input number-input safari_only mb-0 w-100">
+                            <button style="height: 35px;border: transparent;background-color: #cbcccc" id="basic-example-decrease" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"><mat-icon>remove</mat-icon></button>
+                            <input style="height: 35px;width: 70%;border: 1px solid;background-color: white;" class="quantity" min="0" name="quantity" value="1" type="number">
+                            <button style="height: 35px;border: transparent;background-color: #d4d5d5 " id="basic-example-add" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><mat-icon>add</mat-icon></button>
+                          </div>
 
                         </div>
                       </ul>
@@ -421,7 +412,7 @@
 
 
                   <div style="background-color: #CDCDCD;width: 100%">
-                    <div style="margin-left: 65%;">{{transaction.amount}}$</div><br>
+                    <div style="margin-left: 63%;margin-top: 10px;font-size: small;font-weight: 700">Total:{{transaction.amount}}$</div><br>
                     <button style="border-radius: 9px;margin-top: -10px;width: 100px;margin-left: 60%; font-weight: 400;font-size: medium;border: 1px solid;border-color: #000000;height: 40px;;background: white;">Checkout</button>
 
                   </div>
@@ -436,10 +427,10 @@
                     <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px">
 
                       <div *ngIf="transaction.type=='Subscription'">
-                        <div style="margin-left: 3px;font-size: small;display: flex;margin-top: 20px;" >
-                          <p style="margin-top: 11px;width: 50%;"> {{transaction.orderNumber}}</p>
+                        <div style="margin-left: 19px;font-size: large;display: flex;margin-top: 20px;height: 57px;" >
+                          <p style="margin-top: 19px;width: 50%;"> {{transaction.orderNumber}}</p>
 
-                          <p style="margin-top: 11px;width: 50%;">Date{{transaction.date| date: 'dd/MM/yyyy'}}</p>
+                          <p style="margin-top: 19px;width: 50%;">Date:{{transaction.date| date: 'dd/MM/yyyy'}}</p>
 
                         </div>
 
@@ -456,7 +447,7 @@
                             <h5 style="margin-left: 20px; font-size: 15px;"><td >449  recharge unlimited <br> calls/messages 3gb data/day</td> </h5>
                           </div>
                           </div>
-                            <div style="margin-right: 10px;margin-top: -10px;width: 20%"><span ><button style="background: rgba(251, 232, 233, 0.31);border: 1px solid #000000;box-sizing: border-box;border-radius: 10px;margin-top: 40px;">Pay now</button></span></div>
+                            <div style="margin-right: 10px;width: 20%;font-size: small;font-weight: 600"><span ><button style="background: white;border: 1px solid #000000;box-sizing: border-box;border-radius: 9px;margin-top: 72px;">Pay now</button></span></div>
 
 
             </div>
