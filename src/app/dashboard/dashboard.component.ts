@@ -5,6 +5,7 @@ import {NetworkService} from "../network.service";
 import {DataService} from "../data.service";
 import {Router} from "@angular/router";
 import {Product} from "../Model/Product";
+import {style} from "@angular/animations";
 
 
 @Component({
@@ -31,6 +32,27 @@ export class DashboardComponent implements OnInit {
     // else{
       // this.router.navigate(['/login']);
     // }
+  w3_open() {
+
+    if(document.getElementById("mySidebar") != null) {
+      document.getElementById("mySidebar")!.style.display = "block";
+    }
+    if(document.getElementById("myOverlay") != null) {
+      document.getElementById("myOverlay")!.style.display = "block";
+    }
+
+
+  }
+
+  w3_close() {
+    if(document.getElementById("mySidebar") != null) {
+      document.getElementById("mySidebar")!.style.display = "none";
+    }
+    if(document.getElementById("myOverlay") != null) {
+      document.getElementById("myOverlay")!.style.display = "none";
+    }
+  }
+
 
 
 }

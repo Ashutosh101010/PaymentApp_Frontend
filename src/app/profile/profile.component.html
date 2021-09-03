@@ -1,126 +1,357 @@
 
-<div style="" class="sidebar-container">
-  <div style="margin-left: 87px;margin-top: 34px;" class="sidebar-logo">
-    <img src="/assets/gieo.jpg" alt="">
-  </div>
-  <div style="margin-left: 30px;height: 150px;">
-    <ul class="sidebar-navigation">
 
 
-      <li style="margin-top: 180px;">
-        <a href="#">
-          <i class="fa fa-users" aria-hidden="true"></i> Transictions
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-cog" aria-hidden="true"></i> History
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
-        </a>
-      </li>
+
+
+<!--<div style="" class="sidebar-container">-->
+<!--  <div style="margin-left: 87px;margin-top: 34px;" class="sidebar-logo">-->
+<!--    <img src="/assets/gieo.jpg" alt="">-->
+<!--  </div>-->
+<!--  <div style="margin-left: 30px;height: 150px;">-->
+<!--    <ul class="sidebar-navigation">-->
+
+
+<!--      <li style="margin-top: 180px;">-->
+<!--        <a href="#">-->
+<!--          <i class="fa fa-users" aria-hidden="true"></i> Transictions-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="#">-->
+<!--          <i class="fa fa-cog" aria-hidden="true"></i> History-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="#">-->
+<!--          <i class="fa fa-info-circle" aria-hidden="true"></i> Profile-->
+<!--        </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<!--&lt;!&ndash;main-content&ndash;&gt;-->
+
+<!--<div style="background:linear-gradient(180deg, rgba(253, 240, 240, 0.86) 0%, rgba(246, 244, 243, 0.85) 22.71%, rgba(232, 253, 249, 0.96) 100%);-->
+<!--;height: 100%;font-family:Calibri">-->
+<!--  <div  class="content-container">-->
+
+<!--    <div  class="container-fluid">-->
+<!--      <div style="margin-left: 158px;"><h2 style="    margin-left: 14px;-->
+<!--    margin-top: 41px;-->
+<!--">Your Profile</h2></div>-->
+<!--      <div style="margin-left: 125px;-->
+<!--    margin-top: 32px;">-->
+<!--        <img style="margin-top: 30px; margin-left: 50px;height: 110px;width: 110px; border-radius: 50%;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">-->
+<!--        <p style="margin-left: 91px; color: #6b1b98;margin-top: 7px;">edit</p>-->
+<!--        <div style="margin-left: 200px; margin-top: -150px;">-->
+
+<!--          -->
+<!--          <div style="margin-left: -186px;">-->
+<!--            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">-->
+<!--              <h4 style="margin-left: -530px;">Name</h4>-->
+
+<!--              -->
+<!--              <button class="btn" style="height: 40px;-->
+<!--    width: 114px;-->
+<!--    border-radius: 6px;-->
+<!--    border: 0;"-->
+<!--                      (click)="profile()"-->
+<!--                      [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">-->
+<!--                &lt;!&ndash;              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>&ndash;&gt;-->
+<!--                <i class="fa fa-edit" >{{status}}</i></button>-->
+<!--            </div>-->
+<!--            <br />-->
+<!--            <div>-->
+<!--              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;margin-top: -24px;" type="text" name="Name" [disabled]="!enableTxtBox"-->
+<!--                     value="{{user.name}}" class="form-control" [(ngModel)]="Name">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div style="margin-left: -182px;">-->
+<!--            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">-->
+<!--              <h5 style="margin-left: -530px;">E-mail</h5>-->
+
+<!--            </div>-->
+<!--            <br />-->
+<!--            <div>-->
+<!--              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="Email" name="name" [disabled]="!enableTxtBox"-->
+<!--                     value="{{user.email}}" class="form-control" [(ngModel)]="Email" >-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div style="margin-left: -186px;">-->
+<!--            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">-->
+<!--              <h5 style="margin-left: -530px;">Phone</h5>-->
+
+<!--            </div>-->
+<!--            <br />-->
+<!--            <div>-->
+<!--              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="search" name="Phone"  [disabled]="!enableTxtBox"-->
+<!--                     value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+
+<!--        <br>-->
+<!--        <br>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div style="background-color:#e0d3e3;width: 100%">
+
+<div >
+  <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 80%" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-xxlarge" style=" margin-top: 30px;margin-left: 60%;" (click)="w3_close()">
+      <mat-icon style="background-color: white">clear</mat-icon><i class="fa fa-angle-left"></i></button>
+    <ul style="font-size: small;background-color: #a9a1c0;width: 60%;margin-left: 20px;" class="sidebar-navigation">
+
+
+      <hr>
+      <a style="color: black;margin-top: 5px;" href="/dashboard">
+        <i class="fa fa-users" aria-hidden="true"></i> Transactions
+      </a>
+      <hr>
+      <a style="color: black;margin-top: 5px;" href="/history">
+        <i class="fa fa-cog" aria-hidden="true"></i> History
+      </a>
+      <hr>
+      <a style="color: black;margin-top: 10px;" href="/profile">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+      </a>
+      <hr>
     </ul>
   </div>
 </div>
 
+<!-- Page Content -->
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div style="background-color:#dfd2e2 ">
+  <button style="background-color:#dfd2e2 ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+  <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
+  <div class="w3-container">
+    <div  class="w3-container" style="">
+      <div style="background-color: #dfd2e2;" class="sidebar-logo">
+
+        <br>
+        <!-- main-content -->
+            <div style="background-color: #dfd2e2;
+            ;height: 100%;font-family:Calibri">
+              <div  class="content-container">
+
+                <div style="margin-left: -40px;"  class="container-fluid">
+                  <div style=""><h2 style="margin-top: 4px;">Your Profile</h2></div>
+                  <br>
+                  <div style="">
+                    <img style="height: 110px;width: 110px; border-radius: 50%;margin-left: 40px;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
+                    <p style="margin-left: 75px; color: #6b1b98;margin-top: 7px;">edit</p>
+                    <div >
 
 
-<!--main-content-->
+                      <div style="margin-left: 1px;">
+                        <div style="background: transparent;border:0cm;">
+                          <h4 style="color:black;font-size: large"><b>Name</b></h4>
 
-<div style="background:linear-gradient(180deg, rgba(253, 240, 240, 0.86) 0%, rgba(246, 244, 243, 0.85) 22.71%, rgba(232, 253, 249, 0.96) 100%);
-;height: 100%;font-family:Calibri">
-  <div  class="content-container">
 
-    <div  class="container-fluid">
-      <div style="margin-left: 158px;"><h2 style="    margin-left: 14px;
-    margin-top: 41px;
-">Your Profile</h2></div>
-      <div style="margin-left: 125px;
-    margin-top: 32px;">
-        <img style="margin-top: 30px; margin-left: 50px;height: 110px;width: 110px; border-radius: 50%;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
-        <p style="margin-left: 91px; color: #6b1b98;margin-top: 7px;">edit</p>
-        <div style="margin-left: 200px; margin-top: -150px;">
+                          <button class="btn" style="height: 40px;
+                margin-left: 250px;
+                border-radius: 6px;
+                border: 0;"
+                                  (click)="profile()"
+                                  [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
+                            <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+                            <i class="fa fa-edit" >{{status}}</i></button>
 
-          <!--        <div class="col-sm-4">-->
-          <!--          <div class="checkbox switcher">-->
-          <!--            <label>Invoice Number *-->
-          <!--              <input type="checkbox" name="autoGenerate" [(ngModel)]="invoice.autoGenerate">-->
-          <!--              <span><small></small></span>-->
-          <!--              <small *ngIf="invoice.autoGenerate">Auto Generate</small>-->
-          <!--              <small *ngIf="!invoice.autoGenerate">Enter Manually</small>-->
-          <!--            </label>-->
-          <!--          </div>-->
-          <!--          <ng-container *ngIf="!invoice.autoGenerate">-->
-          <!--            <input type="text" name="invoicenumber" placeholder="eg. G-INV001" class="form-control" [(ngModel)]="invoice.invoiceNumber">-->
-          <!--          </ng-container>-->
-          <!--          -->
-          <!--        </div>-->
-          <div style="margin-left: -186px;">
-            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
-              <h4 style="margin-left: -530px;">Name</h4>
+                        <br />
+                        <div>
+                          <input style="background: transparent;border:0cm;margin-top: -54px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
+                                 value="{{user.name}}" class="form-control" [(ngModel)]="Name">
+                        </div>
+                        </div>
+                      </div>
+                      <div style="">
+                        <div style="background: transparent;border:0cm; width: 242px">
+                          <h5 style="color: black;font-size: large"><b>E-mail</b></h5>
 
-              <!--        <input type="checkbox" name="enableTxtBox" [(ngModel)]="enableTxtBox">-->
-              <!--        Edit  {{enableTxtBox}}-->
-              <!--    <button  (click)="toggle()"> Edit {{enableTxtBox}}</button>-->
-              <button class="btn" style="height: 40px;
-    width: 114px;
-    border-radius: 6px;
-    border: 0;"
-                      (click)="profile()"
-                      [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
-                <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-                <i class="fa fa-edit" >{{status}}</i></button>
-            </div>
-            <br />
-            <div>
-              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;margin-top: -24px;" type="text" name="Name" [disabled]="!enableTxtBox"
-                     value="{{user.name}}" class="form-control" [(ngModel)]="Name">
-            </div>
-          </div>
-          <div style="margin-left: -182px;">
-            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
-              <h5 style="margin-left: -530px;">E-mail</h5>
+                        </div>
 
-            </div>
-            <br />
-            <div>
-              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="Email" name="name" [disabled]="!enableTxtBox"
-                     value="{{user.email}}" class="form-control" [(ngModel)]="Email" >
-            </div>
-          </div>
-          <div style="margin-left: -186px;">
-            <div style="background: transparent;border:0cm; width: 242px;margin-left: 729px;">
-              <h5 style="margin-left: -530px;">Phone</h5>
-
-            </div>
-            <br />
-            <div>
-              <input style="background: transparent;border:0cm;width: 242px;margin-left: 200px;" type="search" name="Phone"  [disabled]="!enableTxtBox"
-                     value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >
-            </div>
-          </div>
+                        <div>
+                          <input style="background:transparent;border:1px;width: 60%;font-size: medium" type="Email" name="name" [disabled]="!enableTxtBox"
+                                 value="{{user.email}}" class="form-control" [(ngModel)]="Email" >
+                        </div>
+                      </div>
+                      <div style="">
+                        <div style="background: transparent;border:0cm;">
+                          <h5 style="color: black;font-size: large"><b>Phone</b></h5>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <br>
-        <br>
+                        <div>
+                          <input style="background: transparent;border:0cm;width: 60%;font-size: medium" type="search" name="Phone"  [disabled]="!enableTxtBox"
+                                 value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >
+                          <br>
+                          <br>
+                        </div>
 
       </div>
-    </div>
-  </div>
-</div>
+          </div>
+
+        </div>
+      </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              </div>
+
+
+
+
+
+
+
+
+
+
+<!--<div style="background-color: #dfd2e2;">-->
+
+<!--  <div class="w3-sidebar w3-bar-block w3-border-right sidebar" style="background-color: #a9a1c0;display: none" id="mySidebar">-->
+<!--    <div style="display: flex; width:100%">-->
+<!--      <div style="width:70%">-->
+
+<!--      </div>-->
+
+<!--      <div style="background-color: #a9a1c0;margin-left: 70px;">-->
+<!--        <button (show)="w3_open()" class="w3-button w3-xlarge menu-btn" style=" margin-top: 30px;margin-left: 39px;" (click)="w3_close()">-->
+<!--          <mat-icon style="background-color: white">clear</mat-icon><i class="fa fa-angle-left"></i></button>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <ul style="font-size: small;background-color: #a9a1c0;margin-left: 20px;" class="sidebar-navigation">-->
+
+
+<!--      <hr>-->
+<!--      <a style="color: black;margin-top: 5px;" href="/dashboard">-->
+<!--        <i class="fa fa-users" aria-hidden="true"></i> Transactions-->
+<!--      </a>-->
+<!--      <hr>-->
+<!--      <a style="color: black;margin-top: 5px;" href="/history">-->
+<!--        <i class="fa fa-cog" aria-hidden="true"></i> History-->
+<!--      </a>-->
+<!--      <hr>-->
+<!--      <a style="color: black;margin-top: 10px;" href="/profile">-->
+<!--        <i class="fa fa-info-circle" aria-hidden="true"></i> Profile-->
+<!--      </a>-->
+<!--      <hr>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+<!--  <div style="width:100%;display: flex;background-color:#dfd2e2 " class="w3-teal;" color="none">-->
+
+
+<!--  </div>-->
+<!--  <div style="width:10%;display: flex;">-->
+
+<!--    <button style="border-radius: 1px;height: 50px;background-color: white" class="w3-button w3-xlarge menu-btn" (click)="w3_open()" ><mat-icon style="margin-left: -9px;">list</mat-icon>-->
+<!--      <i style="align-items: center" class="fa fa-angle-right"></i></button>-->
+<!--  </div>-->
+<!--  <div style="margin-left: 1px;">-->
+<!--    <div style="background-color: #dfd2e2;margin-left: 10px;" class="sidebar-logo">-->
+<!--      <img src="/assets/gieo.jpg" alt="">-->
+<!--    </div>-->
+
+<!--    <div style="background-color: #dfd2e2;-->
+<!--    ;height: 100%;font-family:Calibri">-->
+<!--      <div  class="content-container">-->
+
+<!--        <div  class="container-fluid">-->
+<!--          <div style=""><h2 style="-->
+<!--        margin-top: 41px;-->
+<!--    ">Your Profile</h2></div>-->
+<!--          <br>-->
+<!--          <div style="">-->
+<!--            <img style="height: 110px;width: 110px; border-radius: 50%;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">-->
+<!--            <p style="margin-left: 45px; color: #6b1b98;margin-top: 7px;">edit</p>-->
+<!--            <div >-->
+
+
+<!--              <div style="margin-left: 1px;">-->
+<!--                <div style="background: transparent;border:0cm;">-->
+<!--                  <h4 style="color:black;">Name</h4>-->
+
+
+<!--                  <button class="btn" style="height: 40px;-->
+<!--        margin-left: 270px;-->
+<!--        border-radius: 6px;-->
+<!--        border: 0;"-->
+<!--                          (click)="profile()"-->
+<!--                          [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">-->
+<!--                    &lt;!&ndash;              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>&ndash;&gt;-->
+<!--                    <i class="fa fa-edit" >{{status}}</i></button>-->
+
+<!--                <br />-->
+<!--                <div>-->
+<!--                  <input style="background: white;border:0cm;margin-top: -54px;width: 60%" type="text" name="Name" [disabled]="!enableTxtBox"-->
+<!--                         value="{{user.name}}" class="form-control" [(ngModel)]="Name">-->
+<!--                </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div style="">-->
+<!--                <div style="background: transparent;border:0cm; width: 242px">-->
+<!--                  <h5 style="">E-mail</h5>-->
+
+<!--                </div>-->
+
+<!--                <div>-->
+<!--                  <input style="background:white;border:1px;width: 60%" type="Email" name="name" [disabled]="!enableTxtBox"-->
+<!--                         value="{{user.email}}" class="form-control" [(ngModel)]="Email" >-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div style="">-->
+<!--                <div style="background: transparent;border:0cm;">-->
+<!--                  <h5 style="">Phone</h5>-->
+<!--</div>-->
+<!--                <div>-->
+<!--                  <input style="background: white;border:0cm;width: 60%" type="search" name="Phone"  [disabled]="!enableTxtBox"-->
+<!--                         value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >-->
+<!--                  <br>-->
+<!--                  <br>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->

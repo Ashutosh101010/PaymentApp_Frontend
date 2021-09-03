@@ -21,6 +21,7 @@ import { HistoryComponent } from './history/history.component';
 import {MatTableModule} from "@angular/material/table";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatSelectModule} from "@angular/material/select";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 
@@ -47,7 +48,8 @@ import {MatSelectModule} from "@angular/material/select";
         MatIconModule,
         MatTableModule,
         CdkTableModule,
-        MatSelectModule
+        MatSelectModule,
+        MatSidenavModule
 
     ],
   providers: [],

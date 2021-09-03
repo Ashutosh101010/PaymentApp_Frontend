@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 
 * {
-
+  padding: 1px;
   box-sizing: border-box
+
 }
 
 body {
@@ -359,7 +360,7 @@ h6 {
 }
 
 .w3-sidebar {
-  width: 200px;
+  width: 317px;
 }
 
 .login {
@@ -510,7 +511,7 @@ html, body {
 }
 
 .example-container {
-  width: 100%px;
+  width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
@@ -525,4 +526,15 @@ html, body {
 
 .example-sidenav {
   padding: 20px;
+}
+.w3-sidebar {
+  height: 100%;
+  width: 200px;
+  background-color: #fff;
+
+  z-index: 1;
+
+}
+.w3-container, .w3-panel {
+width: 100%;
 }

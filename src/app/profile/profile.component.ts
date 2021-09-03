@@ -102,6 +102,26 @@ this.user=<User>value.user;
 
 
   }
+  w3_open() {
+
+    if(document.getElementById("mySidebar") != null) {
+      document.getElementById("mySidebar")!.style.display = "block";
+    }
+    if(document.getElementById("myOverlay") != null) {
+      document.getElementById("myOverlay")!.style.display = "block";
+    }
+
+
+  }
+
+  w3_close() {
+    if(document.getElementById("mySidebar") != null) {
+      document.getElementById("mySidebar")!.style.display = "none";
+    }
+    if(document.getElementById("myOverlay") != null) {
+      document.getElementById("myOverlay")!.style.display = "none";
+    }
+  }
 
 
 }
