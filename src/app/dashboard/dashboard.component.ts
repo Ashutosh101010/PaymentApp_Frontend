@@ -6,6 +6,7 @@ import {DataService} from "../data.service";
 import {Router} from "@angular/router";
 import {Product} from "../Model/Product";
 import {style} from "@angular/animations";
+import {window} from "ngx-bootstrap/utils";
 
 
 @Component({
@@ -19,7 +20,10 @@ export class DashboardComponent implements OnInit {
   transactions : Transaction[]=[];
 
 
+  width=window.innerWidth;
   ngOnInit(): void {
+    this.width=window.innerWidth;
+
     // let user: User | undefined = this.dataService.user;
     // if (user != undefined) {
       // @ts-ignore

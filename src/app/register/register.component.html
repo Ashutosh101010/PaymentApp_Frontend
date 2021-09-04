@@ -1,49 +1,63 @@
-<!--<div style="background-color:#d7d4e3; height: 150%;">-->
-<!--  <div style="margin-left: 50px;"><img src="/assets/gieo.jpg" alt=""></div>-->
-<!--  <div style="margin-left: 610px;"><img src="/assets/svmny.jpg" alt=""></div>-->
-<!--  <div style="margin-top: 100px;margin-left: 521px;" class="wrapper fadeInDown">-->
-<!--    <div style="margin-top: -60px;background-color: #f6f6f6; height: 445px;width: 497px;border-radius: 40px;" id="formContent">-->
+<div *ngIf="width>1000" style="height: 100%;background-color: #ded2e2">
+<div style="background-color:#ded2e2; height: 150%;">
+  <div style="margin-left: 50px;"><img src="/assets/gieo.jpg" alt=""></div>
+  <div style="margin-left: 40%;"><img src="/assets/svmny.jpg" alt=""></div>
+  <div style="margin-top: 100px;margin-left: 35%;" class="wrapper fadeInDown">
+    <div style="margin-top: -60px;background-color: #f6f6f6; height: 445px;width: 497px;border-radius: 40px;" id="formContent">
 
 
-<!--     <div style="height: 700px;background-color:#f6f6f6;border-radius: 40px;">-->
-<!--       <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 25px; width: 305px;margin-left: 100px;margin-top: 25px;border-radius: 30px;"  [(ngModel)]=operator>-->
-<!--         &lt;!&ndash;          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>&ndash;&gt;-->
-<!--         &lt;!&ndash;        <option value="" disabled selected >Select Operator</option>&ndash;&gt;-->
+     <div style="height: 700px;background-color:#f6f6f6;border-radius: 40px;">
+       <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 25px; width: 305px;margin-left: 100px;margin-top: 25px;border-radius: 30px;"  [(ngModel)]=operator>
+         <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
+         <!--        <option value="" disabled selected >Select Operator</option>-->
 
-<!--         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>-->
-<!--         &lt;!&ndash;          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>&ndash;&gt;-->
-<!--         &lt;!&ndash;          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>&ndash;&gt;-->
-<!--       </mat-select>-->
-<!--      <br>-->
-<!--      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 30px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">-->
-<!--      <br>-->
-<!--       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your name" [(ngModel)]="Name">-->
-<!--       <br>-->
-<!--      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px;margin-left: 100px;" type="password"  class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]="password">-->
-<!--      <br>-->
-<!--       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your Number" [(ngModel)]="number">-->
-<!--       <br>-->
-<!--       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" placeholder="Enter Your DOB" matInput [matDatepicker]="picker" [(ngModel)]="birthdate">-->
-<!--       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
-<!--       <mat-datepicker #picker></mat-datepicker>-->
-<!--       <br>-->
+         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
+         <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
+         <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
+       </mat-select>
+      <br>
+      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 30px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">
+      <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your name" [(ngModel)]="Name">
+       <br>
+      <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px;margin-left: 100px;" type="password"  class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]="password">
+      <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;margin-top: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your Number" [(ngModel)]="number">
+       <br>
+       <input style="background-color: #fff;width: 303px;height: 34.09px; border-radius: 5px; margin-bottom: 60px;margin-left: 100px;" placeholder="Enter Your DOB" matInput [matDatepicker]="picker" [(ngModel)]="birthdate">
+       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+       <mat-datepicker #picker></mat-datepicker>
+       <br>
 
-<!--       <button style="height: 40px;width: 150px;margin-left: 150px;background-color: #6B1B98;border-radius: 20px;" (click)="register()">Create Account</button>-->
+       <button style="height: 40px;width: 150px;margin-left: 150px;background-color: #6B1B98;border-radius: 20px;" (click)="register()">Create Account</button>
 
-<!--       <br>-->
+       <br>
 
-<!--       <div style="margin-top: 20px;"><a style="font-weight: 600;margin-top: -10px ; margin-left: 200px;font-family: Roboto" href="/login">Login</a></div>-->
-<!--     </div>-->
-<!--       -->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+       <div style="margin-top: 20px;"><a style="font-weight: 600;margin-top: -10px ; margin-left: 200px;font-family: Roboto" href="/login">Login</a></div>
+     </div>
+
+    </div>
+  </div>
+
+</div>
+  <br>
+  <br>
+  <br>
+</div>
+
+
+
 
 
 <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
-<div style="background-color:#d7d4e3; height: 100%;width: 100%">
-  <div style="text-align: center"><img src="/assets/gieo.jpg" alt="">
+
+
+
+
+
+<div *ngIf="width<=1000"><div  style="background-color:#ded2e2; height: 100%;width: 100%">
+  <div style="text-align: center;margin-right: 5%"><img src="/assets/gieo.jpg" alt="">
     <br>
   <img style="margin-top: 20px;" src="/assets/svmny.jpg" alt="">
 
@@ -81,4 +95,7 @@
      </div>
 
     </div>
+
+</div>
+
 

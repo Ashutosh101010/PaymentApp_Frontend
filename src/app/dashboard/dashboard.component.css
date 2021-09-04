@@ -49,7 +49,7 @@
 }
 
 .sidebar-navigation li a:active,
-.sidebar-navigation li a:hover,
+
 .sidebar-navigation li a:focus {
   text-decoration: none;
   outline: none;
@@ -68,7 +68,7 @@
   z-index: -1;
 }
 
-.sidebar-navigation li:hover::before {
+.sidebar-navigation li{
   width: 80%;
 }
 
@@ -200,7 +200,7 @@ img, svg {
 }
 
 .sidebar-navigation li a:active,
-.sidebar-navigation li a:hover,
+
 .sidebar-navigation li a:focus {
   text-decoration: none;
   outline: none;
@@ -219,7 +219,7 @@ img, svg {
   z-index: -1;
 }
 
-.sidebar-navigation li:hover::before {
+.sidebar-navigation  {
   width: 100%;
 }
 

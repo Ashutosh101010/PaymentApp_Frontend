@@ -8,6 +8,7 @@ import {User} from "../Model/User";
 import {Router} from "@angular/router";
 import {Transaction} from "../Model/Transaction";
 import {DataService} from "../data.service";
+import {window} from "ngx-bootstrap/utils";
 
 
 class profileResponse {
@@ -31,8 +32,9 @@ export class ProfileComponent implements OnInit {
   constructor(private networkService:NetworkService,private dataService:DataService,private http:HttpClient,private router: Router) { }
 
   // user : string | undefined=[ ];
-
+  width=window.innerWidth;
   ngOnInit(): void {
+    this.width=window.innerWidth;
     this.networkService.getUsers("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value =>{
       console.log(value);
 this.user=<User>value.user;

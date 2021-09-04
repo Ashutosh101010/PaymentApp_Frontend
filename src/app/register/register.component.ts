@@ -6,6 +6,7 @@ import {Operator} from "../Model/Operator";
 import {LoginResponse} from "../Model/LoginResponse";
 import {User} from "../Model/User";
 import {Router} from "@angular/router";
+import {window} from "ngx-bootstrap/utils";
 
 class registerResponse {
 }
@@ -42,7 +43,11 @@ export class RegisterComponent implements OnInit {
   //     this.result =data.user
   //   })
   // }
+
+  width=window.innerWidth;
   ngOnInit(): void {
+this.width=window.innerWidth;
+console.log(this.width);
     let operatorList = this.networkService.getOperators();
     operatorList.forEach(value => {
       value.forEach(value1 => {

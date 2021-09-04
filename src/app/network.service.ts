@@ -26,8 +26,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="\n" + "http://192.168.1.22:4040/api/operator";
-  baseUrlUser: string ="\n" + "http://192.168.1.22:4040/api/users";
+  baseUrl: string ="\n" + "http://192.168.1.15:4040/api/operator";
+  baseUrlUser: string ="\n" + "http://192.168.1.15:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
@@ -156,10 +156,9 @@ export class NetworkService {
     console.log(response);
     return response;
   }
-  getTransactionHistory(userId:string,token:string,operatorId:string):Observable<TransactionHistoryResponse>
-
+  getTransactionHistory(userId:string,token:string,operatorId:string)
   {
-    let response=this.http.post<TransactionHistoryResponse>(this.transactionUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.transactionUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         return EMPTY;
