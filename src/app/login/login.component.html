@@ -38,35 +38,36 @@
 
 <!--<&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
 
-<div style="background-color:#ded2e2;height: 140% ">
+<div style="background-color:white;height: 100% ;font-weight: 500;">
   <div>
-    <div style="width: 100%;text-align: center"><img src="/assets/gieo.jpg" alt="">
-      <br>
-      <img style="margin-top: 20px;" src="/assets/svmny.jpg" alt="">
-      <br>
-        <div style="width: 100%" class="wrapper fadeInDown">
-          <div style="background-color: #f6f6f6; height: 445px;width: 100%;" id="formContent">
+    <div style="width: 100%;text-align: center"><img src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+
+        <div style="width: 100%" class="wrapper ">
+          <div style="background-color: rgba(243,241,241,0);border: 1px solid; height: 445px;width: 100%;" id="formContent">
             <!-- Tabs Titles -->
 
             <!-- Icon -->
 
             <div style="margin-top: 20px;"  class="fadeIn first">
-              <img style="width: 10%;" src="/assets/figma1.jpg" id="icon" alt="User Icon" />
+
             </div>
 
             <!-- Login Form -->
-
-            <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 30px; width: 60%;margin-top: 20px;"  [(ngModel)]=operator>
+            <p style="font-size: large;color: black;margin-left: -44%">Operator</p>
+            <mat-select placeholder=" Select Operator" style="background-color:#f5f2f2; height: 30px;font-family: SansSerif;font-size: medium;font-weight: 600; width: 60%;" [(ngModel)]=operator>
               <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
             </mat-select>
               <br>
-              <input style="background-color: #fff;height: 34.09px; width: 60%; border-radius: 5px; margin-bottom: 60px;margin-top: 40px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>
             <br>
-            <input type="password" style="background-color: #fff;height: 34.09px; border-radius: 5px;width: 60%;text-align: center"   class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]=password>
-            <br>
-            <input style="margin-top: 30px; background-color: #6b1b98; border-radius: 20px; height: 46px;" type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+            <p style="font-size: large;color: black;margin-left: -46%">E-mail</p>
+              <input style="height: 34.09px; width: 60%; border-radius: 5px; margin-bottom: 60px;font-size: medium;font-weight: 600;font-family: SansSerif;" type="text"  class="fadeInThird" name="login" placeholder="Enter Your E-mail" [(ngModel)]=username>
+
+            <p style="font-size: large;color: black;margin-left: -44%;margin-top: -25px;">Password</p>
+            <input type="password" style="height: 34.09px; border-radius: 5px;background-color: #fff;width: 60%;font-size: medium;font-weight: 600;font-family: SansSerif;text-align: center"   class="" name="login" placeholder="Enter Your password" [(ngModel)]=password>
+
+            <input style="margin-top: 35px; background-color: #f3d17b;color: black; border-radius: 5px;text-align: center; height: 43px;width: 60%;font-weight: 600;font-family: SansSerif;" type="submit"  value="Log In" (click)="login()">
            <br>
-            <a style="font-weight: 600;margin-top: -10px ;font-family: Roboto" href="/register">Create Account</a>
+            <a style="font-weight: 600;font-family: SansSerif;font-weight: 600;font-size: medium" href="/register">Create Account</a>
 
     </div>
   </div>

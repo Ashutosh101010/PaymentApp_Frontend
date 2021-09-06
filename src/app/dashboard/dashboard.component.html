@@ -181,23 +181,23 @@
         <div style="border-radius: 30px;width: 100%;font-size: large"><h1 style="">Transactions</h1>
 
           <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px;margin-top: 10px;">
-            <div *ngIf="transaction.type=='Subscription'">
+            <div *ngIf="transaction[type]=='Subscription'">
               <div style="margin-left: 3px;font-size: large;display: flex;height: 57px" >
-                <p style="margin-top: 19px;width: 50%;margin-left: 10px;"> {{transaction.orderNumber}}</p>
+                <p style="margin-top: 19px;width: 50%;margin-left: 10px;"> {{transaction[orderNumber]}}</p>
 
-                <p style="margin-top: 19px;width: 50%;">Date:{{transaction.date| date: 'dd/MM/yyyy'}}</p>
+                <p style="margin-top: 19px;width: 50%;">Date:{{transaction[date]| date: 'dd/MM/yyyy'}}</p>
 
               </div>
               <div  style="background-color: white;
 
-                margin-top: 3px;height: 190px;" *ngFor="let product of transaction.cart; index as j">
+                margin-top: 3px;height: 190px;" *ngFor="let product of transaction[cart]; index as j">
                 <ul class="list-group list-group-flush">
                   <div style="">
                     <div style="display: flex">
-                      <div style="width: 10%">    <img src="{{product.images[0]}}"> </div>
-                      <div style="font-weight: 500"><b><h5 style="margin-top: 30px;font-size: large"><td >{{product.name}}</td> </h5>
-                        <h6 style="font-size: small;" ><td><b>Brand:</b>{{product.brand}}</td></h6>
-                        <h6 style="font-size: small;"><b>Price:</b>{{product.price}}</h6></b> </div>
+                      <div style="width: 10%">    <img src="{{product[images][0]}}"> </div>
+                      <div style="font-weight: 500"><b><h5 style="margin-top: 30px;font-size: large"><td >{{product[name]}}</td> </h5>
+                        <h6 style="font-size: small;" ><td><b>Brand:</b>{{product[brand]}}</td></h6>
+                        <h6 style="font-size: small;"><b>Price:</b>{{product[price]}}</h6></b> </div>
 
                       <div style="margin-left: 80%;height: 30px;">
                         <div style=""><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -240,7 +240,7 @@
 
 
             <div style="background-color: #CDCDCD;width: 100%">
-              <div style="margin-left: 89%;margin-top: 10px;font-size: small;font-weight: 700">Total:{{transaction.amount}}$</div><br>
+              <div style="margin-left: 89%;margin-top: 10px;font-size: small;font-weight: 700">Total:{{transaction[amount]}}$</div><br>
               <button style="border-radius: 9px;margin-top: -10px;width: 100px;margin-left: 88%; font-weight: 400;font-size: medium;border: 1px solid;border-color: #000000;height: 40px;;background: white;">Checkout</button>
 
             </div>
@@ -254,16 +254,16 @@
 
             <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px">
 
-              <div *ngIf="transaction.type=='Subscription'">
+              <div *ngIf="transaction[type]=='Subscription'">
                 <div style="margin-left: 19px;font-size: large;display: flex;margin-top: 20px;height: 57px;" >
-                  <p style="margin-top: 19px;width: 50%;"> {{transaction.orderNumber}}</p>
+                  <p style="margin-top: 19px;width: 50%;"> {{transaction[orderNumber]}}</p>
 
-                  <p style="margin-top: 19px;width: 50%;">Date:{{transaction.date| date: 'dd/MM/yyyy'}}</p>
+                  <p style="margin-top: 19px;width: 50%;">Date:{{transaction[date]| date: 'dd/MM/yyyy'}}</p>
 
                 </div>
 
 
-                <div  style="background-color: white;margin-top: 3px;" *ngFor="let product of transaction.cart; index as k">
+                <div  style="background-color: white;margin-top: 3px;" *ngFor="let product of transaction[cart]; index as k">
                   <ul class="list-group list-group-flush">
                     <div style="display: flex">
                       <div style="display: flex ; height: 110px;margin-top: 9px;">
@@ -341,23 +341,23 @@
                 <div style="border-radius: 30px;width: 100%;font-size: large"><h1 style="">Transactions</h1>
 
                   <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px;margin-top: 10px;">
-                    <div *ngIf="transaction.type=='Subscription'">
+                    <div *ngIf="transaction[type]=='Subscription'">
                     <div style="margin-left: 3px;font-size: large;display: flex;height: 57px" >
-                    <p style="margin-top: 19px;width: 50%;margin-left: 10px;"> {{transaction.orderNumber}}</p>
+                    <p style="margin-top: 19px;width: 50%;margin-left: 10px;"> {{transaction[orderNumber]}}</p>
 
-                    <p style="margin-top: 19px;width: 50%;">Date:{{transaction.date| date: 'dd/MM/yyyy'}}</p>
+                    <p style="margin-top: 19px;width: 50%;">Date:{{transaction[date]| date: 'dd/MM/yyyy'}}</p>
 
                     </div>
                     <div  style="background-color: white;
 
-                margin-top: 3px;height: 190px;" *ngFor="let product of transaction.cart; index as j">
+                margin-top: 3px;height: 190px;" *ngFor="let product of transaction[cart]; index as j">
                       <ul class="list-group list-group-flush">
                     <div style="">
                      <div style="display: flex">
-                    <div style="width: 10%">    <img src="{{product.images[0]}}"> </div>
-                       <div style="font-weight: 500"><b><h5 style="margin-top: 30px;margin-left: 110%;font-size: large"><td >{{product.name}}</td> </h5>
-                         <h6 style="font-size: small;margin-left: 110%" ><td><b>Brand:</b>{{product.brand}}</td></h6>
-                       <h6 style="font-size: small;margin-left: 110%"><b>Price:</b>{{product.price}}</h6></b> </div>
+                    <div style="width: 10%">    <img src="{{product[images[0]]}}"> </div>
+                       <div style="font-weight: 500"><b><h5 style="margin-top: 30px;margin-left: 110%;font-size: large"><td >{{product[name]}}</td> </h5>
+                         <h6 style="font-size: small;margin-left: 110%" ><td><b>Brand:</b>{{product[brand]}}</td></h6>
+                       <h6 style="font-size: small;margin-left: 110%"><b>Price:</b>{{product[price]}}</h6></b> </div>
 
                        <div style="margin-left: 50%;height: 30px;">
                          <div style=""><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -400,7 +400,7 @@
 
 
                   <div style="background-color: #CDCDCD;width: 100%">
-                    <div style="margin-left: 63%;margin-top: 10px;font-size: small;font-weight: 700">Total:{{transaction.amount}}$</div><br>
+                    <div style="margin-left: 63%;margin-top: 10px;font-size: small;font-weight: 700">Total:{{transaction[amount]}}$</div><br>
                     <button style="border-radius: 9px;margin-top: -10px;width: 100px;margin-left: 60%; font-weight: 400;font-size: medium;border: 1px solid;border-color: #000000;height: 40px;;background: white;">Checkout</button>
 
                   </div>
@@ -414,16 +414,16 @@
 
                     <div *ngFor="let transaction of transactions; index as i" style=" background-color: #CDCDCD;border-radius: 30px">
 
-                      <div *ngIf="transaction.type=='Subscription'">
+                      <div *ngIf="transaction[type]=='Subscription'">
                         <div style="margin-left: 19px;font-size: large;display: flex;margin-top: 20px;height: 57px;" >
-                          <p style="margin-top: 19px;width: 50%;"> {{transaction.orderNumber}}</p>
+                          <p style="margin-top: 19px;width: 50%;"> {{transaction[orderNumber]}}</p>
 
-                          <p style="margin-top: 19px;width: 50%;">Date:{{transaction.date| date: 'dd/MM/yyyy'}}</p>
+                          <p style="margin-top: 19px;width: 50%;">Date:{{transaction[date]| date: 'dd/MM/yyyy'}}</p>
 
                         </div>
 
 
-                    <div  style="background-color: white;margin-top: 3px;" *ngFor="let product of transaction.cart; index as k">
+                    <div  style="background-color: white;margin-top: 3px;" *ngFor="let product of transaction[cart]; index as k">
                       <ul class="list-group list-group-flush">
             <div style="display: flex">
                         <div style="display: flex ; height: 110px;margin-top: 9px;">

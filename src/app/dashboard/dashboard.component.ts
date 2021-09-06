@@ -18,21 +18,29 @@ import {JSONConstants} from "../Model/JSONHelper";
 export class DashboardComponent implements OnInit {
 
   constructor(private networkService:NetworkService,private dataService:DataService,private router:Router) { }
-  transactions : Transaction[]=[];
+  transactions : []=[];
   id=JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
   type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   date=JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
   amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
-  Transactionhistorys : [] | undefined=[];
+  // price=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
+  brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
+  name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
+  images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
+  orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
+  cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
+  price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
+
+
+  // Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
   ngOnInit(): void {
     this.width=window.innerWidth;    // let history: history | undefined = this.dataService.history;
-    // if (history != undefined) {
-    // @ts-ignore
+
     this.networkService.getTransactions("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
-      // this.Transactionhistorys = value.transactions;
-      this.Transactionhistorys=JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
-      console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
+
+      this.transactions=JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
+      console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY]);
     })
   }
 

@@ -23,11 +23,14 @@ export class JSONConstants{
   static PRODUCT_OBJECT_QUANTITY_KEY:string="quantity";
   static PRODUCT_OBJECT_DESCRIPTION_KEY:string="description";
   static PRODUCT_OBJECT_PRODUCTID_KEY:string="productId";
-  static PRODUCT_OBJECT_IMAGES_KEY:string="images";
+
   static PRODUCT_OBJECT_TIMESTAMP_KEY:string="timestamp";
   static PRODUCT_OBJECT_SUBTOTAL_KEY:string="subtotal";
   static PRODUCT_OBJECT_PRICE_KEY:string="price";
   static PRODUCT_OBJECT_NAME_KEY:string="name";
+  static PRODUCT_OBJECT_IMAGES_KEY:string="images";
+  static PRODUCT_OBJECT_BRAND_KEY:string="brand";
+  static PRODUCT_OBJECT_AMOUNT_KEY:string="amount";
 
 
   // static ERROR_CODE_KEY:string="errorCode";
