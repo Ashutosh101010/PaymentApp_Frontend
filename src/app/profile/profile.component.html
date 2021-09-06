@@ -71,7 +71,7 @@
                           <br />
                           <div>
                             <input style="background: transparent;border:0cm;margin-top: -54px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
-                                   value="{{user.name}}" class="form-control" [(ngModel)]="Name">
+                                   value="{{user[name]}}" class="form-control" [(ngModel)]="Name">
                           </div>
                         </div>
                       </div>
@@ -83,7 +83,7 @@
 
                         <div>
                           <input style="background:transparent;border:1px;width: 60%;font-size: medium" type="Email" name="name" [disabled]="!enableTxtBox"
-                                 value="{{user.email}}" class="form-control" [(ngModel)]="Email" >
+                                 value="{{user[email]}}" class="form-control" [(ngModel)]="Email" >
                         </div>
                       </div>
                       <div style="">
@@ -92,7 +92,7 @@
                         </div>
                         <div>
                           <input style="background: transparent;border:0cm;width: 60%;font-size: medium" type="search" name="Phone"  [disabled]="!enableTxtBox"
-                                 value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >
+                                 value="{{user[mobileNumber]}}" class="form-control" [(ngModel)]="number" >
                           <br>
                           <br>
                         </div>
@@ -189,7 +189,7 @@
                         <br />
                         <div>
                           <input style="background: transparent;border:0cm;margin-top: -54px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
-                                 value="{{user.name}}" class="form-control" [(ngModel)]="Name">
+                                 value="{{user[name]}}" class="form-control" [(ngModel)]="Name">
                         </div>
                         </div>
                       </div>
@@ -201,7 +201,7 @@
 
                         <div>
                           <input style="background:transparent;border:1px;width: 60%;font-size: medium" type="Email" name="name" [disabled]="!enableTxtBox"
-                                 value="{{user.email}}" class="form-control" [(ngModel)]="Email" >
+                                 value="{{user[email]}}" class="form-control" [(ngModel)]="Email" >
                         </div>
                       </div>
                       <div style="">
@@ -210,7 +210,7 @@
         </div>
                         <div>
                           <input style="background: transparent;border:0cm;width: 60%;font-size: medium" type="search" name="Phone"  [disabled]="!enableTxtBox"
-                                 value="{{user.mobileNumber}}" class="form-control" [(ngModel)]="number" >
+                                 value="{{user[mobileNumber]}}" class="form-control" [(ngModel)]="number" >
                           <br>
                           <br>
                         </div>

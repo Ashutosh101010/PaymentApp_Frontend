@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 import {Transaction} from "../Model/Transaction";
 import {DataService} from "../data.service";
 import {window} from "ngx-bootstrap/utils";
+import {JSONConstants} from "../Model/JSONHelper";
 
 
 class profileResponse {
@@ -24,7 +25,14 @@ function profile() {
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-   user: User = new User();
+  user=JSON.parse(JSON.stringify("{}"));
+   userId=JSONConstants.USER_OBJECT_USERID_KEY;
+   token=JSONConstants.USER_OBJECT_TOKEN_KEY;
+   opeeatorId=JSONConstants.USER_OBJECT_OPERATORID_KEY;
+   name=JSONConstants.USER_OBJECT_NAME_KEY;
+   email=JSONConstants.USER_OBJECT_EMAIL_KEY;
+   mobileNumber=JSONConstants.USER_OBJECT_MOBILENUMBER_KEY;
+
 
 
 
@@ -37,11 +45,12 @@ export class ProfileComponent implements OnInit {
     this.width=window.innerWidth;
     this.networkService.getUsers("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value =>{
       console.log(value);
-this.user=<User>value.user;
+      this.user=JSON.parse(JSON.stringify(value))["user"];
+;
 
-        console.log(this.user.name);
-        console.log(this.user.email);
-        console.log(this.user.mobileNumber);
+        console.log(this.user);
+        // console.log(this.user.email);
+        // console.log(this.user.mobileNumber);
 
 
     })

@@ -125,10 +125,10 @@ export class NetworkService {
   }
 
 
-  getTransactions(userId:string,token:string,operatorId:string):Observable<TransactionResponse>
+  getTransactions(userId:string,token:string,operatorId:string)
 
   {
-    let response=this.http.post<TransactionResponse>(this.transactionUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.transactionUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         return EMPTY;
@@ -140,9 +140,9 @@ export class NetworkService {
   }
 
 
-  getUsers(userId:string,token:string,operatorId:string):Observable<UserResponse>
+  getUsers(userId:string,token:string,operatorId:string)
 {
-    let response=this.http.post<UserResponse>(this.profileUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.profileUrl,{userId:userId,token:token,operatorID:operatorId}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
 

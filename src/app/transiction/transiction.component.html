@@ -17,12 +17,12 @@
             </tr>
             </thead>
             <tbody class="customtable">
-            <tr *ngFor="let transaction of transactions; index as i">
+            <tr *ngFor="let Transaction of Transactions; index as i">
 
-              <td>{{transaction.orderNumber}}</td>
-              <td>{{transaction.date  | date:'dd/MM/yyyy'}}</td>
-              <td>{{transaction.type}}</td>
-              <td>{{transaction.amount}}</td>
+              <td>{{transaction[orderNumber]}}</td>
+              <td>{{transaction[date]| date:'dd/MM/yyyy'}}</td>
+              <td>{{transaction[type]}}</td>
+              <td>{{transaction[amount]}}</td>
 
             </tr>
             </tbody>
