@@ -53,22 +53,23 @@
             </div>
 
             <!-- Login Form -->
-            <p style="font-size: large;color: black;margin-left: -36%">Select Operator</p>
-            <mat-select  style="background-color:#e8f0fd;text-align: center; height: 30px;font-size: medium;font-weight: 600; width: 60%;" [(ngModel)]=operator>
+            <div style="font-family: Arial,sans-serif;">
+            <p style="font-size: large;color: black;">Select Operator</p>
+            <mat-select  style="background-color:#e8f0fd;text-align: center; height: 30px;font-size: medium;font-weight: 400; width: 60%;" [(ngModel)]=operator>
               <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
             </mat-select>
               <br>
             <br>
-            <p style="font-size: large;color: black;margin-left: -38%">Enter E-mail</p>
-              <input style="background-color: #e8f0fd;height: 34.09px; width: 60%; border-radius: 5px; margin-bottom: 60px;font-size: medium;font-weight: 600;"   class="fadeInThird" name="login"  placeholder="Email" [(ngModel)]=username>
+            <p style="font-size: large;color: black;">Enter E-mail</p>
+              <input type="text" style="background-color: #e8f0fd;height: 34.09px; width: 60%; border-radius: 5px; margin-bottom: 60px;font-size: medium;font-weight: 400;"   class="fadeInThird" name="login"  placeholder="Email" [(ngModel)]=username>
             <br>
-            <p style="font-size: large;color: black;margin-left: -34%;margin-top: -25px;">Enter Password</p>
-            <input type="password" style="background-color: #e8f0fd;height: 34.09px; border-radius: 5px;width: 60%;font-size: medium;font-weight: 600;text-align: center" class="fadeInThird" name="login" placeholder="password" [(ngModel)]=password>
+            <p style="font-size: large;color: black;margin-top: -25px;">Enter Password</p>
+            <input type="password" style="background-color: #e8f0fd;height: 34.09px; border-radius: 5px;width: 60%;font-size: medium;font-weight: 400;text-align: center" class="fadeInThird" name="login" placeholder="password" [(ngModel)]=password>
             <br>
-            <input style="margin-top: 35px; background-color: black;color: white; border-radius: 5px;text-align: center; height: 43px;width: 60%;font-weight: 600;" type="submit"  value="Log In" (click)="login()">
+            <input style="margin-top: 35px; background-color: black;color: white; border-radius: 5px;text-align: center; height: 43px;width: 60%;font-weight:400;" type="submit"  value="Log In" (click)="login()">
            <br>
             <a style="font-weight: 600;font-weight: 600;font-size: medium" href="/register">Create Account</a>
-
+            </div>
     </div>
   </div>
 </div>

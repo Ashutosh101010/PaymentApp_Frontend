@@ -9,8 +9,8 @@
     <div style="margin-top: -60px;background-color: white; height: 60%;width: 40%;border-radius: 40px;" id="formContent">
 
 
-     <div style="height: 70%background-color:white;border-radius: 9px;border: 1px solid;text-align: center">
-       <p style="font-size: large;color: black;margin-left: -44%;margin-top: 15px;">Select Operator</p>
+     <div style="height: 70%;background-color:white;border-radius: 9px;border: 1px solid;text-align: center;font-family: Arial,sans-serif">
+       <p style="font-size: large;color: black;margin-top: 15px;">Select Operator</p>
        <mat-select   style="background-color:#e8f0fd; height: 30px;text-align: center; width: 70%;border-radius: 3px;"  [(ngModel)]=operator>
          <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
          <!--        <option value="" disabled selected >Select Operator</option>-->
@@ -20,29 +20,29 @@
          <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
        </mat-select>
       <br>
-       <p style="font-size: large;color: black;margin-left: -50%;margin-top: 20px;">Enter Email</p>
+       <p style="font-size: large;color: black;margin-top: 20px;">Enter Email</p>
       <input style="background-color: #e8f0fd;text-align: center;color: #CDCDCD;width: 70%;height: 34.09px; border-radius: 5px; margin-bottom: 20px;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="Email">
       <br>
-       <p style="font-size: large;color: black;margin-left: -50%;">Enter Name</p>
+       <p style="font-size: large;color: black;">Enter Name</p>
        <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px;font-size: medium; margin-bottom: 20px;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="Name">
        <br>
-       <p style="font-size: large;color: black;margin-left: -45%;margin-top: 20px;">Enter Password</p>
+       <p style="font-size: large;color: black;margin-top: 20px;">Enter Password</p>
       <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px;font-size: medium;" type="password"  class="fadeIn third" name="login"  [(ngModel)]="password">
       <br>
-       <p style="font-size: large;color: black;margin-left: -34%;margin-top: 30px;">Enter Mobile Number</p>
+       <p style="font-size: large;color: black;margin-top: 30px;">Enter Mobile Number</p>
        <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px; font-size: medium;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="number">
        <br>
-       <p style="font-size: large;color: black;margin-left: -50%;margin-top: 30px;">Enter DOB</p>
+       <p style="font-size: large;color: black;margin-top: 30px;">Enter DOB</p>
        <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px; margin-left: 37px;font-size: medium;"  matInput [matDatepicker]="picker" [(ngModel)]="birthdate">
        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
        <mat-datepicker #picker></mat-datepicker>
        <br>
 
-       <button style="margin-top: 30px;text-align: center; background-color: black;color: white; border-radius: 5px;text-align: center; height: 43px;width: 70%;font-weight: 600;font-family: SansSerif;" (click)="register()">Create Account</button>
+       <button style="margin-top: 30px;text-align: center; background-color: black;color: white; border-radius: 5px;text-align: center; height: 43px;width: 70%;font-weight: 600;font-family: Arial,sans-serif;" (click)="register()">Create Account</button>
 
        <br>
 
-       <div style="margin-top: 20px;"><a style="font-weight: 600;margin-top: -10px ; color: blue;font-family: Roboto" href="/login">Login</a></div>
+       <div style="margin-top: 20px;"><a style="font-weight: 600;margin-top: -10px ; color: blue;font-family: Arial,sans-serif" href="/login">Login</a></div>
      </div>
 
     </div>
