@@ -705,3 +705,8 @@ p {
 .example-sidenav {
   padding: 20px;
 }
+.row {
+  --bs-gutter-x: 8.5rem;
+  --bs-gutter-y: 0;
+
+}

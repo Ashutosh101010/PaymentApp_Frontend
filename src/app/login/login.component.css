@@ -3314,7 +3314,7 @@ input[type=text]::placeholder {
   min-width: 0;
   width: 180px;
 }
-mat-list-option[aria-selected="true"] {
+mat-list-option[aria-selectFed="true"] {
   background: white;
 }
 

@@ -4,26 +4,26 @@
 
 
 
-<div *ngIf="width>1000" style="height: 100%;background-color: #ded3e3">
-  <div style="background-color:#e0d3e3;width: 100%">
+<div *ngIf="width>1000" style="height: 100%;background-color: white">
+  <div style="background-color:white;width: 100%">
     <div  >
-      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 15%" id="mySidebar">
+      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 15%" id="mySidebar">
         <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
           <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-        <ul style="font-size: large;background-color: #a9a1c0;margin-left: 5px;" class="sidebar-navigation">
+        <ul style="font-size: medium;background-color: white;margin-left: 1px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
 
           <hr>
           <a style="color: black;margin-top: 5px;" href="/dashboard">
-            <i class="fa fa-users" aria-hidden="true"></i> Transactions
+            <i class="fa fa-users" aria-hidden="true"></i> <b>Transactions</b>
           </a>
           <hr>
           <a style="color: black;margin-top: 5px;" href="/history">
-            <i class="fa fa-cog" aria-hidden="true"></i> History
+            <i class="fa fa-cog" aria-hidden="true"></i> <b>History</b>
           </a>
           <hr>
           <a style="color: black;margin-top: 10px;" href="/profile">
-            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+            <i class="fa fa-info-circle" aria-hidden="true"></i><b> Profile</b>
           </a>
           <hr>
         </ul>
@@ -33,17 +33,17 @@
     <!-- Page Content -->
     <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-    <div style="background-color:#e0d3e3 ">
-      <button style="background-color:#e0d3e3 ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-      <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
+    <div style="background-color:white ">
+      <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+      <img style="margin-left: 10px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
       <div class="w3-container">
         <div  class="w3-container" style="">
-          <div style="background-color: #e0d3e3;" class="sidebar-logo">
+          <div style="background-color: white;" class="sidebar-logo">
 
             <br>
             <!-- main-content -->
-            <div style="border-radius: 30px;width: 100%"><h2 style="">Transactions</h2>
-              <p style="color: #050505;background-color: #e0d3e3" class="text-muted pl-1">Welcome to your transactions</p>
+            <div style="border-radius: 30px;width: 100%"><h2 style="text-align: center"><b>Transactions</b></h2>
+
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-lg-auto">
 
@@ -57,15 +57,15 @@
                 <div class="d-flex justify-content-between align-items-center mt-3">
 
                 </div>
-                <div style="background-color: #e0d3e3;width: 100%;">
-                  <div style="font-family: Roboto">
+                <div style="background-color: white;width: 100%;">
+                  <div style="font-family:  Arial,sans-serif">
                     <table class="table">
                       <thead>
-                      <tr style="background-color: rgba(98,98,98,0.4)" >
-                        <th style="color: black;width: 31%;" scope="col">Order No.</th>
-                        <th style="color: black;width: 28%;" scope="col">Type</th>
-                        <th style="color: black;width: 17%;" scope="col">Date</th>
-                        <th style="color: black;text-align: -webkit-center" scope="col">Amount</th>
+                      <tr style="background-color: #646464" >
+                        <th style="color: white;width: 31%;" scope="col"><b>Order No.</b></th>
+                        <th style="color: white;width: 28%;" scope="col"><b>Type</b></th>
+                        <th style="color: white;width: 17%;" scope="col"><b>Date</b></th>
+                        <th style="color: white;text-align: -webkit-center" scope="col"><b>Amount</b></th>
                       </tr>
                       </thead>
                     </table>
@@ -73,9 +73,9 @@
                   <div  *ngFor="let TransactionHistory of Transactionhistorys; index as i">
                     <div>
                       <table class="table">
-                        <tr style="font-family: Roboto;" >
+                        <tr style="font-family:  Arial,sans-serif;" >
 
-                          <th style="font: icon;width: 30%">{{TransactionHistory[id]}}</th>
+                          <th style="font: icon;width: 30%;font-size: small">{{TransactionHistory[id]}}</th>
 
                           <br>
 
@@ -159,7 +159,7 @@
 
 <!--<-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
 <div *ngIf="width<=1000">
-  <div style="background-color:#e0d3e3;width: 100%">
+  <div style="background-color:white;width: 100%">
 <div  >
   <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 80%" id="mySidebar">
     <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
@@ -187,17 +187,17 @@
 <!-- Page Content -->
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-<div style="background-color:#e0d3e3 ">
-  <button style="background-color:#e0d3e3 ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+<div style="background-color:white ">
+  <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
   <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
   <div class="w3-container">
     <div  class="w3-container" style="">
-      <div style="background-color: #e0d3e3;" class="sidebar-logo">
+      <div style="background-color: white;" class="sidebar-logo">
 
         <br>
         <!-- main-content -->
         <div style="border-radius: 30px;width: 100%"><h2 style="">Transactions</h2>
-           <p style="color: #050505;background-color: #e0d3e3" class="text-muted pl-1">Welcome to your transactions</p>
+           <p style="color: #050505;background-color: white" class="text-muted pl-1">Welcome to your transactions</p>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-lg-auto">
 
@@ -211,7 +211,7 @@
             <div class="d-flex justify-content-between align-items-center mt-3">
 
             </div>
-            <div style="background-color: #e0d3e3;width: 100%;">
+            <div style="background-color: white;width: 100%;">
               <div style="font-family: Roboto">
                 <table class="table">
                   <thead>
@@ -319,7 +319,7 @@
 
 
 
-<!--<div style="background-color: #e0d3e3;">-->
+<!--<div style="background-color: white;">-->
 
 <!--  <div class="w3-sidebar w3-bar-block w3-border-right sidebar" style="background-color: #a9a1c0;display: none" id="mySidebar">-->
 <!--    <div style="display: flex; width:100%">-->
@@ -352,7 +352,7 @@
 <!--    </ul>-->
 <!--  </div>-->
 
-<!--  <div style="width:100%;display: flex;background-color:#e0d3e3 " class="w3-teal;" color="none">-->
+<!--  <div style="width:100%;display: flex;background-color:white " class="w3-teal;" color="none">-->
 
 <!--    <div style="width:10%;display: flex;">-->
 
@@ -361,14 +361,14 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--<div style="margin-left: 12px;">-->
-<!--<div style="background-color: #e0d3e3;margin-left: 10px;" class="sidebar-logo">-->
+<!--<div style="background-color: white;margin-left: 10px;" class="sidebar-logo">-->
 <!--  <img src="/assets/gieo.jpg" alt="">-->
 <!--</div>-->
 <!--<br>-->
 
-<!--  <nav style="background-color: #e0d3e3;" >-->
+<!--  <nav style="background-color: white;" >-->
 <!--    <br>-->
-<!--    <a style="color: #050505;background-color: #e0d3e3" class="navbar-brand" href="#">Transactions <p style="color: #050505;background-color: #e0d3e3" class="text-muted pl-1">Welcome to your transactions</p> </a>-->
+<!--    <a style="color: #050505;background-color: white" class="navbar-brand" href="#">Transactions <p style="color: #050505;background-color: white" class="text-muted pl-1">Welcome to your transactions</p> </a>-->
 <!--    <div class="collapse navbar-collapse" id="navbarNav">-->
 <!--      <ul class="navbar-nav ml-lg-auto">-->
 
@@ -382,7 +382,7 @@
 <!--  <div class="d-flex justify-content-between align-items-center mt-3">-->
 
 <!--  </div>-->
-<!--  <div  style="background-color: #e0d3e3 ">-->
+<!--  <div  style="background-color: white ">-->
 <!--    <div style="font-family: Roboto">-->
 <!--      <table class="table">-->
 <!--        <thead>-->

@@ -2,27 +2,26 @@
 
 
 
-<div *ngIf="width>1000" style="height: 100%;background-color: #ded3e3">
-  <div style="background-color:#e0d3e3;width: 100%;height: 100%">
-
-    <div >
-      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 15%" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-xxlarge" style=" height: 100px;" (click)="w3_close()">
+<div *ngIf="width>1000" style="height: 100%;background-color: white">
+  <div style="background-color:white;width: 100%">
+    <div  >
+      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 15%" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
           <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-        <ul style="font-size: large;background-color: #a9a1c0;margin-left: 5px;" class="sidebar-navigation">
+        <ul style="font-size: medium;background-color: white;margin-left: 10px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
 
           <hr>
           <a style="color: black;margin-top: 5px;" href="/dashboard">
-            <i class="fa fa-users" aria-hidden="true"></i> Transactions
+            <i class="fa fa-users" aria-hidden="true"></i> <b>Transactions</b>
           </a>
           <hr>
           <a style="color: black;margin-top: 5px;" href="/history">
-            <i class="fa fa-cog" aria-hidden="true"></i> History
+            <i class="fa fa-cog" aria-hidden="true"></i> <b>History</b>
           </a>
           <hr>
           <a style="color: black;margin-top: 10px;" href="/profile">
-            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+            <i class="fa fa-info-circle" aria-hidden="true"></i><b> Profile</b>
           </a>
           <hr>
         </ul>
@@ -32,25 +31,25 @@
     <!-- Page Content -->
     <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-    <div style="background-color:#dfd2e2 ">
-      <button style="background-color:#dfd2e2 ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-      <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
+    <div style="background-color:white ">
+      <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+      <img style="margin-left: 10px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
       <div class="w3-container">
         <div  class="w3-container" style="">
-          <div style="background-color: #dfd2e2;" class="sidebar-logo">
+          <div style="background-color: white;" class="sidebar-logo">
 
             <br>
             <!-- main-content -->
-            <div style="background-color: #dfd2e2;
-            ;height: 100%;font-family:Calibri;margin-left: 10%">
+            <div style="background-color: white;
+            ;height: 100%;font-family:Arial, sans-serif;margin-left: 10%">
               <div  class="content-container">
 
                 <div style="margin-left: -40px;"  class="container-fluid">
-                  <div style=""><h2 style="margin-top: 4px;">Your Profile</h2></div>
+                  <div style=""><h2 style="margin-top: 4px;font-family: Arial, sans-serif"><b>Your Profile</b></h2></div>
                   <br>
                   <div style="">
                     <img style="height: 110px;width: 110px; border-radius: 50%;margin-left: 40px;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
-                    <p style="margin-left: 75px; color: #6b1b98;margin-top: 7px;">edit</p>
+                    <p style="margin-left: 75px; color: black;margin-top: 7px;">edit</p>
                     <div >
 
 
@@ -59,14 +58,15 @@
                           <h4 style="color:black;font-size: large"><b>Name</b></h4>
 
 
-                          <button class="btn" style="height: 40px;
+                          <button class="btn" style="height: 40px;width: 80px;
                 margin-left: 250px;
                 border-radius: 6px;
-                border: 0;"
+                border: 0;
+                color: white"
                                   (click)="profile()"
                                   [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
                             <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-                            <i class="fa fa-edit" >{{status}}</i></button>
+                            <i class="fa fa-edit" ><b>{{status}}</b></i></button>
 
                           <br />
                           <div>
@@ -150,16 +150,16 @@
 <!-- Page Content -->
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-<div style="background-color:#dfd2e2 ">
-  <button style="background-color:#dfd2e2 ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+<div style="background-color:white ">
+  <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
   <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
   <div class="w3-container">
     <div  class="w3-container" style="">
-      <div style="background-color: #dfd2e2;" class="sidebar-logo">
+      <div style="background-color: white;" class="sidebar-logo">
 
         <br>
         <!-- main-content -->
-            <div style="background-color: #dfd2e2;
+            <div style="background-color: white;
             ;height: 100%;font-family:Calibri">
               <div  class="content-container">
 
@@ -242,7 +242,7 @@
 
 
 
-<!--<div style="background-color: #dfd2e2;">-->
+<!--<div style="background-color: white;">-->
 
 <!--  <div class="w3-sidebar w3-bar-block w3-border-right sidebar" style="background-color: #a9a1c0;display: none" id="mySidebar">-->
 <!--    <div style="display: flex; width:100%">-->
@@ -276,7 +276,7 @@
 <!--    </ul>-->
 <!--  </div>-->
 
-<!--  <div style="width:100%;display: flex;background-color:#dfd2e2 " class="w3-teal;" color="none">-->
+<!--  <div style="width:100%;display: flex;background-color:white " class="w3-teal;" color="none">-->
 
 
 <!--  </div>-->
@@ -286,11 +286,11 @@
 <!--      <i style="align-items: center" class="fa fa-angle-right"></i></button>-->
 <!--  </div>-->
 <!--  <div style="margin-left: 1px;">-->
-<!--    <div style="background-color: #dfd2e2;margin-left: 10px;" class="sidebar-logo">-->
+<!--    <div style="background-color: white;margin-left: 10px;" class="sidebar-logo">-->
 <!--      <img src="/assets/gieo.jpg" alt="">-->
 <!--    </div>-->
 
-<!--    <div style="background-color: #dfd2e2;-->
+<!--    <div style="background-color: white;-->
 <!--    ;height: 100%;font-family:Calibri">-->
 <!--      <div  class="content-container">-->
 
