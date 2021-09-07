@@ -105,15 +105,15 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #999999; }
-input:-moz-placeholder { color: #999999; }
-input::-moz-placeholder { color: #999999; }
-input:-ms-input-placeholder { color: #999999; }
+input::-webkit-input-placeholder { color: rgba(153, 153, 153, 0); }
+input:-moz-placeholder { color: rgba(153, 153, 153, 0); }
+input::-moz-placeholder { color: rgba(153, 153, 153, 0); }
+input:-ms-input-placeholder { color: rgba(153, 153, 153, 0); }
 
-textarea::-webkit-input-placeholder { color: #999999; }
-textarea:-moz-placeholder { color: #999999; }
-textarea::-moz-placeholder { color: #999999; }
-textarea:-ms-input-placeholder { color: #999999; }
+textarea::-webkit-input-placeholder { color: rgba(153, 153, 153, 0); }
+textarea:-moz-placeholder { color: rgba(153, 153, 153, 0); }
+textarea::-moz-placeholder { color: rgba(153, 153, 153, 0); }
+textarea:-ms-input-placeholder { color: rgba(153, 153, 153, 0); }
 
 /*---------------------------------------------*/
 button {
@@ -137,7 +137,7 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.5;
-  color: #999999;
+  color: rgba(153, 153, 153, 0);
 }
 
 .txt2 {
@@ -3112,7 +3112,7 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 
 
@@ -3120,7 +3120,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: rgba(86, 186, 237, 0);
   border: none;
   color: white;
   padding: 15px 80px;
@@ -3129,8 +3129,8 @@ input[type=button], input[type=submit], input[type=reset]  {
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0);
+  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
@@ -3142,7 +3142,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: white;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -3176,11 +3176,11 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #ffffff;
 }
 
 input[type=text]::placeholder {
-  color: #cccccc;
+  color: rgba(204, 204, 204, 0);
 }
 
 
@@ -3274,7 +3274,7 @@ input[type=text]::placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: rgba(86, 186, 237, 0);
   content: "";
   transition: width 0.2s;
 }
@@ -3314,7 +3314,9 @@ input[type=text]::placeholder {
   min-width: 0;
   width: 180px;
 }
-
+mat-list-option[aria-selected="true"] {
+  background: white;
+}
 
 
 
