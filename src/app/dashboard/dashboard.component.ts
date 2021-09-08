@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
   orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
   price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
+  quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
 
 
   // Transactionhistorys : [] | undefined=[];

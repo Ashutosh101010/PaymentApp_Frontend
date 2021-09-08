@@ -8,22 +8,23 @@
   <div style="background-color:white;width: 100%">
     <div  >
       <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 15%" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
-          <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-        <ul style="font-size: medium;background-color: white;margin-left: 1px;font-family:  Arial, sans-serif" class="sidebar-navigation">
+        <div style="display:flex;"> <img style="margin-left: 10px;height: 84px;width: 158px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+          <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
+            <mat-icon style="background-color: white;margin-left: 50%">clear</mat-icon><i class="fa fa-angle-left"></i></button></div>
+        <ul style="font-size: medium;background-color: white;margin-left: 10px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
 
           <hr>
           <a style="color: black;margin-top: 5px;" href="/dashboard">
-            <i class="fa fa-users" aria-hidden="true"></i> <b>Transactions</b>
+            <i class="fa fa-users" aria-hidden="true"></i> Transactions
           </a>
           <hr>
           <a style="color: black;margin-top: 5px;" href="/history">
-            <i class="fa fa-cog" aria-hidden="true"></i> <b>History</b>
+            <i class="fa fa-cog" aria-hidden="true"></i> History
           </a>
           <hr>
           <a style="color: black;margin-top: 10px;" href="/profile">
-            <i class="fa fa-info-circle" aria-hidden="true"></i><b> Profile</b>
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
           </a>
           <hr>
         </ul>
@@ -34,8 +35,10 @@
     <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
     <div style="background-color:white ">
-      <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-      <img style="margin-left: 10px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+
+      <img style="margin-left: 10px;height: 84px;width: 148px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+      <br>
+      <button style="background-color:white ;margin-top: 10px;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
       <div class="w3-container">
         <div  class="w3-container" style="">
           <div style="background-color: white;" class="sidebar-logo">
@@ -61,7 +64,7 @@
                   <div style="font-family:  Arial,sans-serif">
                     <table class="table">
                       <thead>
-                      <tr style="background-color: #646464" >
+                      <tr style="background-color: rgba(0,0,0,0.87)" >
                         <th style="color: white;width: 31%;" scope="col"><b>Order No.</b></th>
                         <th style="color: white;width: 28%;" scope="col"><b>Type</b></th>
                         <th style="color: white;width: 17%;" scope="col"><b>Date</b></th>
@@ -158,46 +161,49 @@
 
 
 <!--<-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
-<div *ngIf="width<=1000">
-  <div style="background-color:white;width: 100%">
-<div  >
-  <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 80%" id="mySidebar">
-    <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
-      <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-    <ul style="font-size: large;background-color: #a9a1c0;margin-left: 5px;" class="sidebar-navigation">
+<div *ngIf="width<=1000" style="background-color: white">
+  <div style="background-color:white;">
+    <div  >
+      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 70%" id="mySidebar">
+        <div style="display:flex;"> <img style="margin-left: 10px;height: 84px;width: 158px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+          <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
+            <mat-icon style="background-color: white;margin-left: 50%">clear</mat-icon><i class="fa fa-angle-left"></i></button></div>
+        <ul style="font-size: medium;background-color: white;margin-left: 10px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
 
-      <hr>
-      <a style="color: black;margin-top: 5px;" href="/dashboard">
-        <i class="fa fa-users" aria-hidden="true"></i> Transactions
-      </a>
-      <hr>
-      <a style="color: black;margin-top: 5px;" href="/history">
-        <i class="fa fa-cog" aria-hidden="true"></i> History
-      </a>
-      <hr>
-      <a style="color: black;margin-top: 10px;" href="/profile">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
-      </a>
-      <hr>
-    </ul>
-  </div>
-</div>
+          <hr>
+          <a style="color: black;margin-top: 5px;" href="/dashboard">
+            <i class="fa fa-users" aria-hidden="true"></i> Transactions
+          </a>
+          <hr>
+          <a style="color: black;margin-top: 5px;" href="/history">
+            <i class="fa fa-cog" aria-hidden="true"></i> History
+          </a>
+          <hr>
+          <a style="color: black;margin-top: 10px;" href="/profile">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+          </a>
+          <hr>
+        </ul>
+      </div>
+    </div>
 
-<!-- Page Content -->
-<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+    <!-- Page Content -->
+    <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-<div style="background-color:white ">
-  <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-  <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
-  <div class="w3-container">
-    <div  class="w3-container" style="">
-      <div style="background-color: white;" class="sidebar-logo">
+    <div style="background-color:white ">
 
-        <br>
-        <!-- main-content -->
-        <div style="border-radius: 30px;width: 100%"><h2 style="">Transactions</h2>
-           <p style="color: #050505;background-color: white" class="text-muted pl-1">Welcome to your transactions</p>
+      <img style="margin-left: 10px;height: 84px;width: 148px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+      <br>
+      <button style="background-color:white ;margin-top: 10px;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+      <div class="w3-container">
+        <div  class="w3-container" style="">
+          <div style="background-color: white;" class="sidebar-logo">
+
+            <br>
+            <!-- main-content -->
+            <div style="border-radius: 30px;width: 100%"><h2 style="text-align: center"><b>Transactions</b></h2>
+
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-lg-auto">
 
@@ -205,106 +211,106 @@
                 </ul>
               </div>
 
-            <div style="margin-top: -1.5rem!important; padding-top: 0.5rem!important;" class="row mt-2 pt-2 mat-body mat-body-1 mat-typography">
+              <div style="margin-top: -1.5rem!important; padding-top: 0.5rem!important;" class="row mt-2 pt-2 mat-body mat-body-1 mat-typography">
 
 
-            <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex justify-content-between align-items-center mt-3">
 
-            </div>
-            <div style="background-color: white;width: 100%;">
-              <div style="font-family: Roboto">
-                <table class="table">
-                  <thead>
-                  <tr style="background-color: rgba(98,98,98,0.4)" >
-                    <th style="color: black;width: 31%;" scope="col">Order No.</th>
-                    <th style="color: black;width: 28%;" scope="col">Type</th>
-                    <th style="color: black;width: 17%;" scope="col">Date</th>
-                    <th style="color: black;text-align: -webkit-center" scope="col">Amount</th>
-                  </tr>
-                  </thead>
-                </table>
-              </div>
-              <div  *ngFor="let TransactionHistory of Transactionhistorys; index as i">
-                <div>
-                  <table class="table">
-                    <tr style="font-family: Roboto;" >
+                </div>
+                <div style="background-color: white;width: 100%;">
+                  <div style="font-family:  Arial,sans-serif">
+                    <table class="table">
+                      <thead>
+                      <tr style="background-color: rgba(0,0,0,0.87)" >
+                        <th style="color: white;width: 31%;" scope="col"><b>Order No.</b></th>
+                        <th style="color: white;width: 28%;" scope="col"><b>Type</b></th>
+                        <th style="color: white;width: 17%;" scope="col"><b>Date</b></th>
+                        <th style="color: white;text-align: -webkit-center" scope="col"><b>Amount</b></th>
+                      </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div  *ngFor="let TransactionHistory of Transactionhistorys; index as i">
+                    <div>
+                      <table class="table">
+                        <tr style="font-family:  Arial,sans-serif;" >
 
-                      <th style="font: icon">{{TransactionHistory[id]}}</th>
+                          <th style="font: icon;width: 30%;font-size: small">{{TransactionHistory[id]}}</th>
 
-                      <br>
+                          <br>
 
-                      <br>
+                          <br>
 
-                      <td>{{TransactionHistory[type]}}</td>
-
-
-                      <br>
-                      <br>
-
-                      <td>{{TransactionHistory[date]| date: 'dd/MM/yyyy'}}</td>
-                      <br>
-                      <br>
-
-                      <td >{{TransactionHistory[amount]}}$</td>
+                          <td style="width: 29%">{{TransactionHistory[type]}}</td>
 
 
+                          <br>
+                          <br>
 
-                    </tr>
+                          <td style="width: 28%">{{TransactionHistory[date]| date: 'dd/MM/yyyy'}}</td>
+                          <br>
+                          <br>
+
+                          <td style="margin-left: 20px; " >{{TransactionHistory[amount]}}$</td>
 
 
 
-
-                  </table>
-                <hr></div>
-              </div>
-            </div>
+                        </tr>
 
 
 
-          </div>
 
-          </div>
-          </div>
+                      </table>
+                      <hr></div>
+                  </div>
+                </div>
+
 
 
               </div>
+
             </div>
           </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <br>
-  <br>
-  <br><br>
-  <br>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <br>
-  <br>
-  <br><br>
-  <br>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <br>
-  <br>
-  <br><br>
-  <br>
 
 
-</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br><br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br><br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br><br>
+    <br>
+
+
+  </div>
 </div>
 
 

@@ -6,22 +6,23 @@
   <div style="background-color:white;width: 100%">
     <div  >
       <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 15%" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
-          <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
+        <div style="display:flex;"> <img style="margin-left: 10px;height: 84px;width: 158px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+          <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
+            <mat-icon style="background-color: white;margin-left: 50%">clear</mat-icon><i class="fa fa-angle-left"></i></button></div>
         <ul style="font-size: medium;background-color: white;margin-left: 10px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
 
           <hr>
           <a style="color: black;margin-top: 5px;" href="/dashboard">
-            <i class="fa fa-users" aria-hidden="true"></i> <b>Transactions</b>
+            <i class="fa fa-users" aria-hidden="true"></i> Transactions
           </a>
           <hr>
           <a style="color: black;margin-top: 5px;" href="/history">
-            <i class="fa fa-cog" aria-hidden="true"></i> <b>History</b>
+            <i class="fa fa-cog" aria-hidden="true"></i> History
           </a>
           <hr>
           <a style="color: black;margin-top: 10px;" href="/profile">
-            <i class="fa fa-info-circle" aria-hidden="true"></i><b> Profile</b>
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
           </a>
           <hr>
         </ul>
@@ -32,8 +33,10 @@
     <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
     <div style="background-color:white ">
-      <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-      <img style="margin-left: 10px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+
+      <img style="margin-left: 50px;margin-top: 10px;height: 84px;width: 148px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+      <br>
+      <button style="background-color:white ;margin-top: 10px;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
       <div class="w3-container">
         <div  class="w3-container" style="">
           <div style="background-color: white;" class="sidebar-logo">
@@ -44,12 +47,12 @@
             ;height: 100%;font-family:Arial, sans-serif;margin-left: 10%">
               <div  class="content-container">
 
-                <div style="margin-left: -40px;"  class="container-fluid">
-                  <div style=""><h2 style="margin-top: 4px;font-family: Arial, sans-serif"><b>Your Profile</b></h2></div>
+                <div style="margin-left: 25%;margin-top: -95px;border: 1px solid;width: 30%;border-radius: 9px;width: 40%"  class="container-fluid">
+                  <div style=""><h2 style="margin-top: 40px;margin-left: 34%;font-family: Arial, sans-serif"><b>Your Profile</b></h2></div>
                   <br>
                   <div style="">
-                    <img style="height: 110px;width: 110px; border-radius: 50%;margin-left: 40px;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
-                    <p style="margin-left: 75px; color: black;margin-top: 7px;">edit</p>
+                    <img style="height: 130px;width: 150px; border-radius: 50%;margin-left: 30%;margin-top: -10px;" src="https://www.kindpng.com/picc/m/394-3947019_round-profile-picture-png-transparent-png.png" alt="">
+                    <p style="margin-left: 43%; color: black;margin-top: 7px;">edit</p>
                     <div >
 
 
@@ -58,21 +61,13 @@
                           <h4 style="color:black;font-size: large"><b>Name</b></h4>
 
 
-                          <button class="btn" style="height: 40px;width: 80px;
-                margin-left: 250px;
-                border-radius: 6px;
-                border: 0;
-                color: white"
-                                  (click)="profile()"
-                                  [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
-                            <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-                            <i class="fa fa-edit" ><b>{{status}}</b></i></button>
 
                           <br />
                           <div>
-                            <input style="background: transparent;border:0cm;margin-top: -54px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
+                            <input style="background: transparent;border:0cm;margin-top: -34px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
                                    value="{{user[name]}}" class="form-control" [(ngModel)]="Name">
                           </div>
+                          <hr style="height: 1px;margin-top: -5px;width: 100%">
                         </div>
                       </div>
                       <div style="">
@@ -84,15 +79,28 @@
                         <div>
                           <input style="background:transparent;border:1px;width: 60%;font-size: medium" type="Email" name="name" [disabled]="!enableTxtBox"
                                  value="{{user[email]}}" class="form-control" [(ngModel)]="Email" >
+                          <hr style="height: 1px;margin-top: -5px;">
                         </div>
+
                       </div>
+
                       <div style="">
                         <div style="background: transparent;border:0cm;">
                           <h5 style="color: black;font-size: large"><b>Phone</b></h5>
+
                         </div>
                         <div>
                           <input style="background: transparent;border:0cm;width: 60%;font-size: medium" type="search" name="Phone"  [disabled]="!enableTxtBox"
                                  value="{{user[mobileNumber]}}" class="form-control" [(ngModel)]="number" >
+                          <hr style="height: 1px;margin-top: -5px;">
+
+                          <button class="btn" style="height: 40px;width: 100%;border-radius: 6px;border: 0;color: white;margin-top: 30px"
+                                  (click)="profile()"
+                                  [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
+                            <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+                            <p class="fa fa-edit" ><b>{{status}}</b></p></button>
+
+                          <br>
                           <br>
                           <br>
                         </div>
@@ -116,59 +124,68 @@
               </div>
 
     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 <div *ngIf="width<=1000">
-<div style="background-color:#e0d3e3;width: 100%;height: 100%">
+  <div style="background-color:white;width: 100%">
+    <div>
+      <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: white;height: 100%;width: 75%" id="mySidebar">
+        <div style="display:flex;"> <img style="margin-left: 10px;height: 84px;width: 158px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+          <button class="w3-bar-item w3-button w3-xxlarge" style="height: 100px;" (click)="w3_close()">
+            <mat-icon style="background-color: white;margin-left: 50%">clear</mat-icon><i class="fa fa-angle-left"></i></button></div>
+        <ul style="font-size: medium;background-color: white;margin-left: 10px;font-family:  Arial, sans-serif" class="sidebar-navigation">
 
-<div >
-  <div  class="w3-sidebar w3-bar-block" style="display:none;z-index:5;background-color: #a9a1c0;height: 100%;width: 80%" id="mySidebar">
-    <button class="w3-bar-item w3-button w3-xxlarge" style=" height: 100px;" (click)="w3_close()">
-      <mat-icon style="background-color: white;margin-left: 90%">clear</mat-icon><i class="fa fa-angle-left"></i></button>
-    <ul style="font-size: large;background-color: #a9a1c0;margin-left: 5px;" class="sidebar-navigation">
 
+          <hr>
+          <a style="color: black;margin-top: 5px;" href="/dashboard">
+            <i class="fa fa-users" aria-hidden="true"></i> Transactions
+          </a>
+          <hr>
+          <a style="color: black;margin-top: 5px;" href="/history">
+            <i class="fa fa-cog" aria-hidden="true"></i> History
+          </a>
+          <hr>
+          <a style="color: black;margin-top: 10px;" href="/profile">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
+          </a>
+          <hr>
+        </ul>
+      </div>
+    </div>
 
-      <hr>
-      <a style="color: black;margin-top: 5px;" href="/dashboard">
-        <i class="fa fa-users" aria-hidden="true"></i> Transactions
-      </a>
-      <hr>
-      <a style="color: black;margin-top: 5px;" href="/history">
-        <i class="fa fa-cog" aria-hidden="true"></i> History
-      </a>
-      <hr>
-      <a style="color: black;margin-top: 10px;" href="/profile">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Profile
-      </a>
-      <hr>
-    </ul>
-  </div>
-</div>
+    <!-- Page Content -->
+    <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-<!-- Page Content -->
-<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+    <div style="background-color:white ">
 
-<div style="background-color:white ">
-  <button style="background-color:white ;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
-  <img style="margin-left: 65px;" src="/assets/gieo.jpg" alt="">
-  <div class="w3-container">
-    <div  class="w3-container" style="">
-      <div style="background-color: white;" class="sidebar-logo">
+      <img style="margin-left: 50px;margin-top: 10px;height: 84px;width: 148px;" src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
+      <br>
+      <button style="background-color:white ;margin-top: 10px;" class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
+      <div class="w3-container">
+        <div  class="w3-container" style="">
+          <div style="background-color: white;" class="sidebar-logo">
 
-        <br>
-        <!-- main-content -->
+            <br>
+            <!-- main-content -->
             <div style="background-color: white;
-            ;height: 100%;font-family:Calibri">
-              <div  class="content-container">
+            ;height: 100%;font-family:Arial, sans-serif;margin-left: 10%">
+              <div s class="content-container">
 
-                <div style="margin-left: -40px;"  class="container-fluid">
-                  <div style=""><h2 style="margin-top: 4px;">Your Profile</h2></div>
+                <div style="border: 1px solid;border-radius: 9px;width: 110%;margin-left: -13%"  class="container-fluid">
+                  <div style=""><h2 style="margin-top: 40px;margin-left: 27%;font-family: Arial, sans-serif"><b>Your Profile</b></h2></div>
                   <br>
                   <div style="">
-                    <img style="height: 110px;width: 110px; border-radius: 50%;margin-left: 40px;" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
-                    <p style="margin-left: 75px; color: #6b1b98;margin-top: 7px;">edit</p>
+                    <img style="height: 150px;width: 150px; border-radius: 50%;margin-left: 22%;margin-top: -10px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8LnsAejtzN7cp0DLpTWCDnz8yeaCvPifY1Q&usqp=CAU" alt="">
+                    <p style="margin-left: 43%; color: black;margin-top: 7px;">edit</p>
                     <div >
 
 
@@ -177,20 +194,13 @@
                           <h4 style="color:black;font-size: large"><b>Name</b></h4>
 
 
-                          <button class="btn" style="height: 40px;
-                margin-left: 250px;
-                border-radius: 6px;
-                border: 0;"
-                                  (click)="profile()"
-                                  [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
-                            <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-                            <i class="fa fa-edit" >{{status}}</i></button>
 
-                        <br />
-                        <div>
-                          <input style="background: transparent;border:0cm;margin-top: -54px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
-                                 value="{{user[name]}}" class="form-control" [(ngModel)]="Name">
-                        </div>
+                          <br />
+                          <div>
+                            <input style="background: transparent;border:0cm;margin-top: -34px;width: 60%;font-size: medium" type="text" name="Name" [disabled]="!enableTxtBox"
+                                   value="{{user[name]}}" class="form-control" [(ngModel)]="Name">
+                          </div>
+                          <hr style="height: 1px;margin-top: -5px;width: 100%">
                         </div>
                       </div>
                       <div style="">
@@ -202,24 +212,37 @@
                         <div>
                           <input style="background:transparent;border:1px;width: 60%;font-size: medium" type="Email" name="name" [disabled]="!enableTxtBox"
                                  value="{{user[email]}}" class="form-control" [(ngModel)]="Email" >
+                          <hr style="height: 1px;margin-top: -5px;">
                         </div>
+
                       </div>
+
                       <div style="">
                         <div style="background: transparent;border:0cm;">
                           <h5 style="color: black;font-size: large"><b>Phone</b></h5>
-        </div>
+
+                        </div>
                         <div>
                           <input style="background: transparent;border:0cm;width: 60%;font-size: medium" type="search" name="Phone"  [disabled]="!enableTxtBox"
                                  value="{{user[mobileNumber]}}" class="form-control" [(ngModel)]="number" >
+                          <hr style="height: 1px;margin-top: -5px;">
+
+                          <button class="btn" style="height: 40px;width: 100%;border-radius: 6px;border: 0;color: white;margin-top: 30px"
+                                  (click)="profile()"
+                                  [ngClass]="{'green' : enableTxtBox, 'red': !enableTxtBox}">
+                            <!--              {{status}} <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+                            <p class="fa fa-edit" ><b>{{status}}</b></p></button>
+
+                          <br>
                           <br>
                           <br>
                         </div>
 
-      </div>
-          </div>
+                      </div>
+                    </div>
 
-        </div>
-      </div>
+                  </div>
+                </div>
                 <br>
                 <br>
                 <br>
@@ -233,10 +256,13 @@
                 <br>
               </div>
 
-
             </div>
-
-
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
