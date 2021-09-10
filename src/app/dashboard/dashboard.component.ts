@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Transaction} from "../Model/Transaction";
-import {User} from "../Model/User";
+// import {User} from "../Model/User";
 import {NetworkService} from "../network.service";
 import {DataService} from "../data.service";
 import {Router} from "@angular/router";

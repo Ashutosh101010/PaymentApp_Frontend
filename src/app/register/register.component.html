@@ -16,7 +16,7 @@
          <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
          <!--        <option value="" disabled selected >Select Operator</option>-->
 
-         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
+         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator[name]}}</mat-option>
          <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
          <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
        </mat-select>
@@ -69,44 +69,60 @@
 
 
 <div *ngIf="width<=1000"><div  style="background-color:white; height: 100%;width: 100%">
-  <div style="text-align: center;margin-right: 5%"><img src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt="">
-    <br>
-  <img style="margin-top: 20px;" src="/assets/svmny.jpg" alt="">
+  <div style="background-color:white; height: 150%;">
+    <div style="text-align: center"><img src="https://www.gieonexar.com/resource/images/gieonexar-logo-tandem.PNG" alt=""></div>
+
+    <div style="margin-top: 100px;margin-left: 10%" class="wrapper fadeInDown">
+      <div style="margin-top: -60px;background-color: white; height: 80%;width: 90%;border-radius: 40px;" id="formContent">
 
 
+        <div style="height: 70%;background-color:white;border-radius: 9px;border: 1px solid;;font-family: Arial,sans-serif">
+          <div style="margin-left: 15%;width: 100%">
+            <p style="font-size: small;color: black;margin-top: 15px;font-family: Arial,sans-serif"><b>Select Operator</b></p>
+            <mat-select   style="background-color:#e8f0fd; height: 30px;text-align: center; width: 70%;border-radius: 3px;font-family: Arial,sans-serif"  [(ngModel)]=operator>
+              <!--          <option value="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Select Your Account</option>-->
+              <!--        <option value="" disabled selected >Select Operator</option>-->
 
+              <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator[name]}}</mat-option>
+              <!--          <option value="location-2">&nbsp; &nbsp; &nbsp; &nbsp;  Location 2</option>-->
+              <!--          <option value="location-3">&nbsp; &nbsp; &nbsp; &nbsp;  Location 3</option>-->
+            </mat-select>
+            <br>
+            <p style="font-size: small;color: black;margin-top: 20px;font-family: Arial,sans-serif "><b>Enter Email</b></p>
+            <input style="background-color: #e8f0fd;text-align: center;color: #CDCDCD;width: 70%;height: 34.09px; border-radius: 5px; margin-bottom: 20px;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="Email">
+            <br>
+            <p style="font-size: small;color: black;font-family: Arial,sans-serif"><b>Enter Name</b></p>
+            <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px;font-size: medium; margin-bottom: 20px;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="Name">
+            <br>
+            <p style="font-size: small;color: black;margin-top: 20px;font-family: Arial,sans-serif"><b>Enter Password</b></p>
+            <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px;font-size: medium;" type="password"  class="fadeIn third" name="login"  [(ngModel)]="password">
+            <br>
+            <p style="font-size: small;color: black;margin-top: 30px;font-family: Arial,sans-serif"><b>Enter Mobile Number</b></p>
+            <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px; font-size: medium;" type="text"  class="fadeIn third" name="login"  [(ngModel)]="number">
+            <br>
+            <p style="font-size: small;color: black;margin-top: 30px;font-family: Arial,sans-serif"><b>Enter DOB</b></p>
+            <input style="background-color: #e8f0fd;text-align: center;width: 70%;height: 34.09px; border-radius: 5px; font-size: medium;"  matInput [matDatepicker]="picker" [(ngModel)]="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <br>
 
-     <div style="height: 700px;background-color:#f6f6f6;border-radius: 40px;width: 80%;margin-left: 50px;">
-       <mat-select placeholder=" Select Operator"  style="background-color:#fff; height: 25px; width: 60%;margin-top: 25px;border-radius: 30px;"  [(ngModel)]=operator>
+            <button style="margin-top: 30px;text-align: center; font-family: Arial,sans-serif;background-color: black;color: white; border-radius: 5px;text-align: center; height: 43px;width: 70%;font-weight: 400;font-family: Arial,sans-serif;font-size: medium" (click)="register()"><b>Create Account</b></button>
 
+            <br>
 
-         <mat-option  *ngFor="let operator of operators ; index as i" [value]="operator">{{operator.name}}</mat-option>
-
-       </mat-select>
-      <br>
-      <input style="background-color: #fff;width: 60%;height: 34.09px; border-radius: 5px; margin-top: 30px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your E-mail" [(ngModel)]="Email">
-      <br>
-       <input style="background-color: #fff;width: 60%;height: 34.09px; border-radius: 5px; margin-top: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your name" [(ngModel)]="Name">
-       <br>
-      <input style="background-color: #fff;width: 60%;height: 34.09px; border-radius: 5px;margin-top: 60px;" type="password"  class="fadeIn third" name="login" placeholder="Enter Your password" [(ngModel)]="password">
-      <br>
-       <input style="background-color: #fff;width: 60%;height: 34.09px; border-radius: 5px; margin-top: 60px;" type="text"  class="fadeIn third" name="login" placeholder="Enter Your Number" [(ngModel)]="number">
-       <br>
-       <input style="background-color: #fff;width: 60%; border-radius: 5px;margin-top: 30px;" placeholder="Enter Your DOB" matInput [matDatepicker]="picker" [(ngModel)]="birthdate">
-       <br>
-       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-       <mat-datepicker #picker></mat-datepicker>
-       <br>
-
-       <button style="height: 40px;width: 50%;;background-color: #6B1B98;border-radius: 20px;margin-top: 30px;" (click)="register()">Create Account</button>
-
-       <br>
-
-       <div style="margin-top: 20px;"><a style="font-weight: 600;margin-top: -10px ; font-family: Roboto" href="/login">Login</a></div>
-     </div>
-     </div>
-
+            <div style="margin-top: 20px;margin-left: 30%"><a style="font-weight: 400;text-decoration: none;opacity: 70%;margin-top: -10px ;color: blue;font-family: Arial,sans-serif;font-size: medium" href="/login"><b>Login</b></a></div>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
     </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+
 
 </div>
 

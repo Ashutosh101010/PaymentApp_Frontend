@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Transaction} from "./Model/Transaction";
-import {User} from "./Model/User";
+// import {User} from "./Model/User";
+
+class User {
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,7 @@ export class DataService {
 
   private _transaction: Transaction[] | undefined;
 
-  private _user : User | undefined;
+  private _user : any | undefined;
 
 
   get transaction(): Transaction[] | undefined {

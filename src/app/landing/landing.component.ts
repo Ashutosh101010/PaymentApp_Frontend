@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NetworkService} from "../network.service";
+import {JSONConstants} from "../Model/JSONHelper";
 
 @Component({
   selector: 'app-landing',
@@ -8,6 +9,15 @@ import {NetworkService} from "../network.service";
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
+
+  token=JSONConstants.USER_OBJECT_TOKEN_KEY;
+  operatorId=JSONConstants.USER_OBJECT_OPERATORID_KEY;
+  errorCode=JSONConstants.ERROR_CODE_KEY;
+  number=JSONConstants.ERROR_CODE_LOGIN_SUCCESS;
+  cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
+  total=JSONConstants.USER_OBJECT_TOTAL_KEY;
+
+
 
   constructor(private activatedRoute: ActivatedRoute,private networkService:NetworkService,private router:Router) {
 
@@ -21,11 +31,11 @@ export class LandingComponent implements OnInit {
       let operatorId=value['operatorId'];
       console.log(value);
   let response=this.networkService.verifyToken(token,operatorId).subscribe(user => {
-    if(user.errorCode==0)
+    if (this.errorCode==0)
     {
 console.log("success");
     // console.log(user.cart)
-      this.router.navigate(['/cart'],{state:{cart:user.cart,total:user.total}});
+      this.router.navigate(['/cart'],{state:{cart:this.cart,total:this.total}});
     }
     else{
       console.log("fail");

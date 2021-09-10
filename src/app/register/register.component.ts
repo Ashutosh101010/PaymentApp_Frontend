@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {NetworkService} from "../network.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {operators} from "rxjs/internal/Rx";
-import {Operator} from "../Model/Operator";
-import {LoginResponse} from "../Model/LoginResponse";
-import {User} from "../Model/User";
+// import {Operator} from "../Model/Operator";
+
 import {Router} from "@angular/router";
 import {window} from "ngx-bootstrap/utils";
+import {JSONConstants} from "../Model/JSONHelper";
 
 class registerResponse {
 }
@@ -18,10 +18,9 @@ class registerResponse {
 })
 export class RegisterComponent implements OnInit {
 
-  private Operatorid: any;
-  private dataService: any;
 
-
+   operatorID=JSONConstants.USER_OBJECT_OPERATORID_KEY;
+   name=JSONConstants.OPERATOR_OBJECT_NAME_KEY;
 
   constructor(private networkService:NetworkService,private http:HttpClient,private router: Router) { }
 
@@ -51,17 +50,20 @@ console.log(this.width);
     let operatorList = this.networkService.getOperators();
     operatorList.forEach(value => {
       value.forEach(value1 => {
-        this.operators.push(value1);
+        if (this.operators) {
+          this.operators=JSON.parse(JSON.stringify(value))[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY];
+          console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
+        }
       })
     })
   }
-  operator:Operator|undefined;
+  operator: [] |undefined = [];
   password : string|undefined;
   Name : string|undefined
   Email : string|undefined;
   birthdate : string|undefined;
   number: string|undefined;
-  operators:Operator[]=[];
+  operators: [] | undefined=[];
 
   // register() : void {
   //   console.log("Signup");
@@ -76,14 +78,14 @@ console.log(this.width);
     console.log(this.Email);
     console.log(this.Name);
     console.log(this.password);
-    console.log(this.operator?.operatorID);
+    // console.log(this.operator?.this.operatorID);
     console.log(this.number);
     console.log(this.birthdate);
-    if(this.operator!=undefined && this.password!=undefined && this.operator?.operatorID!=undefined)
+    if(this.operator!=undefined && this.password!=undefined && this.operator!=undefined)
     {
       let response:registerResponse;
       if (this.Email != null && this.number!=null && this.birthdate!=null && this.Name!=undefined) {
-        await this.networkService.register(this.Email,this.password,this.birthdate,this.operator.operatorID,this.number,this.Name).toPromise().then(value => {
+        await this.networkService.register(this.Email,this.password,this.birthdate,this.operatorID,this.number,this.Name).toPromise().then(value => {
           response = value
         });
       }

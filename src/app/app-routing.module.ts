@@ -8,6 +8,7 @@ import {RegisterComponent} from "./register/register.component";
 import {TransictionComponent} from "./transiction/transiction.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {HistoryComponent} from "./history/history.component";
+// import {AuthGuard} from "./auth.guard";
 
 
 const routes: Routes = [{path:'cart',component:CartComponent},
@@ -25,3 +26,4 @@ const routes: Routes = [{path:'cart',component:CartComponent},
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [DashboardComponent,LoginComponent]

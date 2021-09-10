@@ -22,17 +22,17 @@
         <div class="infoWrap">
           <div class="cartSection">
             <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-gold-select-201810?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1603332211000" alt="image" class="itemImg" />
-            <p class="itemNumber">{{product.productId}}</p>
-            <h3>{{product.name}}</h3>
+            <p class="itemNumber">{{product[productId]}}</p>
+            <h3>{{product[name]}}</h3>
 
-            <p> <input type="text"  class="qty" placeholder="{{product.quantity}}"/> x ${{product.price}}</p>
+            <p> <input type="text"  class="qty" placeholder="{{product[quantity]}}"/> x ${{product[price]}}</p>
 
             <!--            <p class="stockStatus"> In Stock</p>-->
           </div>
 
 
           <div class="prodTotal cartSection">
-            <p>{{product.subTotal}}</p>
+            <p>{{product[subTotal]}}</p>
           </div>
           <div class="cartSection removeWrap">
             <a href="#" class="remove">x</a>

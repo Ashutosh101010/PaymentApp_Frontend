@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Transaction} from "../Model/Transaction";
-import {User} from "../Model/User";
+
 import {NetworkService} from "../network.service";
 import {DataService} from "../data.service";
 import {Router} from "@angular/router";
@@ -26,6 +26,7 @@ export class HistoryComponent implements OnInit {
   type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   date=JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
   amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
+
   Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
   ngOnInit(): void {

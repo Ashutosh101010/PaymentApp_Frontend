@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NetworkService} from "../network.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {operators} from "rxjs/internal/Rx";
-import {Operator} from "../Model/Operator";
-import {LoginResponse} from "../Model/LoginResponse";
-import {User} from "../Model/User";
+// import {Operator, operators} from "rxjs/internal/Rx";
+// import {Operator} from "../Model/Operator";
+
 import {Router} from "@angular/router";
 import {Transaction} from "../Model/Transaction";
 import {DataService} from "../data.service";
@@ -57,11 +56,12 @@ export class ProfileComponent implements OnInit {
 
 }
 
-  operator:Operator|undefined;
+  operator:[]=[];
   Name : string|undefined
   Email : string|undefined;
-  operators:Operator[]=[];
+  operators:[]|undefined=[];
   number: string|undefined;
+  operatorId : string|undefined;
   async profile()
   {
     this.enableTxtBox = !this.enableTxtBox;
@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-      if (this.operator != undefined && this.operator?.operatorID != undefined) {
+      if (this.operator != undefined && this.opeeatorId != undefined) {
         let response: profileResponse;
         if (this.Email != null && this.Name != undefined && this.number != undefined) {
           this.networkService.profile(this.Name,this.Email,this.number).toPromise().then(value => {
