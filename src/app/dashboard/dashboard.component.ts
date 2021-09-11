@@ -35,16 +35,32 @@ export class DashboardComponent implements OnInit {
 
   // Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
-  ngOnInit(): void {
-    this.width=window.innerWidth;    // let history: history | undefined = this.dataService.history;
+  async ngOnInit() {
 
-    this.networkService.getTransactions("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
+    let userId = localStorage.getItem("userId");
+    let token = localStorage.getItem("token");
+    let operatorId = localStorage.getItem("operatorId");
+    let response:any;
+    if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
+      this.router.navigate(['/login']);
+    } else {
+       await this.networkService.verifySession(token, operatorId,userId).subscribe(user => {
+         response=user;
+        console.log(response[JSONConstants.ERROR_CODE_KEY]);
+        if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
+          this.router.navigate(['/login']);
+        }
+      });
 
-      this.transactions=JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
-      console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY]);
-    })
+      this.width = window.innerWidth;    // let history: history | undefined = this.dataService.history;
+
+      this.networkService.getTransactions("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
+
+        this.transactions = JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
+        console.log("value-------------" + JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY]);
+      })
+    }
   }
-
  //
  //  width=window.innerWidth;
  //  ngOnInit(): void {

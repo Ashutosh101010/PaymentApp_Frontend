@@ -24,8 +24,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="\n" + "http://192.168.1.6:4040/api/operator";
-  baseUrlUser: string ="\n" + "http://192.168.1.6:4040/api/users";
+  baseUrl: string ="\n" + "http://192.168.1.21:4040/api/operator";
+  baseUrlUser: string ="\n" + "http://192.168.1.21:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
@@ -33,6 +33,7 @@ export class NetworkService {
   registerUrl: string =this.baseUrlUser+"/create";
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
+  verifySessionUrl: string =this.baseUrlUser+"/verifySession";
 
 
 
@@ -51,7 +52,6 @@ export class NetworkService {
     let response = this.http.post(this.verifyTokenUrl,{"operatorID":operatorId,"token":token}).pipe(catchError((err, caught) => {
      if(err instanceof HttpErrorResponse)
      {
-       console.log("error");
        this.router.navigate(["/login"]);
        return EMPTY;
      }
@@ -167,5 +167,22 @@ export class NetworkService {
     return response;
   }
 
+
+  verifySession(token:string,operatorId:string,userId:string){
+
+
+    let response = this.http.post(this.verifySessionUrl,{"operatorID":operatorId,"token":token,"userId":userId}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        this.router.navigate(["/login"]);
+        return EMPTY;
+      }
+      return caught;
+    }));
+
+    console.log(response);
+
+    return response;
+  }
 
 }
