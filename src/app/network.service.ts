@@ -4,12 +4,12 @@ import {catchError, first, retry, take} from 'rxjs/operators';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 // import {Operator} from "./Model/Operator";
-import {Transaction} from "./Model/Transaction";
-import {TransactionResponse} from "./Model/TransactionResponse";
+// import {Transaction} from "./Model/Transaction";
+// import {TransactionResponse} from "./Model/TransactionResponse";
 import {RegisterComponent} from "./register/register.component";
 import {EmailValidator} from "@angular/forms";
 // import {UserResponse} from "./Model/UserResponse";
-import {TransactionHistoryResponse} from "./Model/TransactionHistoryResponse";
+// import {TransactionHistoryResponse} from "./Model/TransactionHistoryResponse";
 
 class ProfileResponse {
 }
@@ -24,8 +24,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="\n" + "http://192.168.1.20:4040/api/operator";
-  baseUrlUser: string ="\n" + "http://192.168.1.20:4040/api/users";
+  baseUrl: string ="\n" + "http://192.168.1.6:4040/api/operator";
+  baseUrlUser: string ="\n" + "http://192.168.1.6:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
@@ -92,7 +92,7 @@ export class NetworkService {
     return response;
   }
   profile(Name:string,email: string, phoneNumber: string){
-    let response=this.http.post<any[]>(this.profileUrl,{"name":Name,"email":email,"mobileNumber":phoneNumber}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.profileUrl,{"name":Name,"email":email,"mobileNumber":phoneNumber}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         return EMPTY;

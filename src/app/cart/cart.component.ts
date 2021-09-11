@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {Product} from "../Model/Product";
+// import {Product} from "../Model/Product";
 import {JSONConstants} from "../Model/JSONHelper";
 import {jsDocComment} from "@angular/compiler";
 

@@ -1,6 +1,7 @@
 export class JSONConstants{
 
-  static ERROR_CODE_KEY:number=0;
+  static ERROR_CODE_KEY:string="errorCode";
+
   static ERROR_CODE_LOGIN_SUCCESS:number=0;
   static ERROR_CODE_LOGIN_FAIL:number=1;
 
@@ -71,6 +72,7 @@ export class JSONConstants{
   static USER_OBJECT_USERID_KEY:string="userId";
   static USER_OBJECT_ERRORCODE_KEY:string="errorCode";
   static USER_OBJECT_USER_KEY:string="user";
+  static USER_OBJECT_PASSWORD_KEY:string="password"
 
 
   static LOGIN_ERRORCODE_KEY:string="_errorCode";

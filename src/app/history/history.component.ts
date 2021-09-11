@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Transaction} from "../Model/Transaction";
+// import {Transaction} from "../Model/Transaction";
 
 import {NetworkService} from "../network.service";
 import {DataService} from "../data.service";
 import {Router} from "@angular/router";
-import {Product} from "../Model/Product";
-import {TransactionHIstory} from "../Model/TransactionHistory";
+// import {Product} from "../Model/Product";
+// import {TransactionHIstory} from "../Model/TransactionHistory";
 import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
 

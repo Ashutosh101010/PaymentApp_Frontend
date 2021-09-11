@@ -30,8 +30,8 @@ export class LandingComponent implements OnInit {
       let token=value['token'];
       let operatorId=value['operatorId'];
       console.log(value);
-  let response=this.networkService.verifyToken(token,operatorId).subscribe(user => {
-    if (this.errorCode==0)
+  let response:any=this.networkService.verifyToken(token,operatorId).subscribe(user => {
+    if (response[JSONConstants.ERROR_CODE_KEY]==0)
     {
 console.log("success");
     // console.log(user.cart)

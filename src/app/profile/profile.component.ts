@@ -5,7 +5,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 // import {Operator} from "../Model/Operator";
 
 import {Router} from "@angular/router";
-import {Transaction} from "../Model/Transaction";
+// import {Transaction} from "../Model/Transaction";
 import {DataService} from "../data.service";
 import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
