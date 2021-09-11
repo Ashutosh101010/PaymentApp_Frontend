@@ -47,17 +47,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 this.width=window.innerWidth;
 console.log(this.width);
-    let operatorList = this.networkService.getOperators();
-    operatorList.forEach(value => {
-      value.forEach(value1 => {
-        if (this.operators) {
-          this.operators=JSON.parse(JSON.stringify(value))[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY];
-          console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
-        }
-      })
-    })
+    this.networkService.getOperators().subscribe(value => {
+      this.operators = JSON.parse(JSON.stringify(value));
+    });
+    // operatorList.forEach(value => {
+    //   value.forEach(value1 => {
+    //     if (this.operators) {
+    //       this.operators=JSON.parse(JSON.stringify(value))[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY];
+    //       console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
+    //     }
+    //   })
+    // })
   }
-  operator: [] |undefined = [];
+
+  operator:any;
   password : string|undefined;
   Name : string|undefined
   Email : string|undefined;

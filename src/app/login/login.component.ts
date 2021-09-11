@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem("userId", response[JSONConstants.USER_OBJECT_USERID_KEY]);
         localStorage.setItem("token",response[JSONConstants.USER_OBJECT_TOKEN_KEY]);
-        localStorage.setItem("operatorId",this.operator[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY]);
+        localStorage.setItem("operatorId",response[JSONConstants.USER_OBJECT_OPERATORID_KEY]);
 
         await this.router.navigate(['/dashboard'])
       }else {
