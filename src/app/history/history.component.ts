@@ -63,4 +63,8 @@ export class HistoryComponent implements OnInit {
   }
 
 
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(["/login"]);
+  }
 }
