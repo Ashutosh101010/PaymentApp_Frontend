@@ -66,7 +66,7 @@ console.log(this.width);
   Email : string|undefined;
   birthdate : string|undefined;
   number: string|undefined;
-  operators: [] | undefined=[];
+  operators: any;
 
   // register() : void {
   //   console.log("Signup");
@@ -88,7 +88,7 @@ console.log(this.width);
     {
       let response:registerResponse;
       if (this.Email != null && this.number!=null && this.birthdate!=null && this.Name!=undefined) {
-        await this.networkService.register(this.Email,this.password,this.birthdate,this.operatorID,this.number,this.Name).toPromise().then(value => {
+        await this.networkService.register(this.Email,this.password,this.birthdate,this.operator[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY],this.number,this.Name).toPromise().then(value => {
           response = value
         });
       }

@@ -24,8 +24,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="\n" + "http://192.168.1.21:4040/api/operator";
-  baseUrlUser: string ="\n" + "http://192.168.1.21:4040/api/users";
+  baseUrl: string ="\n" + "http://localhost:4040/api/operator";
+  baseUrlUser: string ="\n" + "http://localhost:4040/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
@@ -79,7 +79,7 @@ export class NetworkService {
   }
 
   register(email: string,password: string, dob:string, operatorId: string, phoneNumber: string,Name:string){
-    let response=this.http.post<any[]>(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         return EMPTY;

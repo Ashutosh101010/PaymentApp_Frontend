@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
 
   // Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
-  async ngOnInit() {
+   ngOnInit() {
 
     let userId = localStorage.getItem("userId");
     let token = localStorage.getItem("token");
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
     if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
       this.router.navigate(['/login']);
     } else {
-       await this.networkService.verifySession(token, operatorId,userId).subscribe(user => {
+        this.networkService.verifySession(token, operatorId,userId).subscribe(user => {
          response=user;
         console.log(response[JSONConstants.ERROR_CODE_KEY]);
         if (response[JSONConstants.ERROR_CODE_KEY] != 0) {

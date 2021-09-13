@@ -69,7 +69,7 @@ export class JSONConstants{
   static USER_OBJECT_OPERATORID_KEY:string="operatorId";
   static USER_OBJECT_TOTAL_KEY:string="total";
   static USER_OBJECT_EMAIL_KEY:string="email";
-  static USER_OBJECT_USERID_KEY:string="userId";
+  static USER_OBJECT_USERID_KEY:string="id";
   static USER_OBJECT_ERRORCODE_KEY:string="errorCode";
   static USER_OBJECT_USER_KEY:string="user";
   static USER_OBJECT_PASSWORD_KEY:string="password"
