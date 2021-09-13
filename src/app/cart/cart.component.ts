@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
     if (state!=undefined) {
       this.products = state.cart;
       this.total= state.total;
+      console.log(this.products);
     }
     else {
       this.products=[];
@@ -35,10 +36,10 @@ export class CartComponent implements OnInit {
   quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
 
   ngOnInit(): void {
-    if(this.products.length<=0)
-    {
-      this.route.navigate(["/login"])
-    }
+    // if(this.products.length<=0)
+    // {
+    //   this.route.navigate(["/login"])
+    // }
   }
 
 }
