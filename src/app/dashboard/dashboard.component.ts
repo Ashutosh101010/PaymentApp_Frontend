@@ -43,24 +43,31 @@ export class DashboardComponent implements OnInit {
     let response:any;
     if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
       this.router.navigate(['/login']);
-    } else {
-        this.networkService.verifySession(token, operatorId,userId).subscribe(user => {
+    }
+    else {
+        this.networkService.verifySession(token,operatorId,userId).subscribe(user => {
          response=user;
         console.log(response[JSONConstants.ERROR_CODE_KEY]);
         if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
           this.router.navigate(['/login']);
         }
+this.getTransaction();
       });
 
       this.width = window.innerWidth;    // let history: history | undefined = this.dataService.history;
 
-      this.networkService.getTransactions("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
-
-        this.transactions = JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
-        console.log("value-------------" + JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY]);
-      })
     }
   }
+
+  getTransaction(){
+
+    this.networkService.getTransactions("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
+
+      this.transactions = JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
+      console.log("value-------------" + JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY]);
+    })
+  }
+
  //
  //  width=window.innerWidth;
  //  ngOnInit(): void {

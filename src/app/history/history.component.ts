@@ -19,26 +19,51 @@ class history {
 })
 export class HistoryComponent implements OnInit {
 
-  constructor(private networkService:NetworkService,private dataService:DataService,private router:Router) { }
+  constructor(private networkService: NetworkService, private dataService: DataService, private router: Router) {
+  }
 
 
-  id=JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
-  type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
-  date=JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
-  amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
+  id = JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
+  type = JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
+  date = JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
+  amount = JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
 
-  Transactionhistorys : [] | undefined=[];
-  width=window.innerWidth;
+  Transactionhistorys: [] | undefined = [];
+  width = window.innerWidth;
+
   ngOnInit(): void {
-    this.width=window.innerWidth;    // let history: history | undefined = this.dataService.history;
-    // if (history != undefined) {
-      // @ts-ignore
+
+    let userId = localStorage.getItem("userId");
+    let token = localStorage.getItem("token");
+    let operatorId = localStorage.getItem("operatorId");
+    let response: any;
+    if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
+      this.router.navigate(['/login']);
+    } else {
+      this.networkService.verifySession(token, operatorId, userId).subscribe(user => {
+        response = user;
+        console.log(response[JSONConstants.ERROR_CODE_KEY]);
+        if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
+          this.router.navigate(['/login']);
+        }
+        this.getTransactionHistory();
+      });
+
+      this.width = window.innerWidth;    // let history: history | undefined = this.dataService.history;
+
+    }
+
+  }
+    getTransactionHistory()
+    {
       this.networkService.getTransactionHistory("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value => {
         // this.Transactionhistorys = value.transactions;
-        this.Transactionhistorys=JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
-        console.log("value-------------"+JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
+        this.Transactionhistorys = JSON.parse(JSON.stringify(value))[JSONConstants.TRANSACTION_HISTORY_OBJECT_ARRAY_KEY];
+        console.log("value-------------" + JSON.parse(JSON.stringify(value))[JSONConstants.ERROR_CODE_KEY]);
       })
     }
+
+
 
 
   w3_open() {
