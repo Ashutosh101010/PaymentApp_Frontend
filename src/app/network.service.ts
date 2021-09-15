@@ -34,6 +34,7 @@ export class NetworkService {
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
+  paymentStatusUrl:string = this.baseUrl+"/paymentStatus";
 
 
 
@@ -186,4 +187,20 @@ export class NetworkService {
     return response;
   }
 
+  paymentStatus(){
+
+
+    let response = this.http.post(this.paymentStatusUrl,{}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        this.router.navigate(["/stripe-payment"]);
+        return EMPTY;
+      }
+      return caught;
+    }));
+
+    console.log(response);
+
+    return response;
+  }
 }

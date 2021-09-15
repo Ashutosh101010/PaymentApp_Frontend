@@ -20,10 +20,12 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "@types/stripe-v3": "^3.1.25",
     "bootstrap": "^5.0.2",
     "jquery": "^3.6.0",
     "ngx-bootstrap": "^7.0.0",
     "rxjs": "~6.6.0",
+    "stripe-angular": "^1.7.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },

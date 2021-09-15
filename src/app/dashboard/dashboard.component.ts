@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
 import {style} from "@angular/animations";
 import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
+import { MatDialog } from '@angular/material/dialog';
+import {StripePaymentComponent} from "../stripe-payment/stripe-payment.component";
+// import { OtpcheckComponent } from '../otpcheck/otpcheck.component';
 
 
 @Component({
@@ -17,7 +20,7 @@ import {JSONConstants} from "../Model/JSONHelper";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private networkService:NetworkService,private dataService:DataService,private router:Router) { }
+  constructor(private networkService:NetworkService,private dataService:DataService,private router:Router,public dialog:MatDialog) { }
   transactions : []=[];
   id=JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
   type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
@@ -68,6 +71,8 @@ this.getTransaction();
     })
   }
 
+
+
  //
  //  width=window.innerWidth;
  //  ngOnInit(): void {
@@ -110,5 +115,24 @@ this.getTransaction();
   logOut() {
     localStorage.clear();
     this.router.navigate(["/login"]);
+  }
+  checkout() {
+    const dialogRef = this.dialog.open(StripePaymentComponent, {
+      height: '140px',
+      width: '600px',
+      // opening dialog here which will give us back stripeToken
+      data: {totalAmount: this.amount},
+    });
+    dialogRef.afterClosed()
+      // waiting for stripe token that will be given back
+      .subscribe((result: any) => {
+        if (result) {
+          this.createOrder(result.token.id);
+        }
+      });
+  }
+
+  private createOrder(token: string) {
+
   }
 }

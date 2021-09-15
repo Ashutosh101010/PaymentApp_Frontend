@@ -8,6 +8,7 @@ import {RegisterComponent} from "./register/register.component";
 import {TransictionComponent} from "./transiction/transiction.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {HistoryComponent} from "./history/history.component";
+import {StripePaymentComponent} from "./stripe-payment/stripe-payment.component";
 // import {AuthGuard} from "./auth.guard";
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [{path:'cart',component:CartComponent},
   {path:'landing',component:LandingComponent},
   {path:'profile',component:ProfileComponent},
   {path:'history',component:HistoryComponent},
+  {path:'stripe-payment',component:StripePaymentComponent},
   {path:'**',redirectTo:'/login',pathMatch:'full'}];
 
 @NgModule({

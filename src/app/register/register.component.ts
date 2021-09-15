@@ -43,12 +43,12 @@ export class RegisterComponent implements OnInit {
   //   })
   // }
 
-  width=window.innerWidth;
-  ngOnInit(): void {
-this.width=window.innerWidth;
-console.log(this.width);
-    this.networkService.getOperators().subscribe(value => {
-      this.operators = JSON.parse(JSON.stringify(value));
+    width=window.innerWidth;
+    ngOnInit(): void {
+  this.width=window.innerWidth;
+  console.log(this.width);
+      this.networkService.getOperators().subscribe(value => {
+        this.operators = JSON.parse(JSON.stringify(value));
     });
     // operatorList.forEach(value => {
     //   value.forEach(value1 => {

@@ -14,6 +14,12 @@ module.exports = function (config) {
     ],
     client: {
       jasmine: {
+        imports: [ MatDialogModule],
+        providers: [
+          { provide: MAT_DIALOG_DATA, useValue: {} },
+          { provide: MatDialogRef, useValue: {} }
+        ]
+
         // you can add configuration options for Jasmine here
         // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
         // for example, you can disable the random execution with `random: false`
