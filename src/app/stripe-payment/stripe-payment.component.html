@@ -1,36 +1,38 @@
 <!-- stripe-payment.component.html -->
 <!--<div *ngIf=paymentStatus()>Loading....</div>-->
+<!DOCTYPE html>
+<!--<script src="https://js.stripe.com/v3/"></script>-->
 <div *ngIf="waiting">
   <p>{{message}}</p>
 
   <mat-spinner *ngIf="waiting"></mat-spinner>
 </div>
 <div>
-<form (ngSubmit)="createStripeToken()" class="checkout">
-  <label for="card-info">Card Info</label>
-  <div id="form-field">
+  <form (ngSubmit)="createStripeToken()" class="checkout">
+    <label for="card-info">Card Info</label>
+    <div id="form-field">
 
-    <div id="card-info" #cardInfo></div>
+      <div id="card-info" #cardInfo></div>
 
-    <button style="margin-top: 100px;height: 30px;width: 100px;" id="submit-button" type="submit">
-      <li style="color: black" *ngFor="let product of products ; index as i" [ngClass]="i%2!=0?'items even':'items odd'">
+      <button style="margin-top: 100px;height: 30px;width: 100px;background-color: black;color: white;border-radius: 9px;" >
+        <!--      <li style="color: black" *ngFor="let product of products ; index as i" [ngClass]="i%2!=0?'items even':'items odd'">-->
 
-      Pay ${{product[price]}}
+        <!--      Pay ${{product[amount]}}-->
 
-
-    </button>
-    <mat-error id="card-errors" role="alert" *ngIf="cardError">
-      <mat-icon style="color: #f44336">cancel</mat-icon>
-      &nbsp;{{ cardError }}
-    </mat-error>
-  </div>
-</form>
+        <!--      </li>-->
+        <b>pay${{total}}</b>
+        <!--      <li *ngFor="let product of products;">-->
+        <!--        {{product[price]}}-->
+        <!--      </li>-->
+      </button>
+      <mat-error id="card-errors" role="alert" *ngIf="cardError">
+        <mat-icon style="color: #f44336">cancel</mat-icon>
+        &nbsp;{{ cardError }}
+      </mat-error>
+    </div>
+  </form>
 
 </div>
 <div *ngIf="success">
   <mat-icon>done</mat-icon>
 </div>
-
-
-
-

@@ -38,7 +38,9 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     private cd: ChangeDetectorRef,
     @Inject(MAT_DIALOG_DATA) private data: any,
     private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,private http:HttpClient,private router: Router)
+
   {{
+    this.total= data.totalAmount;
     let state=this.router.getCurrentNavigation()?.extras.state
     if (state!=undefined) {
       this.products = state.cart;

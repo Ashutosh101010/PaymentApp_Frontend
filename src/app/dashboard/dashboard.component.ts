@@ -117,12 +117,13 @@ this.getTransaction();
     localStorage.clear();
     this.router.navigate(["/login"]);
   }
-  checkout() {
+  checkout(transaction:any) {
+
     const dialogRef = this.dialog.open(StripePaymentComponent, {
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken
-      data: {totalAmount: this.amount},
+      data: {totalAmount: transaction[this.amount]},
     });
     dialogRef.afterClosed()
       // waiting for stripe token that will be given back

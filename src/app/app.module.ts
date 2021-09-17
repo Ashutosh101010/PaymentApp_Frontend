@@ -69,6 +69,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { StripeLoaderComponent } from './stripe-loader/stripe-loader.component';
 
 
 
@@ -86,6 +87,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     ProfileComponent,
     HistoryComponent,
     StripePaymentComponent,
+    StripeLoaderComponent,
   ],
   entryComponents:[StripePaymentComponent],
     imports: [
