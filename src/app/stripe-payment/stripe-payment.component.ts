@@ -4,12 +4,14 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 // import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {NetworkService} from "../network.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 import {operators} from "rxjs/internal/Rx";
 // import {Operator} from "../Model/Operator";
 
 import {Router} from "@angular/router";
 import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
+
 
 @Component({
   selector: 'app-stripe-payment',
@@ -20,17 +22,58 @@ import {JSONConstants} from "../Model/JSONHelper";
 
 export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   @ViewChild('cardInfo') cardInfo: ElementRef|undefined;
-  _totalAmount: number;
+  // amount: number ;
   card: any;
   cardHandler = this.onChange.bind(this);
   cardError: |undefined;
+
+  message = "Waiting for purchase to complete...";
+  // amount = JSONConstants.USER_OBJECT_TOTAL_KEY;
+  waiting = false;
+  success = false;
+  private checkout: any;
+  private response: any;
   constructor(
+
     private cd: ChangeDetectorRef,
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,private http:HttpClient,private router: Router
-  ) {
-    this._totalAmount = data['totalAmount'];
-  }
+    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,private http:HttpClient,private router: Router)
+  {{
+    let state=this.router.getCurrentNavigation()?.extras.state
+    if (state!=undefined) {
+      this.products = state.cart;
+      this.total= state.total;
+      console.log(this.products);
+    }
+    else {
+      this.products=[];
+    }
+  }}
+  products:[];
+
+  total=JSONConstants.USER_OBJECT_TOTAL_KEY;
+  type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
+  productId=JSONConstants.PRODUCT_OBJECT_PRODUCTID_KEY;
+  price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
+  subTotal=JSONConstants.PRODUCT_OBJECT_SUBTOTAL_KEY;
+  name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
+  quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
+  transactions : []=[];
+  id=JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
+  // type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
+  date=JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
+  // amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
+  // price=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
+  brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
+  // name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
+  images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
+  orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
+  cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
+  // price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
+  // quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
+
+  // Transactionhistorys: [] | undefined = [];
+  transaction: any|undefined;
 
 
   ngOnDestroy() {
@@ -66,6 +109,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     }
     this.card.addEventListener('change', this.cardHandler);
   }
+
   onChange({error}:{error:any}) {
     if (error) {
       this.cardError = error.message;
@@ -75,23 +119,41 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     this.cd.detectChanges();
   }
   async createStripeToken() {
+    this.waiting=true;
     const {token, error} = await stripe.createToken(this.card);
     if (token) {
       this.onSuccess(token);
+      (
+          () => {
+            console.log("success");
+
+
+          })
     } else {
+      console.log("error");
+      this.waiting = false;
       this.onError(error);
     }
   }
+
   async onSuccess(token:any) {
-    await this.networkService.paymentStatus().subscribe(value => {
-      this.data = JSON.parse(JSON.stringify(value));
-    });
-    this.dialogRef.close({token});
+    this.waiting = false;
+    this.success = true;
+    await this.networkService.stripePayment(token).toPromise().then( (value => {
+      this.response = value
+    }));
+    // await this.networkService.paymentStatus().subscribe(value => {
+    //   this.data = JSON.parse(JSON.stringify(value));
+    //
+    // });
+    // this.dialogRef.close({token});
   }
   onError(error:any) {
     if (error.message) {
       this.cardError = error.message;
     }
+
   }
+
 
 }

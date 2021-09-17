@@ -34,7 +34,7 @@ export class NetworkService {
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
-  paymentStatusUrl:string = this.baseUrl+"/paymentStatus";
+  stripePaymentUrl:string = this.baseUrl+"/paymentStatus";
 
 
 
@@ -187,10 +187,10 @@ export class NetworkService {
     return response;
   }
 
-  paymentStatus(){
+  stripePayment(token: any){
 
 
-    let response = this.http.post(this.paymentStatusUrl,{}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         this.router.navigate(["/stripe-payment"]);

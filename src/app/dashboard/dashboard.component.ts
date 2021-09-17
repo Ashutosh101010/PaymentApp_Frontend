@@ -53,6 +53,7 @@ export class DashboardComponent implements OnInit {
         console.log(response[JSONConstants.ERROR_CODE_KEY]);
         if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
           this.router.navigate(['/login']);
+          this.router.navigate(['/stripe-component'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],total:response[JSONConstants.USER_OBJECT_TOTAL_KEY]}});
         }
 this.getTransaction();
       });
@@ -118,8 +119,8 @@ this.getTransaction();
   }
   checkout() {
     const dialogRef = this.dialog.open(StripePaymentComponent, {
-      height: '140px',
-      width: '600px',
+      height: '700px',
+      width: '1000px',
       // opening dialog here which will give us back stripeToken
       data: {totalAmount: this.amount},
     });

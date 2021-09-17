@@ -1,14 +1,23 @@
 <!-- stripe-payment.component.html -->
+<!--<div *ngIf=paymentStatus()>Loading....</div>-->
+<div *ngIf="waiting">
+  <p>{{message}}</p>
 
-
-
+  <mat-spinner *ngIf="waiting"></mat-spinner>
+</div>
 <div>
 <form (ngSubmit)="createStripeToken()" class="checkout">
   <label for="card-info">Card Info</label>
   <div id="form-field">
+
     <div id="card-info" #cardInfo></div>
-    <button id="submit-button" type="submit">
-      Pay ${{_totalAmount}}
+
+    <button style="margin-top: 100px;height: 30px;width: 100px;" id="submit-button" type="submit">
+      <li style="color: black" *ngFor="let product of products ; index as i" [ngClass]="i%2!=0?'items even':'items odd'">
+
+      Pay ${{product[price]}}
+
+
     </button>
     <mat-error id="card-errors" role="alert" *ngIf="cardError">
       <mat-icon style="color: #f44336">cancel</mat-icon>
@@ -18,3 +27,10 @@
 </form>
 
 </div>
+<div *ngIf="success">
+  <mat-icon>done</mat-icon>
+</div>
+
+
+
+
