@@ -81,6 +81,9 @@ export class JSONConstants{
   static LOGIN_OBJECT_MESSAGE_KEY:string="_message";
   static LOGIN_OBJECT_Token_KEY:string="_token";
 
+
+
+  static PAYMENT_OBJECT_TOKEN_KEY:string="token";
 // static OPERATOR_OBJECT_ID_KEY:string="_id";
 //   static OPERATOR_OBJECT_OPERATORID_KEY:string="_operatorId";
 //   static OPERATOR_OBJECT_NAME_KEY:string="_name";

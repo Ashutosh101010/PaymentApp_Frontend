@@ -24,8 +24,8 @@ class RegisterResponse {
 })
 export class NetworkService {
 
-  baseUrl: string ="\n" + "http://localhost:4041/api/operator";
-  baseUrlUser: string ="\n" + "http://localhost:4041/api/users";
+  baseUrl: string ="http://localhost:4041/api/operator";
+  baseUrlUser: string ="http://localhost:4041/api/users";
   verifyTokenUrl: string =this.baseUrl+"/verifyToken";
   loginUrl: string =this.baseUrl+"/login";
   operatorUrl: string =this.baseUrl+"/fetchOperator";
@@ -34,7 +34,8 @@ export class NetworkService {
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
-  stripePaymentUrl:string = this.baseUrl+"/paymentStatus";
+  stripePaymentUrl:string = this.baseUrl+"/stripePayment";
+  private tokenId: any;
 
 
 
@@ -187,13 +188,17 @@ export class NetworkService {
     return response;
   }
 
-  stripePayment(token: any){
+   stripePayment(token:any){
 
+    console.log("request");
+    console.log(token.id);
+    this.tokenId = token.id
+    console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"stripeToken":token.id}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
-        this.router.navigate(["/stripe-payment"]);
+        // this.router.navigate(["/stripe-loader"]);
         return EMPTY;
       }
       return caught;

@@ -2,13 +2,10 @@
 <!--<div *ngIf=paymentStatus()>Loading....</div>-->
 <!DOCTYPE html>
 <!--<script src="https://js.stripe.com/v3/"></script>-->
-<div *ngIf="waiting">
-  <p>{{message}}</p>
 
-  <mat-spinner *ngIf="waiting"></mat-spinner>
-</div>
-<div>
-  <form (ngSubmit)="createStripeToken()" class="checkout">
+  <div>
+  <form (ngSubmit)="createStripeToken()" class="checkout" *ngIf="!success">
+
     <label for="card-info">Card Info</label>
     <div id="form-field">
 
@@ -31,8 +28,20 @@
       </mat-error>
     </div>
   </form>
+</div>
 
+<div *ngIf="!success">
+  <div style="margin-left: 40%;margin-top: 30%" *ngIf="waiting">
+    <p style="margin-left: -45px;">{{message}}</p>
+
+    <mat-spinner *ngIf="waiting"></mat-spinner>
+  </div>
 </div>
-<div *ngIf="success">
-  <mat-icon>done</mat-icon>
+<div >
+
+<div style="margin-left: 40%;margin-top: 30%" *ngIf="success">
+
+  <img style="margin-left: -20%;margin-top: -30px;" src="https://i.pinimg.com/originals/0d/e4/1a/0de41a3c5953fba1755ebd416ec109dd.gif">
+  <h3>Transaction Successful</h3>
 </div>
+

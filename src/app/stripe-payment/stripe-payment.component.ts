@@ -129,7 +129,6 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
           () => {
             console.log("success");
 
-
           })
     } else {
       console.log("error");
@@ -138,11 +137,14 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     }
   }
 
-  async onSuccess(token:any) {
+ async onSuccess(token:any) {
     this.waiting = false;
     this.success = true;
-    await this.networkService.stripePayment(token).toPromise().then( (value => {
-      this.response = value
+
+
+   await this.networkService.stripePayment(token).toPromise().then( (value => {
+console.log(value);
+      // this.response = JSON.parse(JSON.stringify(value));
     }));
     // await this.networkService.paymentStatus().subscribe(value => {
     //   this.data = JSON.parse(JSON.stringify(value));
@@ -151,6 +153,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     // this.dialogRef.close({token});
   }
   onError(error:any) {
+    this.dialogRef.close();
     if (error.message) {
       this.cardError = error.message;
     }
