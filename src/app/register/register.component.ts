@@ -21,6 +21,12 @@ export class RegisterComponent implements OnInit {
 
    operatorID=JSONConstants.USER_OBJECT_OPERATORID_KEY;
    name=JSONConstants.OPERATOR_OBJECT_NAME_KEY;
+   // Lane=JSONConstants.OPERATOR_OBJECT_LANE_KEY;
+   // PostalCode=JSONConstants.OPERATOR_OBJECT_POSTALCODE_KEY;
+   // City=JSONConstants.OPERATOR_OBJECT_CITY_KEY;
+   // State=JSONConstants.OPERATOR_OBJECT_STATE_KEY;
+   // Country=JSONConstants.OPERATOR_OBJECT_COUNTRY_KEY;
+
 
   constructor(private networkService:NetworkService,private http:HttpClient,private router: Router) { }
 
@@ -65,6 +71,12 @@ export class RegisterComponent implements OnInit {
   Name : string|undefined
   Email : string|undefined;
   birthdate : string|undefined;
+  Lane : string |undefined;
+  PostalCode : string |undefined;
+  City : string |undefined;
+  State : string | undefined;
+  Country : string | undefined;
+
   number: string|undefined;
   operators: any;
 
@@ -81,14 +93,20 @@ export class RegisterComponent implements OnInit {
     console.log(this.Email);
     console.log(this.Name);
     console.log(this.password);
+
     // console.log(this.operator?.this.operatorID);
     console.log(this.number);
+    console.log(this.Lane);
+    console.log(this.PostalCode);
+    console.log(this.City);
+    console.log(this.State);
+    console.log(this.Country);
     console.log(this.birthdate);
     if(this.operator!=undefined && this.password!=undefined && this.operator!=undefined)
     {
       let response:registerResponse;
-      if (this.Email != null && this.number!=null && this.birthdate!=null && this.Name!=undefined) {
-        await this.networkService.register(this.Email,this.password,this.birthdate,this.operator[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY],this.number,this.Name).toPromise().then(value => {
+      if (this.Email != null && this.number!=null && this.birthdate!=null && this.Name!=undefined && this.Lane!=undefined && this.PostalCode!=undefined && this.City!=undefined && this.State!=undefined && this.Country!=undefined) {
+        await this.networkService.register(this.Email,this.password,this.birthdate,this.operator[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY],this.number,this.Name,this.Lane,this.PostalCode,this.City,this.State,this.Country).toPromise().then(value => {
           response = value
         });
       }

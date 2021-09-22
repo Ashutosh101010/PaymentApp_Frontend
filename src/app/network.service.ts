@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 // import {TransactionResponse} from "./Model/TransactionResponse";
 import {RegisterComponent} from "./register/register.component";
 import {EmailValidator} from "@angular/forms";
+import {JSONConstants} from "./Model/JSONHelper";
 // import {UserResponse} from "./Model/UserResponse";
 // import {TransactionHistoryResponse} from "./Model/TransactionHistoryResponse";
 
@@ -80,7 +81,7 @@ export class NetworkService {
     return response;
   }
 
-  register(email: string,password: string, dob:string, operatorId: string, phoneNumber: string,Name:string){
+  register(email: string, password: string, dob: string, operatorId: string, phoneNumber: string, Name: string, Lane: string, PostalCode: string, City: string, State: string, Country: string){
     let response=this.http.post(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
@@ -188,14 +189,14 @@ export class NetworkService {
     return response;
   }
 
-   stripePayment(token:any){
+  stripePayment(token: any, Lane: any, PostalCode: any, City: any, State: any, Country: any){
 
     console.log("request");
     console.log(token.id);
     this.tokenId = token.id
     console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{"stripeToken":token.id}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"stripeToken":token.id,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         // this.router.navigate(["/stripe-loader"]);

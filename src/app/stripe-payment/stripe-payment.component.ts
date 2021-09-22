@@ -71,6 +71,11 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
   orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
+  Lane=JSONConstants.OPERATOR_OBJECT_LANE_KEY;
+  PostalCode=JSONConstants.OPERATOR_OBJECT_POSTALCODE_KEY;
+  City=JSONConstants.OPERATOR_OBJECT_CITY_KEY;
+  State=JSONConstants.OPERATOR_OBJECT_STATE_KEY;
+  Country=JSONConstants.OPERATOR_OBJECT_COUNTRY_KEY
   // price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   // quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
 
@@ -142,7 +147,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     this.success = true;
 
 
-   await this.networkService.stripePayment(token).toPromise().then( (value => {
+   await this.networkService.stripePayment(token,this.Lane,this.PostalCode,this.City,this.State,this.Country).toPromise().then( (value => {
 console.log(value);
       // this.response = JSON.parse(JSON.stringify(value));
     }));

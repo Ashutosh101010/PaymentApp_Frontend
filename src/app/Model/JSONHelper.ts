@@ -62,6 +62,12 @@ export class JSONConstants{
   // static ERROR_CODE_LOGIN_FAIL:number=1;
 
   static USER_OBJECT_NAME_KEY:string="name";
+  static OPERATOR_OBJECT_LANE_KEY:string="Lane";
+  static OPERATOR_OBJECT_POSTALCODE_KEY:string="PostalCode";
+  static OPERATOR_OBJECT_CITY_KEY:string="City";
+  static OPERATOR_OBJECT_STATE_KEY:string="State";
+  static OPERATOR_OBJECT_COUNTRY_KEY:string="Country";
+
   static USER_OBJECT_MOBILENUMBER_KEY:string="mobileNumber";
   static USER_OBJECT_STATUS_KEY:string="status";
   static USER_OBJECT_TOKEN_KEY:string="token";
@@ -72,7 +78,8 @@ export class JSONConstants{
   static USER_OBJECT_USERID_KEY:string="id";
   static USER_OBJECT_ERRORCODE_KEY:string="errorCode";
   static USER_OBJECT_USER_KEY:string="user";
-  static USER_OBJECT_PASSWORD_KEY:string="password"
+  static USER_OBJECT_PASSWORD_KEY:string="password";
+
 
 
   static LOGIN_ERRORCODE_KEY:string="_errorCode";
