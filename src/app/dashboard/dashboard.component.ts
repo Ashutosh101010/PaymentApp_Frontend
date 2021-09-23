@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
   amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
   // price=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
   brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
+  products : []=[];
   name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
   images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
   orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
@@ -117,14 +118,15 @@ this.getTransaction();
     localStorage.clear();
     this.router.navigate(["/login"]);
   }
-  checkout(transaction:any) {
+
+  checkout(transaction: any) {
 
     const dialogRef = this.dialog.open(StripePaymentComponent, {
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken
 
-      data: {totalAmount: transaction[this.amount],orderNo:transaction[this.orderNumber]},
+      data: {totalAmount: transaction[this.amount],orderNo:transaction[this.orderNumber],name:transaction[this.name]},
 
     }
     );

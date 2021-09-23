@@ -51,9 +51,9 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
       this.transactions = state.cart;
       this.orderNo=state.orderNo;
       console.log(this.transactions);
-      this.products=state.cart;
+      this.transactions=state.cart;
       this.name=state.name;
-      console.log(this.products);
+      console.log(this.transactions);
     }
 
     else {
