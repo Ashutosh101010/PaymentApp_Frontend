@@ -123,8 +123,11 @@ this.getTransaction();
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken
-      data: {totalAmount: transaction[this.amount]},
-    });
+
+      data: {totalAmount: transaction[this.amount],orderNo:transaction[this.orderNumber]},
+
+    }
+    );
     dialogRef.afterClosed()
       // waiting for stripe token that will be given back
       .subscribe((result: any) => {

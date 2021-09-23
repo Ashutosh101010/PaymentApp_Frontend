@@ -87,6 +87,7 @@ export class JSONConstants{
   static LOGIN_OBJECT_STATUS_KEY:string="_status";
   static LOGIN_OBJECT_MESSAGE_KEY:string="_message";
   static LOGIN_OBJECT_Token_KEY:string="_token";
+  // static USER_OBJECT_ORDERNUMBER_KEY:string="orderNo";
 
 
 

@@ -40,15 +40,25 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,private http:HttpClient,private router: Router)
 
   {{
+    this.orderNo= data.orderNo;
+    this.name=data.name;
     this.total= data.totalAmount;
     let state=this.router.getCurrentNavigation()?.extras.state
     if (state!=undefined) {
       this.products = state.cart;
       this.total= state.total;
       console.log(this.products);
+      this.transactions = state.cart;
+      this.orderNo=state.orderNo;
+      console.log(this.transactions);
+      this.products=state.cart;
+      this.name=state.name;
+      console.log(this.products);
     }
+
     else {
       this.products=[];
+      this.transactions=[];
     }
   }}
   products:[];
@@ -69,7 +79,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
   // name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
   images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
-  orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
+  orderNo=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
   Lane=JSONConstants.OPERATOR_OBJECT_LANE_KEY;
   PostalCode=JSONConstants.OPERATOR_OBJECT_POSTALCODE_KEY;
@@ -147,7 +157,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     this.success = true;
 
 
-   await this.networkService.stripePayment(token,this.Lane,this.PostalCode,this.City,this.State,this.Country).toPromise().then( (value => {
+   await this.networkService.stripePayment(token,this.Lane,this.total,this.name,this.orderNo,this.PostalCode,this.City,this.State,this.Country).toPromise().then( (value => {
 console.log(value);
       // this.response = JSON.parse(JSON.stringify(value));
     }));
