@@ -126,7 +126,7 @@ this.getTransaction();
       width: '1000px',
       // opening dialog here which will give us back stripeToken
 
-      data: {totalAmount: transaction[this.amount],orderNo:transaction[this.orderNumber],name:transaction[this.name]},
+      data: {totalAmount: transaction[this.amount],orderNumber:transaction[this.orderNumber],name:transaction[this.name]},
 
     }
     );

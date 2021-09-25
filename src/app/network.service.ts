@@ -189,14 +189,14 @@ export class NetworkService {
     return response;
   }
 
-  stripePayment(token: any, Lane: any, total: any, name: any, orderNo: any, PostalCode: any, City: any, State: any, Country: any){
+  stripePayment(name: string, total: any, Lane: any, PostalCode: any, City: any, State: any, Country: any, orderNumber: any, token: any, operatorId: string | null){
 
     console.log("request");
     console.log(token.id);
     this.tokenId = token.id
     console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{"stripeToken":token.id,"Lane":Lane,"amount":total,"name":name,"orderNumber":orderNo,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"name":name,"amount":total,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country,"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         // this.router.navigate(["/stripe-loader"]);
