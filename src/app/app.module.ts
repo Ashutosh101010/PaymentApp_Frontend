@@ -70,6 +70,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { StripeLoaderComponent } from './stripe-loader/stripe-loader.component';
+import {NgxPayPalModule} from "ngx-paypal";
+import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
+import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.component';
 
 
 
@@ -88,6 +91,8 @@ import { StripeLoaderComponent } from './stripe-loader/stripe-loader.component';
     HistoryComponent,
     StripePaymentComponent,
     StripeLoaderComponent,
+    PaymentgatewayComponent,
+    PaypalPaymentComponent,
   ],
   entryComponents:[StripePaymentComponent],
     imports: [
@@ -149,7 +154,7 @@ import { StripeLoaderComponent } from './stripe-loader/stripe-loader.component';
       OverlayModule,
       PortalModule,
       ScrollingModule,
-
+      NgxPayPalModule,
 
     ],
   providers: [StripePaymentComponent,{ provide: MAT_DIALOG_DATA, useValue: {} }],

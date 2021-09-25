@@ -36,6 +36,7 @@ export class NetworkService {
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
   stripePaymentUrl:string = this.baseUrl+"/stripePayment";
+  paypalPaymentUrl:string = this.baseUrl+"/paypalPayment";
   private tokenId: any;
 
 
@@ -189,17 +190,37 @@ export class NetworkService {
     return response;
   }
 
-  stripePayment(token: any, Lane: any, PostalCode: any, City: any, State: any, Country: any){
+  stripePayment(name: string, total: any, Lane: any, PostalCode: any, City: any, State: any, Country: any, orderNumber: any, token: any, operatorId: string | null){
 
     console.log("request");
-    console.log(token.id);
+    console.log(orderNumber);
     this.tokenId = token.id
     console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{"stripeToken":token.id,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"name":name,"amount":total,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country,"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         // this.router.navigate(["/stripe-loader"]);
+        return EMPTY;
+      }
+      return caught;
+    }));
+
+    console.log(response);
+
+    return response;
+  }
+  paypalPayment(token: any,OperatorID:any,TotalAmount:any){
+
+    
+    console.log(token.id+" "+OperatorID+" "+TotalAmount);
+    this.tokenId = token.id
+    console.log(JSON.stringify(token));
+
+    let response = this.http.post(this.paypalPaymentUrl,{"paypalToken":token.id,"operatorID":OperatorID,"totalAmount":TotalAmount}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+        
         return EMPTY;
       }
       return caught;

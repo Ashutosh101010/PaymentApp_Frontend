@@ -1,0 +1,40 @@
+.stripecontainer{
+  width: 50vw;
+  height: 70vh;
+  overflow: hidden;
+}
+.matbuttonclose{
+  float: right;
+  transition: 0.3s;
+}
+.matbuttonclose:hover{
+  float: right;
+  background: #d5d5d5;
+}
+#form-field{
+  margin-top: 30px;
+}
+.success1{
+  position: relative;
+  top: -20vh;
+}
+.closebtn1{
+  position: absolute;
+  top: 18%;
+  right: 27%;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 10px;
+  transition: 0.2s;
+  border: 0;
+}
+.closebtn1:hover{
+
+  width: 4vh;
+  height: 4vh;
+  border-radius: 10px;
+  background-color: rgb(160, 160, 160);
+}
+.ordernumber1{
+  margin-top: 10vh;
+}

@@ -10,10 +10,14 @@ import {ProfileComponent} from "./profile/profile.component";
 import {HistoryComponent} from "./history/history.component";
 import {StripePaymentComponent} from "./stripe-payment/stripe-payment.component";
 import {StripeLoaderComponent} from "./stripe-loader/stripe-loader.component";
+import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
+import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.component';
 // import {AuthGuard} from "./auth.guard";
 
 
-const routes: Routes = [{path:'cart',component:CartComponent},
+const routes: Routes = [
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'cart',component:CartComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -23,7 +27,10 @@ const routes: Routes = [{path:'cart',component:CartComponent},
   {path:'history',component:HistoryComponent},
   {path:'stripe-payment',component:StripePaymentComponent},
   {path:'stripe-loader',component:StripeLoaderComponent},
-  {path:'**',redirectTo:'/login',pathMatch:'full'}];
+  {path:'paymentgateway',component:PaymentgatewayComponent},
+  {path:'paypal-payment',component:PaypalPaymentComponent},
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

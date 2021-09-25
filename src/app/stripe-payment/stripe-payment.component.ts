@@ -34,26 +34,26 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   private checkout: any;
   private response: any;
   constructor(
-
     private cd: ChangeDetectorRef,
-    @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,private http:HttpClient,private router: Router)
-
-  {{
-    this.total= data.totalAmount;
-    let state=this.router.getCurrentNavigation()?.extras.state
-    if (state!=undefined) {
-      this.products = state.cart;
-      this.total= state.total;
-      console.log(this.products);
+    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,public router:Router,
+    @Inject(MAT_DIALOG_DATA) public data: any,){
+      console.log(this.data.amount);
+      // {
+      //   this.total= data.totalAmount;
+      //   let state=this.router.getCurrentNavigation()?.extras.state
+      //   if (state!=undefined) {
+      //     this.products = state.cart;
+      //     this.total= state.total;
+      //     console.log(this.products);
+      //   }
+      //   else {
+      //     this.products=[];
+      //   }
+      // }
     }
-    else {
-      this.products=[];
-    }
-  }}
-  products:[];
 
-  total=JSONConstants.USER_OBJECT_TOTAL_KEY;
+
+  total=this.data.totalAmount;
   type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   productId=JSONConstants.PRODUCT_OBJECT_PRODUCTID_KEY;
   price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
@@ -69,7 +69,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
   // name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
   images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
-  orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
+  orderNumber=this.data.orderNumber;
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
   Lane=JSONConstants.OPERATOR_OBJECT_LANE_KEY;
   PostalCode=JSONConstants.OPERATOR_OBJECT_POSTALCODE_KEY;
@@ -78,7 +78,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   Country=JSONConstants.OPERATOR_OBJECT_COUNTRY_KEY
   // price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   // quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
-
+  operatorId = localStorage.getItem("operatorId");
   // Transactionhistorys: [] | undefined = [];
   transaction: any|undefined;
 
@@ -147,7 +147,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
     this.success = true;
 
 
-   await this.networkService.stripePayment(token,this.Lane,this.PostalCode,this.City,this.State,this.Country).toPromise().then( (value => {
+   await this.networkService.stripePayment(this.name,this.total,this.Lane,this.PostalCode,this.City,this.State,this.Country,this.orderNumber,token,this.operatorId).toPromise().then( (value => {
 console.log(value);
       // this.response = JSON.parse(JSON.stringify(value));
     }));
@@ -165,5 +165,7 @@ console.log(value);
 
   }
 
-
+  successClose(){
+    this.router.navigate(['dashboard']);
+  }
 }

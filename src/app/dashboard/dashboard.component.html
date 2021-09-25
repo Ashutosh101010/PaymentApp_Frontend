@@ -180,12 +180,12 @@
   <br>
   <button style="background-color:white;margin-top: 5px; " class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
   <div class="w3-container">
-    <div  class="w3-container" style="">
+    <div  class="w3-container">
       <div style="background-color: white;margin-left: -5px;" class="sidebar-logo">
 
         <br>
 
-        <div style="border-radius: 30px;width: 100%;font-size: large"><h1 style="">Transactions</h1>
+        <div style="border-radius: 30px;width: 100%;font-size: large"><h1>Transactions</h1>
 
           <div *ngFor="let transaction of transactions; index as i" style=" background-color: white;border-radius: 9px;border: 1px solid;margin-top: 10px;">
             <div *ngIf="transaction[type]=='Subscription'">
@@ -200,7 +200,7 @@
 
                 margin-top: 3px;height: 190px;" *ngFor="let product of transaction[cart]; index as j">
                 <ul class="list-group list-group-flush">
-                  <div style="">
+                  <div>
                     <div style="display: flex">
                       <div style="width: 10%">    <img src="{{product[images][0]}}"> </div>
                       <div style="font-weight: 500"><b><h5 style="margin-top: 30px;font-size: large"><td >{{product[name]}}</td> </h5>
@@ -208,7 +208,7 @@
                         <h6 style="font-size: small;"><b>Price:</b>{{product[price]}}</h6></b> </div>
 
                       <div style="margin-left: 80%;height: 30px;">
-                        <div style=""><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <div><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                           <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                           <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                         </svg></div>
@@ -250,7 +250,7 @@
 
             <div style="background-color: white;width: 100%;display: flex">
               <div style="margin-left: 3%;margin-top: 19px;font-size: medium;font-weight: 700;color: black">Total:<b>{{transaction[amount]}}$</b></div><br>
-              <button mat-raised-button (click)="checkout(transaction)" style="border-radius: 9px;margin-top: 15px;width: 100px;margin-left: 80%; font-weight: 400;font-size: medium;border: 1px solid;border-color: #000000;height: 40px;;background-color: black;color: white"><b> Checkout</b></button>
+              <button mat-raised-button (click)="goToPayment(transaction)" style="border-radius: 9px;margin-top: 15px;width: 100px;margin-left: 80%; font-weight: 400;font-size: medium;border: 1px solid;border-color: #000000;height: 40px;;background-color: black;color: white"><b> Checkout</b></button>
 
             </div>
             <br>
@@ -352,12 +352,12 @@
   <br>
   <button style="background-color:white;margin-top: 15px; " class="w3-button  w3-xxlarge" (click)="w3_open()">&#9776;</button>
   <div class="w3-container">
-        <div  class="w3-container" style="">
+        <div  class="w3-container" >
           <div style="background-color: white;margin-left: -5px;" class="sidebar-logo">
 
                 <br>
                 <!-- main-content -->
-                <div style="border-radius: 30px;width: 100%;font-size: large"><h1 style="">Transactions</h1>
+                <div style="border-radius: 30px;width: 100%;font-size: large"><h1 >Transactions</h1>
 
                   <div *ngFor="let transaction of transactions; index as i" style=" background-color: white;border-radius: 9px;border: 1px solid;margin-top: 10px;">
                     <div *ngIf="transaction[type]=='Subscription'">
@@ -372,7 +372,7 @@
 
                 margin-top: 3px;height: 190px;" *ngFor="let product of transaction[cart]; index as j">
                       <ul class="list-group list-group-flush">
-                    <div style="">
+                    <div >
                      <div style="display: flex">
                     <div style="width: 10%">    <img src="{{product[images][0]}}"> </div>
                        <div style="font-weight: 500"><b><h5 style="margin-top: 30px;margin-left: 110%;font-size: large"><td >{{product[name]}}</td> </h5>
@@ -380,7 +380,7 @@
                        <h6 style="font-size: small;margin-left: 110%"><b>Price:</b>{{product[price]}}</h6></b> </div>
 
                        <div style="margin-left: 50%;height: 30px;">
-                         <div style=""><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                         <div ><svg style="width: 15px;margin-top: -30px"  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                          </svg></div>

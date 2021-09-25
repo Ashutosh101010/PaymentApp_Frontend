@@ -2,16 +2,16 @@
 <!--<div *ngIf=paymentStatus()>Loading....</div>-->
 <!DOCTYPE html>
 <!--<script src="https://js.stripe.com/v3/"></script>-->
-
+<div class="stripecontainer">
   <div>
   <form (ngSubmit)="createStripeToken()" class="checkout" *ngIf="!success">
-
+    <button mat-button-close class="btn matbuttonclose">X</button>
     <label for="card-info">Card Info</label>
     <div id="form-field">
 
       <div id="card-info" #cardInfo></div>
-
-      <button style="margin-top: 100px;height: 30px;width: 100px;background-color: black;color: white;border-radius: 9px;" >
+      <p class="ordernumber1">Order Number : {{orderNumber}}</p>
+      <button style="margin-top: 50px;height: 30px;width: 100px;background-color: black;color: white;border-radius: 9px;" >
         <!--      <li style="color: black" *ngFor="let product of products ; index as i" [ngClass]="i%2!=0?'items even':'items odd'">-->
 
         <!--      Pay ${{product[amount]}}-->
@@ -22,6 +22,8 @@
         <!--        {{product[price]}}-->
         <!--      </li>-->
       </button>
+
+
       <mat-error id="card-errors" role="alert" *ngIf="cardError">
         <mat-icon style="color: #f44336">cancel</mat-icon>
         &nbsp;{{ cardError }}
@@ -30,18 +32,20 @@
   </form>
 </div>
 
-<div *ngIf="!success">
-  <div style="margin-left: 40%;margin-top: 30%" *ngIf="waiting">
+<div *ngIf="!success" class="success1">
+  
+  <div style="margin-left: 40%;margin-top: 15%" *ngIf="waiting">
     <p style="margin-left: -45px;">{{message}}</p>
 
     <mat-spinner *ngIf="waiting"></mat-spinner>
   </div>
 </div>
-<div >
+<div > 
 
-<div style="margin-left: 40%;margin-top: 30%" *ngIf="success">
-
-  <img style="margin-left: -20%;margin-top: -30px;" src="https://i.pinimg.com/originals/0d/e4/1a/0de41a3c5953fba1755ebd416ec109dd.gif">
+ <div style="margin-left: 36%;margin-top: 15%" *ngIf="success">
+  <button class="closebtn1" (click)="successClose()" mat-dialog-close>X</button>
+  <img style="margin-left: -24%;margin-top: -30px;" src="https://i.pinimg.com/originals/0d/e4/1a/0de41a3c5953fba1755ebd416ec109dd.gif">
   <h3>Transaction Successful</h3>
 </div>
 
+</div>

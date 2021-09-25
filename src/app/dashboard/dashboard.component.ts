@@ -123,7 +123,7 @@ this.getTransaction();
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken
-      data: {totalAmount: transaction[this.amount]},
+      data: {totalAmount: transaction[this.amount],orderNumber:transaction[this.orderNumber],name:transaction[this.name]},
     });
     dialogRef.afterClosed()
       // waiting for stripe token that will be given back
@@ -133,7 +133,9 @@ this.getTransaction();
         }
       });
   }
-
+  goToPayment(transaction:any){
+    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount: transaction[this.amount],orderNumber: transaction[this.orderNumber]} });
+  }
   private createOrder(token: string) {
 
   }
