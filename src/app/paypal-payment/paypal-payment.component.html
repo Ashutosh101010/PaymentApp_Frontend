@@ -1,0 +1,11 @@
+<div class="paypalcontainer">
+    <div *ngIf="!closebutton">
+        <button class="closebtn1" (click)="successClose()" mat-dialog-close>X</button>
+        <ngx-paypal [config]="payPalConfig" class="ngxpaypal">Pay With PAYPAL</ngx-paypal>
+    </div>
+    <div style="margin-left: 36%;margin-top: 15%" *ngIf="closebutton">
+        <button class="closebtn1" (click)="successClose()" mat-dialog-close>X</button>
+        <img style="margin-left: -24%;margin-top: -30px;" src="https://i.pinimg.com/originals/0d/e4/1a/0de41a3c5953fba1755ebd416ec109dd.gif">
+        <h3>Transaction Successful</h3>
+      </div>
+</div>

@@ -1,0 +1,27 @@
+.paypalcontainer{
+    width: 50vw;
+    height: auto;
+    max-height: 80vh;
+    overflow: auto;
+}
+.ngxpaypal{
+    position: relative;
+    width: 100%;
+}
+.closebtn1{
+    position: absolute;
+    top: 25%;
+    right: 25.5%;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50px;
+    transition: 0.2s;
+    border: 0;
+  }
+  .closebtn1:hover{
+  
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50px;
+    background-color: rgb(160, 160, 160);
+  }
