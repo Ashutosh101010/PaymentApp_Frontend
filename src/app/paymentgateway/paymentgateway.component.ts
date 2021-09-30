@@ -7,6 +7,7 @@ import { JSONConstants } from '../Model/JSONHelper';
 import { PaypalPaymentComponent } from '../paypal-payment/paypal-payment.component';
 import { StripePaymentComponent } from '../stripe-payment/stripe-payment.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import {CheckoutComponent} from "../checkout/checkout.component";
 
 @Component({
   selector: 'app-paymentgateway',
@@ -19,7 +20,7 @@ export class PaymentgatewayComponent implements OnInit {
   radioselect:number=0;
   orderNumber:any;
   constructor(public router:Router,public dialog:MatDialog,public activatedRoute: ActivatedRoute) { }
-  
+
   radio1(){
     this.radioselect=1;
   }
@@ -36,7 +37,7 @@ export class PaymentgatewayComponent implements OnInit {
 
     if(this.radioselect==1)
     {
-      let dialogref=this.dialog.open(StripePaymentComponent,{
+      let dialogref=this.dialog.open(CheckoutComponent,{
         disableClose:true,
         data: {totalAmount: this.amount,orderNumber: this.orderNumber},
       });
@@ -61,7 +62,7 @@ export class PaymentgatewayComponent implements OnInit {
   }
 
 
-  
+
 
   ngOnInit(): void {
     console.log(history.state);

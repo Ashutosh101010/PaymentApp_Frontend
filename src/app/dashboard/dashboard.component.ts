@@ -10,6 +10,7 @@ import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
 import { MatDialog } from '@angular/material/dialog';
 import {StripePaymentComponent} from "../stripe-payment/stripe-payment.component";
+import {CheckoutComponent} from "../checkout/checkout.component";
 // import { OtpcheckComponent } from '../otpcheck/otpcheck.component';
 
 
@@ -119,11 +120,11 @@ this.getTransaction();
   }
   checkout(transaction:any) {
 
-    const dialogRef = this.dialog.open(StripePaymentComponent, {
+    const dialogRef = this.dialog.open(CheckoutComponent, {
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken
-      data: {totalAmount: transaction[this.amount],orderNumber:transaction[this.orderNumber],name:transaction[this.name]},
+      data: {totalAmount: transaction[this.amount],orderNumber:transaction[this.orderNumber],name:transaction[this.name],type:transaction[this.type]},
     });
     dialogRef.afterClosed()
       // waiting for stripe token that will be given back

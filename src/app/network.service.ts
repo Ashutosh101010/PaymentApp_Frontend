@@ -37,6 +37,7 @@ export class NetworkService {
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
   stripePaymentUrl:string = this.baseUrl+"/stripePayment";
   paypalPaymentUrl:string = this.baseUrl+"/paypalPayment";
+  checkoutUrl:string = this.baseUrl+"/checkout";
   private tokenId: any;
 
 
@@ -83,7 +84,7 @@ export class NetworkService {
   }
 
   register(email: string, password: string, dob: string, operatorId: string, phoneNumber: string, Name: string, Lane: string, PostalCode: string, City: string, State: string, Country: string){
-    let response=this.http.post(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name}).pipe(catchError((err, caught) => {
+    let response=this.http.post(this.registerUrl,{"email":email,"password":password,"dob":dob,"operatorID":operatorId,"mobileNumber":phoneNumber,"name":Name,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         return EMPTY;
@@ -190,14 +191,14 @@ export class NetworkService {
     return response;
   }
 
-  stripePayment(name: string, total: any, Lane: any, PostalCode: any, City: any, State: any, Country: any, orderNumber: any, token: any, operatorId: string | null){
+  stripePayment(name: string, total: any, Lane: any, PostalCode: any, City: any, State: any, Country: any, orderNumber: any, token: any, operatorId: string | null, userid: any, type: string, token1: any, card: any){
 
     console.log("request");
     console.log(orderNumber);
     this.tokenId = token.id
     console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{"name":name,"amount":total,"Lane":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country,"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"name":name,"amount":total,"Line1":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country,"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId,"userId":userid,"type":type,"token": token1,"card":card}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         // this.router.navigate(["/stripe-loader"]);
@@ -212,7 +213,7 @@ export class NetworkService {
   }
   paypalPayment(token: any,OperatorID:any,TotalAmount:any){
 
-    
+
     console.log(token.id+" "+OperatorID+" "+TotalAmount);
     this.tokenId = token.id
     console.log(JSON.stringify(token));
@@ -220,7 +221,23 @@ export class NetworkService {
     let response = this.http.post(this.paypalPaymentUrl,{"paypalToken":token.id,"operatorID":OperatorID,"totalAmount":TotalAmount}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
-        
+
+        return EMPTY;
+      }
+      return caught;
+    }));
+
+    console.log(response);
+
+    return response;
+  }
+
+  checkout(){
+
+  let response = this.http.post(this.paypalPaymentUrl,{}).pipe(catchError((err, caught) => {
+      if(err instanceof HttpErrorResponse)
+      {
+
         return EMPTY;
       }
       return caught;

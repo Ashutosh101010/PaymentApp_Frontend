@@ -33,14 +33,14 @@
 </div>
 
 <div *ngIf="!success" class="success1">
-  
+
   <div style="margin-left: 40%;margin-top: 15%" *ngIf="waiting">
     <p style="margin-left: -45px;">{{message}}</p>
 
     <mat-spinner *ngIf="waiting"></mat-spinner>
   </div>
 </div>
-<div > 
+<div >
 
  <div style="margin-left: 36%;margin-top: 15%" *ngIf="success">
   <button class="closebtn1" (click)="successClose()" mat-dialog-close>X</button>

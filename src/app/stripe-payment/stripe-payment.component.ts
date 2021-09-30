@@ -33,28 +33,33 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   success = false;
   private checkout: any;
   private response: any;
+  private userid: any;
+  private token: any;
   constructor(
     private cd: ChangeDetectorRef,
     private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,public router:Router,
     @Inject(MAT_DIALOG_DATA) public data: any,){
       console.log(this.data.amount);
-      // {
-      //   this.total= data.totalAmount;
-      //   let state=this.router.getCurrentNavigation()?.extras.state
-      //   if (state!=undefined) {
-      //     this.products = state.cart;
-      //     this.total= state.total;
-      //     console.log(this.products);
-      //   }
-      //   else {
-      //     this.products=[];
-      //   }
-      // }
+      console.log(this.data.type);
+      {
+        this.total= data.totalAmount;
+        this.type = data.type;
+        let state=this.router.getCurrentNavigation()?.extras.state
+        if (state!=undefined) {
+          // this.products = state.cart;
+          this.total= state.total;
+          this.type=state.type;
+          // console.log(this.products);
+        }
+
+      }
     }
 
 
   total=this.data.totalAmount;
-  type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
+  type=this.data.type;
+  // type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
+  // type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   productId=JSONConstants.PRODUCT_OBJECT_PRODUCTID_KEY;
   price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   subTotal=JSONConstants.PRODUCT_OBJECT_SUBTOTAL_KEY;
@@ -64,6 +69,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   id=JSONConstants.HISTORY_OBJECT_ORDERNUMBER_KEY;
   // type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   date=JSONConstants.TRANSACTION_OBJECT_DATE_KEY;
+  // type=JSONConstants.TRANSACTION_OBJECT_TYPE_KEY;
   // amount=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
   // price=JSONConstants.TRANSACTION_OBJECT_AMOUNT_KEY;
   brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
@@ -81,7 +87,6 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   operatorId = localStorage.getItem("operatorId");
   // Transactionhistorys: [] | undefined = [];
   transaction: any|undefined;
-
 
   ngOnDestroy() {
     if (this.card) {
@@ -128,6 +133,7 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   async createStripeToken() {
     this.waiting=true;
     const {token, error} = await stripe.createToken(this.card);
+
     if (token) {
       this.onSuccess(token);
       (
@@ -145,9 +151,10 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
  async onSuccess(token:any) {
     this.waiting = false;
     this.success = true;
+   this.userid=localStorage.getItem("userId");
+   this.token=localStorage.getItem("token");
 
-
-   await this.networkService.stripePayment(this.name,this.total,this.Lane,this.PostalCode,this.City,this.State,this.Country,this.orderNumber,token,this.operatorId).toPromise().then( (value => {
+   await this.networkService.stripePayment(this.name,this.total,this.Lane,this.PostalCode,this.City,this.State,this.Country,this.orderNumber,token,this.operatorId,this.userid,this.type,this.token,this.card).toPromise().then( (value => {
 console.log(value);
       // this.response = JSON.parse(JSON.stringify(value));
     }));
@@ -162,7 +169,7 @@ console.log(value);
     if (error.message) {
       this.cardError = error.message;
     }
-
+// string | null
   }
 
   successClose(){

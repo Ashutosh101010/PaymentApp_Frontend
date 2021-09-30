@@ -12,6 +12,7 @@ import {StripePaymentComponent} from "./stripe-payment/stripe-payment.component"
 import {StripeLoaderComponent} from "./stripe-loader/stripe-loader.component";
 import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.component';
+import {CheckoutComponent} from "./checkout/checkout.component";
 // import {AuthGuard} from "./auth.guard";
 
 
@@ -29,7 +30,9 @@ const routes: Routes = [
   {path:'stripe-loader',component:StripeLoaderComponent},
   {path:'paymentgateway',component:PaymentgatewayComponent},
   {path:'paypal-payment',component:PaypalPaymentComponent},
-  
+  {path:'Checkout',component:CheckoutComponent},
+  {path:'**',component:LoginComponent},
+
 ];
 
 @NgModule({
