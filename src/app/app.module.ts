@@ -73,6 +73,7 @@ import { StripeLoaderComponent } from './stripe-loader/stripe-loader.component';
 import {NgxPayPalModule} from "ngx-paypal";
 import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.component';
+import { NgxStripeModule } from 'ngx-stripe';
 
 
 
@@ -155,7 +156,7 @@ import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.componen
       PortalModule,
       ScrollingModule,
       NgxPayPalModule,
-
+      NgxStripeModule.forRoot('pk_test_51JZZDHSBUHJ9G3xy4mm1mW5Ljih71SFtXc2IksQCsUcnLRHEiCJyFDbDTheve1Y501RIXe0SXpCrDhYeH2GFtN1S00HMfVah4S'),
     ],
   providers: [StripePaymentComponent,{ provide: MAT_DIALOG_DATA, useValue: {} }],
 

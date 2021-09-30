@@ -1,16 +1,11 @@
-// import { Component, OnInit } from '@angular/core';
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, ViewChild} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-// import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {NetworkService} from "../network.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-
-import {operators} from "rxjs/internal/Rx";
-// import {Operator} from "../Model/Operator";
-
 import {Router} from "@angular/router";
-import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
+import { HttpClient } from '@angular/common/http';
+import { StripeService } from 'ngx-stripe';
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -20,24 +15,12 @@ import {JSONConstants} from "../Model/JSONHelper";
 })
 
 
-export class StripePaymentComponent implements OnDestroy, AfterViewInit {
-  @ViewChild('cardInfo') cardInfo: ElementRef|undefined;
-  // amount: number ;
-  card: any;
-  cardHandler = this.onChange.bind(this);
-  cardError: |undefined;
+export class StripePaymentComponent implements OnInit {
 
-  message = "Waiting for purchase to complete...";
-  // amount = JSONConstants.USER_OBJECT_TOTAL_KEY;
-  waiting = false;
-  success = false;
-  private checkout: any;
-  private response: any;
   constructor(
-    private cd: ChangeDetectorRef,
-    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,public router:Router,
+    private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,public router:Router,private https: HttpClient,private stripeService: StripeService,
     @Inject(MAT_DIALOG_DATA) public data: any,){
-      console.log(this.data.amount);
+      console.log(this.data);
       // {
       //   this.total= data.totalAmount;
       //   let state=this.router.getCurrentNavigation()?.extras.state
@@ -83,89 +66,29 @@ export class StripePaymentComponent implements OnDestroy, AfterViewInit {
   transaction: any|undefined;
 
 
-  ngOnDestroy() {
-    if (this.card) {
-      // We remove event listener here to keep memory clean
-      this.card.removeEventListener('change', this.cardHandler);
-      this.card.destroy();
+  checkout() {
+    // Check the server.js tab to see an example implementation
+
+    this.https.post('http://localhost:4041/api/operator/create-checkout-session', {"name":this.name,"amount":this.total,"Line1":this.Lane,"PostalCode":this.PostalCode,"City":this.City,"State":this.State,"Country":this.Country,"orderNumber":this.orderNumber,"operatorId":this.operatorId})
+      .pipe(
+        switchMap(session => {
+          let sess:any=session;
+          console.log(session);
+
+          return this.stripeService.redirectToCheckout({ sessionId: sess.id });
+        })
+      )
+      .subscribe(result => {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, you should display the localized error message to your
+        // customer using `error.message`.
+        if (result.error) {
+          alert(result.error.message);
+        }
+      });
+  }
+
+    ngOnInit(){
+
     }
-  }
-  ngAfterViewInit() {
-    this.initiateCardElement();
-  }
-  initiateCardElement() {
-    // Giving a base style here, but most of the style is in scss file
-    const cardStyle = {
-      base: {
-        color: '#32325d',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: 'antialiased',
-        fontSize: '16px',
-        '::placeholder': {
-          color: '#aab7c4',
-        },
-      },
-      invalid: {
-        color: '#fa755a',
-        iconColor: '#fa755a',
-      },
-    };
-    this.card = elements.create('card', {cardStyle});
-    if (this.cardInfo) {
-      this.card.mount(this.cardInfo.nativeElement);
-    }
-    this.card.addEventListener('change', this.cardHandler);
-  }
-
-  onChange({error}:{error:any}) {
-    if (error) {
-      this.cardError = error.message;
-    } else {
-      this.cardError = undefined;
-    }
-    this.cd.detectChanges();
-  }
-  async createStripeToken() {
-    this.waiting=true;
-    const {token, error} = await stripe.createToken(this.card);
-    if (token) {
-      this.onSuccess(token);
-      (
-          () => {
-            console.log("success");
-
-          })
-    } else {
-      console.log("error");
-      this.waiting = false;
-      this.onError(error);
-    }
-  }
-
- async onSuccess(token:any) {
-    this.waiting = false;
-    this.success = true;
-
-
-   await this.networkService.stripePayment(this.name,this.total,this.Lane,this.PostalCode,this.City,this.State,this.Country,this.orderNumber,token,this.operatorId).toPromise().then( (value => {
-console.log(value);
-      // this.response = JSON.parse(JSON.stringify(value));
-    }));
-    // await this.networkService.paymentStatus().subscribe(value => {
-    //   this.data = JSON.parse(JSON.stringify(value));
-    //
-    // });
-    // this.dialogRef.close({token});
-  }
-  onError(error:any) {
-    this.dialogRef.close();
-    if (error.message) {
-      this.cardError = error.message;
-    }
-
-  }
-
-  successClose(){
-    this.router.navigate(['dashboard']);
-  }
 }

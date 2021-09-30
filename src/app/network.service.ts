@@ -35,7 +35,7 @@ export class NetworkService {
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
-  stripePaymentUrl:string = this.baseUrl+"/stripePayment";
+  stripePaymentUrl:string = this.baseUrl+"//create-checkout-session";
   paypalPaymentUrl:string = this.baseUrl+"/paypalPayment";
   private tokenId: any;
 
