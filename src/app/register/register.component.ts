@@ -30,24 +30,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private networkService:NetworkService,private http:HttpClient,private router: Router) { }
 
-  // postData() {
-  //   localStorage.setItem("username", JSON.stringify(this.Operatorid)),
-  //     localStorage.setItem("password", JSON.stringify(this.password))
-  //   localStorage.setItem("balance", JSON.stringify(this.number))
-  //   let url = "http://localhost:4040/api/users/create"
-  //   this.http.post(url, {
-  //     Operatorid:this.Operatorid,
-  //     Email:this.Email,
-  //     password:this.password,
-  //     birthdate:this.birthdate
-  //
-  //   }).toPromise().then((data:any) => {
-  //     console.log(data)
-  //     console.log(JSON.stringify(data.Operatorid ))
-  //
-  //     this.result =data.user
-  //   })
-  // }
+
 
     width=window.innerWidth;
     ngOnInit(): void {
