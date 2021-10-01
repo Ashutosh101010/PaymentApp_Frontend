@@ -35,7 +35,7 @@ export class NetworkService {
   profileUrl: string =this.baseUrlUser+"/getUserInfo";
   historyUrl: string =this.baseUrlUser+"/getTransactionHistory";
   verifySessionUrl: string =this.baseUrlUser+"/verifySession";
-  stripePaymentUrl:string = this.baseUrl+"//create-checkout-session";
+  stripePaymentUrl:string = this.baseUrl+"/create-checkout-session";
   paypalPaymentUrl:string = this.baseUrl+"/paypalPayment";
   checkoutUrl:string = this.baseUrl+"/checkout";
   private tokenId: any;
@@ -198,7 +198,7 @@ export class NetworkService {
     this.tokenId = token.id
     console.log(JSON.stringify(token));
 
-    let response = this.http.post(this.stripePaymentUrl,{"name":name,"amount":total,"Line1":Lane,"PostalCode":PostalCode,"City":City,"State":State,"Country":Country,"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId,"userId":userid,"type":type,"token": token1,"card":card}).pipe(catchError((err, caught) => {
+    let response = this.http.post(this.stripePaymentUrl,{"orderNumber":orderNumber,"stripeToken":token.id,"operatorId":operatorId,"userId":userid,"type":type,"token": token1,"card":card}).pipe(catchError((err, caught) => {
       if(err instanceof HttpErrorResponse)
       {
         // this.router.navigate(["/stripe-loader"]);

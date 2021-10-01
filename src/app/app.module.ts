@@ -74,6 +74,8 @@ import {NgxPayPalModule} from "ngx-paypal";
 import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 import { PaypalPaymentComponent } from './paypal-payment/paypal-payment.component';
 import { NgxStripeModule } from 'ngx-stripe';
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
 
 
 
@@ -94,6 +96,8 @@ import { NgxStripeModule } from 'ngx-stripe';
     StripeLoaderComponent,
     PaymentgatewayComponent,
     PaypalPaymentComponent,
+    SuccessComponent,
+    CancelComponent,
   ],
   entryComponents:[StripePaymentComponent],
     imports: [

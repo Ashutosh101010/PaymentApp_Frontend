@@ -34,9 +34,9 @@
           <div class="prodTotal cartSection">
             <p>{{product[subTotal]}}</p>
           </div>
-          <div class="cartSection removeWrap">
-            <a href="#" class="remove">x</a>
-          </div>
+<!--          <div class="cartSection removeWrap">-->
+<!--&lt;!&ndash;            <a href="#" class="remove">x</a>&ndash;&gt;-->
+<!--          </div>-->
         </div>
       </li>
 
@@ -53,8 +53,9 @@
       <!--      <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>-->
 
       <!--      <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>-->
-      <li  class="totalRow final"><span style="color:black;height: 15px" class="label">Total</span><span style="color: black;height: 15px;" class="value">{{total}}</span></li>
-      <li  class="totalRow"><a style="background-color: black;color: white;width: 160px;border-radius: 9px;font-family: Roboto" href="#" class="btn continue"><b>Checkout</b></a></li>
+      <p>{{total}}</p>
+      <li *ngFor="let transaction of transactions; index as i" class="totalRow final"><span style="color:black;height: 15px" class="label">Total</span><span style="color: black;height: 15px;" class="value">{{total}}</span></li>
+      <button (click)="goToPayment(transactions)" class="totalRow"><a style="background-color: black;color: white;width: 160px;border-radius: 9px;font-family: Roboto"  class="btn continue"><b>Checkout</b></a></button>
     </ul>
   </div>
 </div>

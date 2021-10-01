@@ -37,7 +37,7 @@ export class LandingComponent implements OnInit {
     {
 console.log("success");
     // console.log(user.cart)
-      this.router.navigate(['/cart'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],total:response[JSONConstants.USER_OBJECT_TOTAL_KEY]}});
+      this.router.navigate(['/cart'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],total:response[JSONConstants.USER_OBJECT_TOTAL_KEY],userId:response[JSONConstants.USER_OBJECT_USERID_KEY],operatorId:response[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY]}});
     }
     else{
       console.log("fail");

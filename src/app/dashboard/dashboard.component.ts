@@ -10,7 +10,7 @@ import {window} from "ngx-bootstrap/utils";
 import {JSONConstants} from "../Model/JSONHelper";
 import { MatDialog } from '@angular/material/dialog';
 import {StripePaymentComponent} from "../stripe-payment/stripe-payment.component";
-import {CheckoutComponent} from "../checkout/checkout.component";
+// import {CheckoutComponent} from "../checkout/checkout.component";
 // import { OtpcheckComponent } from '../otpcheck/otpcheck.component';
 
 
@@ -120,7 +120,7 @@ this.getTransaction();
   }
   checkout(transaction:any) {
 
-    const dialogRef = this.dialog.open(CheckoutComponent, {
+    const dialogRef = this.dialog.open(StripePaymentComponent, {
       height: '700px',
       width: '1000px',
       // opening dialog here which will give us back stripeToken

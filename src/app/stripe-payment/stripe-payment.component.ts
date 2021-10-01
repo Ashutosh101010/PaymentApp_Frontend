@@ -16,6 +16,7 @@ import { switchMap } from 'rxjs/operators';
 
 
 export class StripePaymentComponent implements OnInit {
+  private userId: any;
 
   constructor(
     private dialogRef: MatDialogRef<StripePaymentComponent>,private networkService:NetworkService,public router:Router,private https: HttpClient,private stripeService: StripeService,
@@ -25,13 +26,11 @@ export class StripePaymentComponent implements OnInit {
       //   this.total= data.totalAmount;
       //   let state=this.router.getCurrentNavigation()?.extras.state
       //   if (state!=undefined) {
-      //     this.products = state.cart;
+      //     // this.products = state.cart;
       //     this.total= state.total;
-      //     console.log(this.products);
+      //     // console.log(this.products);
       //   }
-      //   else {
-      //     this.products=[];
-      //   }
+      //
       // }
     }
 
@@ -60,16 +59,18 @@ export class StripePaymentComponent implements OnInit {
   State=JSONConstants.OPERATOR_OBJECT_STATE_KEY;
   Country=JSONConstants.OPERATOR_OBJECT_COUNTRY_KEY
   // price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
+
   // quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
   operatorId = localStorage.getItem("operatorId");
   // Transactionhistorys: [] | undefined = [];
   transaction: any|undefined;
-
+    // userid : any;
 
   checkout() {
     // Check the server.js tab to see an example implementation
+    this.userId =localStorage.getItem("userId");
 
-    this.https.post('http://localhost:4041/api/operator/create-checkout-session', {"name":this.name,"amount":this.total,"Line1":this.Lane,"PostalCode":this.PostalCode,"City":this.City,"State":this.State,"Country":this.Country,"orderNumber":this.orderNumber,"operatorId":this.operatorId})
+    this.https.post('http://localhost:4041/api/operator/create-checkout-session', {"name":this.name,"amount":this.total,"orderNumber":this.orderNumber,"operatorId":this.operatorId,"userId":this.userId})
       .pipe(
         switchMap(session => {
           let sess:any=session;
