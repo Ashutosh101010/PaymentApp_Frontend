@@ -42,11 +42,27 @@ export class ProfileComponent implements OnInit {
   // user : string | undefined=[ ];
   width=window.innerWidth;
   ngOnInit(): void {
+    let userId = localStorage.getItem("userId");
+    let token = localStorage.getItem("token");
+    let operatorId = localStorage.getItem("operatorId");
+    let response:any;
+    if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
+      this.router.navigate(['/login']);
+    }
+    else {
+      this.networkService.verifySession(token, operatorId, userId).subscribe(user => {
+        response = user;
+        console.log(response[JSONConstants.ERROR_CODE_KEY]);
+        if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
+          this.router.navigate(['/login']);
+        }
+      });
+    }
     this.width=window.innerWidth;
     this.networkService.getUsers("w2qe22344vfc435", "ABCD12345678abcd", "101").toPromise().then(value =>{
       console.log(value);
       this.user=JSON.parse(JSON.stringify(value))["user"];
-;
+
 
         console.log(this.user);
         // console.log(this.user.email);

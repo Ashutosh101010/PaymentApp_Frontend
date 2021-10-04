@@ -130,6 +130,22 @@ export class PaymentgatewayComponent implements OnInit {
 
 
   ngOnInit(): void {
+    let userId = localStorage.getItem("userId");
+    let token = localStorage.getItem("token");
+    let operatorId = localStorage.getItem("operatorId");
+    let response:any;
+    if (userId == null || userId == "" || token == null || token == "" || operatorId == null || operatorId == "") {
+      this.router.navigate(['/login']);
+    }
+    else {
+      this.networkService.verifySession(token, operatorId, userId).subscribe(user => {
+        response = user;
+        console.log(response[JSONConstants.ERROR_CODE_KEY]);
+        if (response[JSONConstants.ERROR_CODE_KEY] != 0) {
+          this.router.navigate(['/login']);
+        }
+      });
+    }
     this.initConfig();
     console.log(history.state);
     this.id=history.state.id;

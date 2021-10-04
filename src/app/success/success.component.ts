@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {JSONConstants} from "../Model/JSONHelper";
+import {Router} from "@angular/router";
+import {NetworkService} from "../network.service";
 
 @Component({
   selector: 'app-success',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router,public networkService:NetworkService) { }
 
   ngOnInit(): void {
+
   }
 
 }
