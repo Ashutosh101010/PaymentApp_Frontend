@@ -64,7 +64,7 @@ export class CartComponent implements OnInit {
   brand=JSONConstants.PRODUCT_OBJECT_BRAND_KEY;
   // name=JSONConstants.PRODUCT_OBJECT_NAME_KEY;
   images=JSONConstants.PRODUCT_OBJECT_IMAGES_KEY;
-  orderNumber=JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY;
+  orderNumber:any;
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
   // price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   // quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
@@ -74,6 +74,11 @@ export class CartComponent implements OnInit {
     // {
     //   this.route.navigate(["/login"])
     // }
+    console.log(history.state);
+    this.userId=history.state.userId;
+    this.operatorId=history.state.operatorId;
+    this.amount=history.state.total;
+    this.orderNumber=history.state.ordernumber;
   }
   checkout(transaction:any) {
 
@@ -92,7 +97,7 @@ export class CartComponent implements OnInit {
       });
   }
   goToPayment(transaction:any){
-    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount: transaction[this.amount],orderNumber: transaction[this.orderNumber],userId: transaction[this.userId],operatorId: transaction[this.operatorId]} });
+    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount:this.amount,orderNumber: this.orderNumber,userId: this.userId,operatorId: this.operatorId} });
   }
   private createOrder(token: string) {
 

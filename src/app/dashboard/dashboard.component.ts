@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   cart=JSONConstants.TRANSACTION_OBJECT_CART_KEY;
   price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
-
+  userId =localStorage.getItem("userId");
 
   // Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
@@ -135,7 +135,9 @@ this.getTransaction();
       });
   }
   goToPayment(transaction:any){
-    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount: transaction[this.amount],orderNumber: transaction[this.orderNumber]} });
+    let operatorId = localStorage.getItem("operatorId");
+    console.log(operatorId);
+    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount: transaction[this.amount],orderNumber: transaction[this.orderNumber],userId:this.userId,operatorId:operatorId} });
   }
   private createOrder(token: string) {
 

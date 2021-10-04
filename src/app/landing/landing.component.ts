@@ -30,14 +30,14 @@ export class LandingComponent implements OnInit {
       let token=value['token'];
       let operatorId=value[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY];
       let userId=value[JSONConstants.USER_OBJECT_USERID_KEY];
-      console.log(value);
+      console.log(value,token,operatorId,userId);
   this.networkService.verifyToken(token,operatorId,userId).subscribe(data => {
     let response:any=data;
     if (response[JSONConstants.ERROR_CODE_KEY]==0)
     {
 console.log("success");
     // console.log(user.cart)
-      this.router.navigate(['/cart'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],total:response[JSONConstants.USER_OBJECT_TOTAL_KEY],userId:response[JSONConstants.USER_OBJECT_USERID_KEY],operatorId:response[JSONConstants.OPERATOR_OBJECT_OPERATORID_KEY]}});
+      this.router.navigate(['/cart'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],ordernumber:response[JSONConstants.TRANSACTION_OBJECT_ORDERNUMBER_KEY],token:token,total:4000,userId:userId,operatorId:operatorId}});
     }
     else{
       console.log("fail");

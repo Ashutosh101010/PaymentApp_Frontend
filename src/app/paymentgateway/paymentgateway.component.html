@@ -6,12 +6,12 @@
     <div class="col2">
         <div class="div1">
             <h1 class="text1">Please Choose A Payment Option</h1>
-            <div class="radio1"><input type="radio" mat-raised-button (click)="radio1()" name="blah">&nbsp;Open Stripe Payment</div>
-            <div class="radio1"><input type="radio" mat-raised-button (click)="radio2()" name="blah">&nbsp;Open Paypal Payment</div>
-            <button class="button1" (click)="openDialog()">Continue</button>
+          <button (click)="checkout()" style="margin-bottom: 100px">GO TO CHECKOUT</button>
+          <ngx-paypal [config]="payPalConfig" class="ngxpaypal">Pay With PAYPAL</ngx-paypal>
+
         </div>
     </div>
     <div class="col3">
-        
+
     </div>
 </div>
