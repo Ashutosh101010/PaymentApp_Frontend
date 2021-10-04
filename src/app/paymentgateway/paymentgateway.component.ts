@@ -27,6 +27,7 @@ export class PaymentgatewayComponent implements OnInit {
   operatorId:any;
   name:any;
   navigationId:any;
+  type:any;
   constructor(public router:Router,public dialog:MatDialog,public activatedRoute: ActivatedRoute,private https:HttpClient,private stripeService: StripeService,public networkService:NetworkService) {
 
   }
@@ -36,7 +37,7 @@ export class PaymentgatewayComponent implements OnInit {
   checkout() {
 
 
-    this.https.post('http://localhost:4041/api/operator/create-checkout-session', {"name":this.name,"amount":this.amount,"orderNumber":this.orderNumber,"operatorId":this.operatorId,"userId":this.userId})
+    this.https.post('http://localhost:4041/api/operator/create-checkout-session', {"name":this.name,"amount":this.amount,"orderNumber":this.orderNumber,"type":this.type,"operatorId":this.operatorId,"userId":this.userId})
       .pipe(
         switchMap(session => {
           let sess:any=session;
@@ -156,6 +157,7 @@ export class PaymentgatewayComponent implements OnInit {
     this.orderNumber=history.state.orderNumber;
     this.operatorId=history.state.operatorId;
     this.userId=history.state.userId;
+    this.type=history.state.type;
     console.log(this.operatorId);
   }
 

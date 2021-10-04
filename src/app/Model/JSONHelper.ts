@@ -55,6 +55,8 @@ export class JSONConstants{
   static TRANSACTION_OBJECT_TYPE_KEY:string="type";
   static TRANSACTION_OBJECT_STATUSCODE_KEY:string="statuscode";
   static TRANSACTION_OBJECT_CART_KEY:string="cart";
+  static TRANSACTION_OBJECT_DESCRIPTION_KEY:string="description";
+  static TRANSACTION_OBJECT_PRODUCTID_KEY:string="productID";
 
 
   // static ERROR_CODE_KEY:string="errorCode";

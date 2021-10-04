@@ -36,7 +36,8 @@ export class DashboardComponent implements OnInit {
   price=JSONConstants.PRODUCT_OBJECT_PRICE_KEY;
   quantity=JSONConstants.PRODUCT_OBJECT_QUANTITY_KEY;
   userId =localStorage.getItem("userId");
-
+  description=JSONConstants.TRANSACTION_OBJECT_DESCRIPTION_KEY;
+  productID=JSONConstants.TRANSACTION_OBJECT_PRODUCTID_KEY;
   // Transactionhistorys : [] | undefined=[];
   width=window.innerWidth;
    ngOnInit() {
@@ -57,11 +58,13 @@ export class DashboardComponent implements OnInit {
           this.router.navigate(['/stripe-component'],{state:{cart:response[JSONConstants.TRANSACTION_OBJECT_CART_KEY],total:response[JSONConstants.USER_OBJECT_TOTAL_KEY]}});
         }
 this.getTransaction();
+
       });
 
       this.width = window.innerWidth;    // let history: history | undefined = this.dataService.history;
 
     }
+
   }
 
   getTransaction(){
@@ -118,26 +121,16 @@ this.getTransaction();
     localStorage.clear();
     this.router.navigate(["/login"]);
   }
-  checkout(transaction:any) {
 
-    const dialogRef = this.dialog.open(StripePaymentComponent, {
-      height: '700px',
-      width: '1000px',
-      // opening dialog here which will give us back stripeToken
-      data: {totalAmount: transaction[this.amount],orderNumber:transaction[this.orderNumber],name:transaction[this.name],type:transaction[this.type]},
-    });
-    dialogRef.afterClosed()
-      // waiting for stripe token that will be given back
-      .subscribe((result: any) => {
-        if (result) {
-          this.createOrder(result.token.id);
-        }
-      });
-  }
   goToPayment(transaction:any){
     let operatorId = localStorage.getItem("operatorId");
     console.log(operatorId);
-    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:'Angular',amount: transaction[this.amount],orderNumber: transaction[this.orderNumber],userId:this.userId,operatorId:operatorId} });
+    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:transaction[this.name],amount: transaction[this.amount],orderNumber: transaction[this.orderNumber],type: transaction[this.type],userId:this.userId,operatorId:operatorId} });
+  }
+  goToPaymentProduct(transaction:any,product:any){
+    let operatorId = localStorage.getItem("operatorId");
+    console.log(product,transaction);
+    this.router.navigateByUrl('/paymentgateway', { state: { id:5 , name:product[this.name],amount: product[this.price],orderNumber: transaction[this.orderNumber],type: transaction[this.type],userId:this.userId,operatorId:operatorId} });
   }
   private createOrder(token: string) {
 

@@ -10,7 +10,7 @@
     background-size: cover;
 }
 .col1{
-    width: 25%;
+    width: 35%;
     background: transparent;
     height: 100vh;
     display: inline-block;
@@ -19,7 +19,7 @@
     margin: 0;
 }
 .col2{
-    width: 50%;
+    width: 30%;
     height: 100vh;
     display: inline-block;
     overflow: hidden;
@@ -29,7 +29,7 @@
     background-color: transparent;
 }
 .col3{
-    width: 25%;
+    width: 35%;
     background: transparent;
     height: 100vh;
     display: inline-block;
@@ -79,4 +79,22 @@
 }
 .button1:hover{
     background-color: rgb(199, 187, 253);
+}
+.stripecheckout{
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 13px;
+  border-radius: 5px;
+  border: 0px;
+  transition-duration: 0.3s;
+  background: #3B7FF4;
+  color: white;
+}
+.stripecheckout:hover{
+  filter: brightness(95%);
+}
+.orsize{
+  font-size: 1.5vw;
+  margin-bottom: 25px;
+
 }
